@@ -11,6 +11,7 @@
 		2E6444B02483054A00663B77 /* UnderlinedTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */; };
 		2E6444B12483093D00663B77 /* UnderlinedTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */; };
 		2E6444B3248309AD00663B77 /* CircularShadowedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6444B2248309AD00663B77 /* CircularShadowedButton.swift */; };
+		2E6444B52483216000663B77 /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6444B42483216000663B77 /* RoundedCornerButton.swift */; };
 		2E8B5963247FC9EF00D916FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B5962247FC9EF00D916FF /* GoogleService-Info.plist */; };
 		2E8B5964247FC9EF00D916FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B5962247FC9EF00D916FF /* GoogleService-Info.plist */; };
 		2E8B5967247FCAAB00D916FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B5966247FCAAB00D916FF /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextfield.swift; sourceTree = "<group>"; };
 		2E6444B2248309AD00663B77 /* CircularShadowedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularShadowedButton.swift; sourceTree = "<group>"; };
+		2E6444B42483216000663B77 /* RoundedCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButton.swift; sourceTree = "<group>"; };
 		2E8B5962247FC9EF00D916FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E8B5966247FCAAB00D916FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E8B596B247FD20400D916FF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */,
 				2E8B5980247FD55600D916FF /* DesignableView.swift */,
 				2E6444B2248309AD00663B77 /* CircularShadowedButton.swift */,
+				2E6444B42483216000663B77 /* RoundedCornerButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				2E8B59D12482F6C700D916FF /* AppColors.swift in Sources */,
 				2E6444B02483054A00663B77 /* UnderlinedTextfield.swift in Sources */,
 				2EF9E8192476F49F00E122B8 /* SceneDelegate.swift in Sources */,
+				2E6444B52483216000663B77 /* RoundedCornerButton.swift in Sources */,
 				2EF9E8212476F49F00E122B8 /* BuildBack.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
