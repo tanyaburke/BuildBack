@@ -40,6 +40,10 @@
 		2E8B59912480037400D916FF /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B598F2480037400D916FF /* BusinessViewController.swift */; };
 		2E8B59D12482F6C700D916FF /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B59D02482F6C700D916FF /* AppColors.swift */; };
 		2E8B59D22482F6C700D916FF /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B59D02482F6C700D916FF /* AppColors.swift */; };
+		2E9BF8872488440B0032B61C /* build.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E9BF8862488440B0032B61C /* build.gif */; };
+		2E9BF88A248845540032B61C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BF889248845540032B61C /* UserProfileViewController.swift */; };
+		2E9BF88C248846110032B61C /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BF88B248846110032B61C /* EmptyView.swift */; };
+		2E9BF88F2488480F0032B61C /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BF88E2488480F0032B61C /* AuthenticationSession.swift */; };
 		2EF9E8172476F49F00E122B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E8162476F49F00E122B8 /* AppDelegate.swift */; };
 		2EF9E8192476F49F00E122B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E8182476F49F00E122B8 /* SceneDelegate.swift */; };
 		2EF9E81B2476F49F00E122B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E81A2476F49F00E122B8 /* ViewController.swift */; };
@@ -77,6 +81,10 @@
 		2E8B598C2480032600D916FF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E8B598F2480037400D916FF /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		2E8B59D02482F6C700D916FF /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		2E9BF8862488440B0032B61C /* build.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = build.gif; sourceTree = "<group>"; };
+		2E9BF889248845540032B61C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		2E9BF88B248846110032B61C /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		2E9BF88E2488480F0032B61C /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		2EF9E8132476F49F00E122B8 /* BuildBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF9E8162476F49F00E122B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EF9E8182476F49F00E122B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,11 +143,11 @@
 			isa = PBXGroup;
 			children = (
 				2E8B59D02482F6C700D916FF /* AppColors.swift */,
-				2E8B596F247FD29F00D916FF /* InitialView.swift */,
 				2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */,
 				2E8B5980247FD55600D916FF /* DesignableView.swift */,
 				2E6444B2248309AD00663B77 /* CircularShadowedButton.swift */,
 				2E6444B42483216000663B77 /* RoundedCornerButton.swift */,
+				2E9BF88B248846110032B61C /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,10 +164,45 @@
 		2E8B597C247FD44500D916FF /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				2E8B597D247FD46B00D916FF /* LoginView.storyboard */,
+				2EF9E8242476F4A300E122B8 /* LaunchScreen.storyboard */,
 				2E8B5989247FD77700D916FF /* MainView.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		2E9BF8852487F73F0032B61C /* InitialView  */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B596B247FD20400D916FF /* InitialViewController.swift */,
+				2E8B596F247FD29F00D916FF /* InitialView.swift */,
+				2E9BF8862488440B0032B61C /* build.gif */,
+			);
+			path = "InitialView ";
+			sourceTree = "<group>";
+		};
+		2E9BF888248844E90032B61C /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2E9BF889248845540032B61C /* UserProfileViewController.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		2E9BF88D248847D20032B61C /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+				2E9BF88E2488480F0032B61C /* AuthenticationSession.swift */,
+			);
+			path = FireBase;
+			sourceTree = "<group>";
+		};
+		2E9BF89024884DC00032B61C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B597D247FD46B00D916FF /* LoginView.storyboard */,
+				2E8B5979247FD40800D916FF /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2EF9E80A2476F49F00E122B8 = {
@@ -185,18 +228,19 @@
 		2EF9E8152476F49F00E122B8 /* BuildBack */ = {
 			isa = PBXGroup;
 			children = (
+				2E9BF88D248847D20032B61C /* FireBase */,
 				2E8B5972247FD2E900D916FF /* Extensions */,
 				2E8B597C247FD44500D916FF /* StoryBoards */,
+				2E9BF89024884DC00032B61C /* Login */,
+				2E9BF8852487F73F0032B61C /* InitialView  */,
 				2E8B596E247FD24200D916FF /* Views */,
+				2E9BF888248844E90032B61C /* UserProfile */,
 				2E8B596A247FD1AD00D916FF /* ViewControllers */,
-				2E8B5979247FD40800D916FF /* LoginViewController.swift */,
-				2E8B596B247FD20400D916FF /* InitialViewController.swift */,
 				2E8B5983247FD73700D916FF /* TabBarViewController.swift */,
 				2E8B598C2480032600D916FF /* ProfileViewController.swift */,
 				2E8B598F2480037400D916FF /* BusinessViewController.swift */,
 				2EF9E81A2476F49F00E122B8 /* ViewController.swift */,
 				2E8B5969247FD15A00D916FF /* SupportingFiles */,
-				2EF9E8242476F4A300E122B8 /* LaunchScreen.storyboard */,
 				2E8B5966247FCAAB00D916FF /* Assets.xcassets */,
 				2EF9E8272476F4A300E122B8 /* Info.plist */,
 				2EF9E81F2476F49F00E122B8 /* BuildBack.xcdatamodeld */,
@@ -323,6 +367,7 @@
 				2E8B598A247FD77700D916FF /* MainView.storyboard in Resources */,
 				2E8B5963247FC9EF00D916FF /* GoogleService-Info.plist in Resources */,
 				2E8B5967247FCAAB00D916FF /* Assets.xcassets in Resources */,
+				2E9BF8872488440B0032B61C /* build.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,8 +458,10 @@
 				2E8B5984247FD73700D916FF /* TabBarViewController.swift in Sources */,
 				2E8B596C247FD20400D916FF /* InitialViewController.swift in Sources */,
 				2EF9E81B2476F49F00E122B8 /* ViewController.swift in Sources */,
+				2E9BF88C248846110032B61C /* EmptyView.swift in Sources */,
 				2E8B59902480037400D916FF /* BusinessViewController.swift in Sources */,
 				2EF9E8172476F49F00E122B8 /* AppDelegate.swift in Sources */,
+				2E9BF88A248845540032B61C /* UserProfileViewController.swift in Sources */,
 				2E6444B3248309AD00663B77 /* CircularShadowedButton.swift in Sources */,
 				2E8B598D2480032600D916FF /* ProfileViewController.swift in Sources */,
 				2E8B5981247FD55600D916FF /* DesignableView.swift in Sources */,
@@ -424,6 +471,7 @@
 				2E6444B02483054A00663B77 /* UnderlinedTextfield.swift in Sources */,
 				2EF9E8192476F49F00E122B8 /* SceneDelegate.swift in Sources */,
 				2E6444B52483216000663B77 /* RoundedCornerButton.swift in Sources */,
+				2E9BF88F2488480F0032B61C /* AuthenticationSession.swift in Sources */,
 				2EF9E8212476F49F00E122B8 /* BuildBack.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
