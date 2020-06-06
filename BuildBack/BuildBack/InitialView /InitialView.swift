@@ -15,7 +15,7 @@ class InitialView: UIView {
             gifImage.loadGif(name: "build")
         gifImage.backgroundColor = .systemBackground
             gifImage.contentMode = .scaleAspectFill
-            gifImage.animationDuration = 2.0
+            gifImage.animationDuration = 0.0
                 return gifImage
             }()
         
