@@ -10,21 +10,44 @@ import UIKit
 
 class BusinessViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+     override func viewDidLoad() {
+            super.viewDidLoad()
 
-        view.backgroundColor = .clear
+        tableView.dataSource = self
+        tableView.register(BusinessDisplayTableViewCell.self, forCellReuseIdentifier: "businessCell")
+        
+        }
+        
+         override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(true)
+            
+            
+        }
+    
+    
+    
+}
+
+
+extension BusinessViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 10
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell =  tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as? BusinessDisplayTableViewCell else {
+            fatalError("Error loading Cell")
+        }
+        cell.backgroundColor = .black
+        return cell
     }
-    */
-
+    
+    
+    
+    
 }

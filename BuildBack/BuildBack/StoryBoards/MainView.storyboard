@@ -4,27 +4,48 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="AAd-tk-gdo">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="FBe-yi-t8r" customClass="ViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="FBe-yi-t8r" customClass="UserProfileViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VcG-lQ-7jj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vzd-Fu-lDV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" rowHeight="133" id="cVR-q9-Gb8">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="133"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cVR-q9-Gb8" id="WAT-mk-GUo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vzd-Fu-lDV" firstAttribute="top" secondItem="VcG-lQ-7jj" secondAttribute="topMargin" constant="-44" id="Vnb-tG-Vpc"/>
+                            <constraint firstItem="0MF-Ko-sJW" firstAttribute="bottom" secondItem="Vzd-Fu-lDV" secondAttribute="bottom" id="ca5-lb-5A9"/>
+                            <constraint firstItem="0MF-Ko-sJW" firstAttribute="trailing" secondItem="Vzd-Fu-lDV" secondAttribute="trailing" id="r84-H1-6uh"/>
+                            <constraint firstItem="Vzd-Fu-lDV" firstAttribute="leading" secondItem="0MF-Ko-sJW" secondAttribute="leading" id="rua-Tq-GUa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0MF-Ko-sJW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4tb-9q-I4w"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.rectangle.fill" catalog="system" id="4tb-9q-I4w"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGc-ZF-R50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119" y="852"/>
+            <point key="canvasLocation" x="118.84057971014494" y="851.78571428571422"/>
         </scene>
-        <!--Item 2-->
+        <!--SavedBusiness-->
         <scene sceneID="kaZ-nJ-YZw">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="IlH-67-r1n" customClass="ProfileViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,13 +55,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3HL-jV-cQM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="B22-T1-DE2"/>
+                    <tabBarItem key="tabBarItem" title="SavedBusiness" image="star.fill" catalog="system" id="B22-T1-DE2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IcB-tb-Oh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="120" y="94"/>
         </scene>
-        <!--Item 1-->
+        <!--Businesses-->
         <scene sceneID="yjj-tv-vXx">
             <objects>
                 <viewController storyboardIdentifier="BusinessViewController" id="M5J-TE-CxI" customClass="BusinessViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,37 +69,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WSk-r7-ZPK">
-                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BL3-m8-x9w">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Nmh-wX-ogQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="57N-Tf-S9V">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nq1-ZA-yra">
-                                <rect key="frame" x="0.0" y="76" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nq1-ZA-yra">
+                                <rect key="frame" x="0.0" y="76" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-QO-O0L">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cvK-KJ-goq" firstAttribute="bottom" secondItem="zpF-QO-O0L" secondAttribute="bottom" id="4A2-sl-NSv"/>
+                            <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="nq1-ZA-yra" secondAttribute="trailing" id="RYm-dc-C3q"/>
+                            <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="zpF-QO-O0L" secondAttribute="trailing" id="YLI-jE-UNL"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="top" secondItem="pgY-i9-3bg" secondAttribute="top" id="ehZ-rm-u63"/>
+                            <constraint firstItem="nq1-ZA-yra" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="kLN-cg-N0m"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="rXn-IH-7O3"/>
+                            <constraint firstItem="nq1-ZA-yra" firstAttribute="top" secondItem="cvK-KJ-goq" secondAttribute="top" constant="32" id="wNH-b9-f5E"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cvK-KJ-goq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="AcS-xe-OKO"/>
+                    <tabBarItem key="tabBarItem" title="Businesses" image="magnifyingglass" catalog="system" id="AcS-xe-OKO"/>
+                    <connections>
+                        <outlet property="searchBar" destination="nq1-ZA-yra" id="Ko1-sk-ztm"/>
+                        <outlet property="tableView" destination="zpF-QO-O0L" id="tC1-Ma-oTM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ah-ze-i9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,4 +120,9 @@
             <point key="canvasLocation" x="-799" y="-230"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="person.crop.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

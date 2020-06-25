@@ -17,13 +17,13 @@ class InitialViewController: UIViewController {
                     
                     view.backgroundColor = .systemBackground
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
                   
                         
                         let scene = UIApplication.shared.connectedScenes.first
                         if let sceneDelegate = (scene?.delegate as? SceneDelegate) {
                             UIView.transition(with: self.logoAnimationView,
-                                              duration: 1.0,
+                                              duration: 2.0,
                                                        options: .transitionCrossDissolve,
                                                        animations: nil,
                                                        completion: nil)

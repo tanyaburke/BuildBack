@@ -15,50 +15,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="buildback" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-bR-Bku">
-                                <rect key="frame" x="-111" y="-33" width="587" height="946"/>
-                            </imageView>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zwi-db-wuo">
-                                <rect key="frame" x="0.0" y="-16" width="414" height="896"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TJJ-VH-MUl">
-                                        <rect key="frame" x="15" y="537.5" width="399" height="155.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BuildBack" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqm-N5-So8">
-                                                <rect key="frame" x="0.0" y="0.0" width="399" height="91.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="66"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="2" height="1"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building back our community through one donation at a time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jg-7W-7gX">
-                                                <rect key="frame" x="0.0" y="91.5" width="399" height="64"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="23"/>
-                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="TJJ-VH-MUl" secondAttribute="trailing" id="CvV-bq-hUe"/>
-                                    <constraint firstItem="TJJ-VH-MUl" firstAttribute="leading" secondItem="zwi-db-wuo" secondAttribute="leading" constant="15" id="DlG-s1-fnU"/>
-                                    <constraint firstAttribute="bottom" secondItem="TJJ-VH-MUl" secondAttribute="bottom" constant="203" id="rXT-Ug-4oA"/>
-                                </constraints>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwi-db-wuo" userLabel="TransparentView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-bR-Bku">
+                                <rect key="frame" x="-71" y="0.0" width="578" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TJJ-VH-MUl">
+                                <rect key="frame" x="7" y="369" width="323" height="92.5"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zwi-db-wuo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="7gi-TY-Efy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="zwi-db-wuo" secondAttribute="top" constant="44" id="B93-dV-BT1"/>
-                            <constraint firstItem="XHg-bR-Bku" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bk8-FZ-2oC"/>
+                            <constraint firstItem="XHg-bR-Bku" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="93" id="Bk8-FZ-2oC"/>
+                            <constraint firstItem="TJJ-VH-MUl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="325" id="S4d-4m-Yyu"/>
+                            <constraint firstItem="TJJ-VH-MUl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="TGZ-iI-3Zi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TJJ-VH-MUl" secondAttribute="trailing" constant="84" id="U5i-LV-d6m"/>
                             <constraint firstAttribute="bottom" secondItem="XHg-bR-Bku" secondAttribute="bottom" id="Xsy-Fj-LAl"/>
-                            <constraint firstItem="XHg-bR-Bku" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ecz-13-VG9"/>
+                            <constraint firstItem="XHg-bR-Bku" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-71" id="ecz-13-VG9"/>
+                            <constraint firstAttribute="bottom" secondItem="TJJ-VH-MUl" secondAttribute="bottom" constant="434.5" id="jBN-x8-0SM"/>
                             <constraint firstItem="zwi-db-wuo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qyb-4D-mgT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="zwi-db-wuo" secondAttribute="top" constant="44" id="rZ1-al-Nze"/>
                             <constraint firstItem="XHg-bR-Bku" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="wu0-8F-Zq3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="zwi-db-wuo" secondAttribute="leading" id="xM4-4L-X4X"/>
                         </constraints>
@@ -71,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buildback" width="225" height="225"/>
+        <image name="Icon" width="1024" height="1024"/>
     </resources>
 </document>
