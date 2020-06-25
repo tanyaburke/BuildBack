@@ -4,14 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Profile-->
         <scene sceneID="AAd-tk-gdo">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="FBe-yi-t8r" customClass="ProfileViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="FBe-yi-t8r" customClass="UserProfileViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VcG-lQ-7jj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,8 +32,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Vzd-Fu-lDV" firstAttribute="top" secondItem="VcG-lQ-7jj" secondAttribute="topMargin" constant="-44" id="Vnb-tG-Vpc"/>
                             <constraint firstItem="0MF-Ko-sJW" firstAttribute="bottom" secondItem="Vzd-Fu-lDV" secondAttribute="bottom" id="ca5-lb-5A9"/>
-                            <constraint firstItem="0MF-Ko-sJW" firstAttribute="top" secondItem="Vzd-Fu-lDV" secondAttribute="top" constant="44" id="g0F-wA-LkB"/>
                             <constraint firstItem="0MF-Ko-sJW" firstAttribute="trailing" secondItem="Vzd-Fu-lDV" secondAttribute="trailing" id="r84-H1-6uh"/>
                             <constraint firstItem="Vzd-Fu-lDV" firstAttribute="leading" secondItem="0MF-Ko-sJW" secondAttribute="leading" id="rua-Tq-GUa"/>
                         </constraints>
@@ -74,73 +73,27 @@
                                 <rect key="frame" x="0.0" y="76" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WSk-r7-ZPK">
-                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-QO-O0L">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BL3-m8-x9w">
-                                    <size key="itemSize" width="378" height="253"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="profileCell" reuseIdentifier="profileCell" id="Nmh-wX-ogQ">
-                                        <rect key="frame" x="18" y="0.0" width="378" height="253"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="57N-Tf-S9V">
-                                            <rect key="frame" x="0.0" y="0.0" width="378" height="253"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="robert-svebeck-TNsLQrmTo2Y-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="7TF-ig-5cJ">
-                                                    <rect key="frame" x="8" y="0.0" width="196" height="245"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evr-mb-r4x">
-                                                    <rect key="frame" x="212" y="8" width="151" height="84"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="29"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxL-De-n6C">
-                                                    <rect key="frame" x="212" y="100" width="158" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6u-9D-9EY" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                                    <rect key="frame" x="212" y="187" width="85" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.91052131430000005" blue="0.19219665490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                                    <state key="normal" title="DONATE">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="378" height="253"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cvK-KJ-goq" firstAttribute="bottom" secondItem="WSk-r7-ZPK" secondAttribute="bottom" id="8VI-Tr-2vB"/>
+                            <constraint firstItem="cvK-KJ-goq" firstAttribute="bottom" secondItem="zpF-QO-O0L" secondAttribute="bottom" id="4A2-sl-NSv"/>
                             <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="nq1-ZA-yra" secondAttribute="trailing" id="RYm-dc-C3q"/>
-                            <constraint firstItem="WSk-r7-ZPK" firstAttribute="top" secondItem="nq1-ZA-yra" secondAttribute="bottom" id="U2Z-pf-Zfb"/>
-                            <constraint firstItem="WSk-r7-ZPK" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="b1j-DY-wAb"/>
-                            <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="WSk-r7-ZPK" secondAttribute="trailing" id="eew-p4-FPS"/>
+                            <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="zpF-QO-O0L" secondAttribute="trailing" id="YLI-jE-UNL"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="top" secondItem="pgY-i9-3bg" secondAttribute="top" id="ehZ-rm-u63"/>
                             <constraint firstItem="nq1-ZA-yra" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="kLN-cg-N0m"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="rXn-IH-7O3"/>
                             <constraint firstItem="nq1-ZA-yra" firstAttribute="top" secondItem="cvK-KJ-goq" secondAttribute="top" constant="32" id="wNH-b9-f5E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cvK-KJ-goq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Businesses" image="magnifyingglass" catalog="system" id="AcS-xe-OKO"/>
                     <connections>
-                        <outlet property="collectionView" destination="WSk-r7-ZPK" id="57r-XM-fya"/>
                         <outlet property="searchBar" destination="nq1-ZA-yra" id="Ko1-sk-ztm"/>
+                        <outlet property="tableView" destination="zpF-QO-O0L" id="tC1-Ma-oTM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ah-ze-i9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -170,7 +123,6 @@
     <resources>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="person.crop.rectangle.fill" catalog="system" width="64" height="46"/>
-        <image name="robert-svebeck-TNsLQrmTo2Y-unsplash" width="3052" height="4586"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>

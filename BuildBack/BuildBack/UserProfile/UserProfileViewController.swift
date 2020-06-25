@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UITableViewController {
     
       
 //      private var buisness = [BusinessModel]() {

@@ -16,11 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-Ej-OM1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="buildback" translatesAutoresizingMaskIntoConstraints="NO" id="US5-Jn-T96">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="esu-WJ-2NT">
-                                <rect key="frame" x="20" y="330" width="588.5" height="350"/>
+                                <rect key="frame" x="20" y="304" width="588.5" height="350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0TS-tl-avF">
                                         <rect key="frame" x="0.0" y="0.0" width="588.5" height="69"/>
@@ -90,7 +94,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="aTT-TE-LW9">
-                                <rect key="frame" x="82" y="737" width="250" height="128"/>
+                                <rect key="frame" x="82" y="711" width="250" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jv-L4-cR5" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
@@ -131,16 +135,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="esu-WJ-2NT" firstAttribute="leading" secondItem="tVg-0p-K1e" secondAttribute="leading" constant="20" id="5Tk-mh-sQn"/>
-                            <constraint firstItem="esu-WJ-2NT" firstAttribute="top" secondItem="eFl-3s-SG7" secondAttribute="bottom" constant="58" id="BrL-Tu-bf4"/>
+                            <constraint firstItem="UKh-Ej-OM1" firstAttribute="leading" secondItem="tVg-0p-K1e" secondAttribute="leading" id="60G-vV-1dV"/>
+                            <constraint firstItem="esu-WJ-2NT" firstAttribute="top" secondItem="eFl-3s-SG7" secondAttribute="bottom" constant="93" id="BrL-Tu-bf4"/>
                             <constraint firstItem="aTT-TE-LW9" firstAttribute="top" secondItem="esu-WJ-2NT" secondAttribute="bottom" constant="57" id="EY8-BN-Ejm"/>
                             <constraint firstAttribute="trailing" secondItem="US5-Jn-T96" secondAttribute="trailing" id="Ifa-em-31q"/>
-                            <constraint firstItem="eFl-3s-SG7" firstAttribute="top" secondItem="tVg-0p-K1e" secondAttribute="top" constant="61" id="PAS-e7-Hrt"/>
+                            <constraint firstItem="tVg-0p-K1e" firstAttribute="top" secondItem="UKh-Ej-OM1" secondAttribute="top" constant="44" id="ONV-rc-aLd"/>
+                            <constraint firstItem="eFl-3s-SG7" firstAttribute="top" secondItem="tVg-0p-K1e" secondAttribute="top" id="PAS-e7-Hrt"/>
                             <constraint firstItem="eFl-3s-SG7" firstAttribute="leading" secondItem="tVg-0p-K1e" secondAttribute="leading" constant="20" id="Xmy-zW-Jow"/>
                             <constraint firstItem="aTT-TE-LW9" firstAttribute="centerX" secondItem="xhT-na-SVp" secondAttribute="centerX" id="YFC-IH-ESy"/>
                             <constraint firstAttribute="bottom" secondItem="US5-Jn-T96" secondAttribute="bottom" id="eTK-4I-rCg"/>
+                            <constraint firstItem="UKh-Ej-OM1" firstAttribute="bottom" secondItem="tVg-0p-K1e" secondAttribute="bottom" constant="34" id="jSA-ci-XCV"/>
+                            <constraint firstItem="tVg-0p-K1e" firstAttribute="trailing" secondItem="UKh-Ej-OM1" secondAttribute="trailing" id="kRK-Ie-o0Y"/>
                             <constraint firstItem="US5-Jn-T96" firstAttribute="leading" secondItem="xhT-na-SVp" secondAttribute="leading" id="lDb-XY-CSS"/>
                             <constraint firstItem="esu-WJ-2NT" firstAttribute="trailing" secondItem="tVg-0p-K1e" secondAttribute="trailing" constant="194.5" id="nF2-tw-zkx"/>
-                            <constraint firstItem="tVg-0p-K1e" firstAttribute="trailing" secondItem="eFl-3s-SG7" secondAttribute="trailing" constant="20" id="nyw-d6-E4b"/>
+                            <constraint firstItem="tVg-0p-K1e" firstAttribute="trailing" secondItem="eFl-3s-SG7" secondAttribute="trailing" constant="42" id="nyw-d6-E4b"/>
                             <constraint firstItem="US5-Jn-T96" firstAttribute="top" secondItem="xhT-na-SVp" secondAttribute="top" id="vfg-Ya-yF2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tVg-0p-K1e"/>
@@ -166,7 +174,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" misplaced="YES" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="41b-Cq-LUw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eps-nW-8L2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="41b-Cq-LUw">
                                 <rect key="frame" x="-89" y="0.0" width="503" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HKw-a9-QiF">
@@ -211,12 +223,16 @@
                             <constraint firstItem="41b-Cq-LUw" firstAttribute="top" secondItem="Bpx-XI-Xlb" secondAttribute="top" id="75E-W2-jYW"/>
                             <constraint firstItem="HKw-a9-QiF" firstAttribute="leading" secondItem="pdH-30-4sp" secondAttribute="leading" constant="15" id="FBD-jh-tM8"/>
                             <constraint firstItem="41b-Cq-LUw" firstAttribute="trailing" secondItem="pdH-30-4sp" secondAttribute="trailing" id="H0I-Pr-mGd"/>
+                            <constraint firstItem="eps-nW-8L2" firstAttribute="leading" secondItem="pdH-30-4sp" secondAttribute="leading" id="J5D-WA-JFS"/>
                             <constraint firstItem="pdH-30-4sp" firstAttribute="trailing" secondItem="HKw-a9-QiF" secondAttribute="trailing" constant="2" id="N1B-8o-rFd"/>
                             <constraint firstItem="pdH-30-4sp" firstAttribute="bottom" secondItem="HKw-a9-QiF" secondAttribute="bottom" constant="184" id="OAH-Q2-Rq9"/>
                             <constraint firstItem="ZGt-Hi-ai9" firstAttribute="top" secondItem="HKw-a9-QiF" secondAttribute="bottom" constant="60" id="QvC-67-06v"/>
-                            <constraint firstItem="41b-Cq-LUw" firstAttribute="leading" secondItem="pdH-30-4sp" secondAttribute="leading" id="Vmf-1F-lYw"/>
+                            <constraint firstItem="41b-Cq-LUw" firstAttribute="leading" secondItem="pdH-30-4sp" secondAttribute="leading" constant="-89" id="Vmf-1F-lYw"/>
                             <constraint firstAttribute="bottom" secondItem="41b-Cq-LUw" secondAttribute="bottom" id="cBM-Vg-Sod"/>
+                            <constraint firstItem="pdH-30-4sp" firstAttribute="bottom" secondItem="eps-nW-8L2" secondAttribute="bottom" constant="-34" id="iKq-B6-MQN"/>
                             <constraint firstItem="pdH-30-4sp" firstAttribute="trailing" secondItem="ZGt-Hi-ai9" secondAttribute="trailing" constant="25" id="lEJ-TX-TJT"/>
+                            <constraint firstItem="pdH-30-4sp" firstAttribute="trailing" secondItem="eps-nW-8L2" secondAttribute="trailing" id="n6r-5f-KLU"/>
+                            <constraint firstItem="eps-nW-8L2" firstAttribute="top" secondItem="pdH-30-4sp" secondAttribute="top" constant="-44" id="vjm-Ax-oE4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pdH-30-4sp"/>
                     </view>

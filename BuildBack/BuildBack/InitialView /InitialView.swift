@@ -12,10 +12,10 @@ class InitialView: UIView {
     
      public lazy var logoGifImageView: UIImageView = {
          let gifImage =  UIImageView()
-            gifImage.loadGif(name: "build")
+            gifImage.loadGif(name: "buildBack")
         gifImage.backgroundColor = .systemBackground
             gifImage.contentMode = .scaleAspectFill
-            gifImage.animationDuration = 0.0
+            gifImage.animationDuration = 3.5
                 return gifImage
             }()
         
