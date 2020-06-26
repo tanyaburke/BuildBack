@@ -19,6 +19,7 @@ struct BusinessModel {
     let address: String
     let description: String
     let paymentType: String
+    let imageURL: String
 
     
 }
@@ -33,6 +34,6 @@ extension BusinessModel {
         self.address = dictionary["address"] as? String ?? ""
         self.description = dictionary["description"] as? String ?? ""
         self.paymentType = dictionary["paymentType"] as? String ?? ""
-        
+        self.imageURL = dictionary["imageURL"] as? String ?? ""
     }
 }

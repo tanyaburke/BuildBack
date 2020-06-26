@@ -13,6 +13,26 @@ class StorageService {
     
     private let storageRef = Storage.storage().reference()
     
+    private lazy var storage: Storage = {
+        return Storage.storage()
+    }()
+    
+    func retrieveItemImages(imageURL: String, completion: @escaping (Result<UIImage,Error>) -> Void) {
+        storage.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                completion(.failure(error))
+            }
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: data) {
+                        completion(.success(image))
+                    }
+                }
+            }
+        }
+    }
+    
     public func uploadPhoto(userId: String? = nil, itemID: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()){
         
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {

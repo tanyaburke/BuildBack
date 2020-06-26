@@ -10,23 +10,19 @@ import UIKit
 
 class BusinessDisplayTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var businessImage: UIImageView!
+    @IBOutlet private weak var businessImageImageView: UIImageView!
     
-    @IBOutlet weak var businessName: UILabel!
+    @IBOutlet private weak var businessNameLabel: UILabel!
     
-    @IBOutlet weak var businessType: UILabel!
+    @IBOutlet private weak var businessTypeLabel: UILabel!
     
-    @IBOutlet weak var buusinessButton: UIButton!
+    @IBOutlet private weak var donateButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage){
+        
+        businessImageImageView.image = buisnessImage
+        businessNameLabel.text = buisnessName
+        businessTypeLabel.text = buisnessType
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+  
 }

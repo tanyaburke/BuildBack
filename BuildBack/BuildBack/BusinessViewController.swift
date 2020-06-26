@@ -14,30 +14,58 @@ class BusinessViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var storageService = StorageService()
+    
+    private var businesses = [BusinessModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     private var buisnessManager = BusinessManager()
     
      override func viewDidLoad() {
             super.viewDidLoad()
 
         tableView.dataSource = self
-        tableView.register(BusinessDisplayTableViewCell.self, forCellReuseIdentifier: "businessCell")
+        tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
+        retrieveBuisness()
         
         }
 
-    
+    private func retrieveBuisness(){
+        buisnessManager.retriveBusinesses { (result) in
+            switch result{
+            case let .success(businesses):
+                self.businesses = businesses
+            case let .failure(error):
+                print(error)
+           }
+        }
+    }
 }
 
 
 extension BusinessViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 10
+        return businesses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as? BusinessDisplayTableViewCell else {
             fatalError("Error loading Cell")
         }
-        cell.backgroundColor = .black
+        let buisness = businesses[indexPath.row]
+        storageService.retrieveItemImages(imageURL: buisness.imageURL) { (result) in
+            switch result{
+            case let .success(image):
+                cell.configureCell(buisnessName: buisness.buisnessName, buisnessType: buisness.type, buisnessImage: image)
+                
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
         return cell
     }
     
