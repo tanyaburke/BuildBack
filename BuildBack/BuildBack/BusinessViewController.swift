@@ -14,6 +14,7 @@ class BusinessViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var buisnessManager = BusinessManager()
     
      override func viewDidLoad() {
             super.viewDidLoad()
@@ -22,14 +23,7 @@ class BusinessViewController: UIViewController {
         tableView.register(BusinessDisplayTableViewCell.self, forCellReuseIdentifier: "businessCell")
         
         }
-        
-         override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(true)
-            
-            
-        }
-    
-    
+
     
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D82212881CAAD8980E5687B /* Pods_BuildBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C9B8F24ADB0B22E318815C /* Pods_BuildBack.framework */; };
+		2E33A9D124A64EB100C5D456 /* BusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E33A9D024A64EB100C5D456 /* BusinessManager.swift */; };
 		2E507624249A3E8800510691 /* buildBack.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E507623249A3E8800510691 /* buildBack.gif */; };
 		2E507625249A3E8800510691 /* buildBack.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E507623249A3E8800510691 /* buildBack.gif */; };
 		2E507627249AC0C100510691 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E507626249AC0C000510691 /* StorageService.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E33A9D024A64EB100C5D456 /* BusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessManager.swift; sourceTree = "<group>"; };
 		2E507623249A3E8800510691 /* buildBack.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = buildBack.gif; sourceTree = "<group>"; };
 		2E507626249AC0C000510691 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextfield.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				2E9BF88E2488480F0032B61C /* AuthenticationSession.swift */,
 				2E507626249AC0C000510691 /* StorageService.swift */,
 				2E6F14E8248C473600198C71 /* DataBaseService.swift */,
+				2E33A9D024A64EB100C5D456 /* BusinessManager.swift */,
 			);
 			path = FireBase;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				2E6F14E5248961C700198C71 /* UserModel.swift in Sources */,
 				2E6444B3248309AD00663B77 /* CircularShadowedButton.swift in Sources */,
 				2E8B598D2480032600D916FF /* ProfileViewController.swift in Sources */,
+				2E33A9D124A64EB100C5D456 /* BusinessManager.swift in Sources */,
 				2E8B5981247FD55600D916FF /* DesignableView.swift in Sources */,
 				2E6F14E9248C473700198C71 /* DataBaseService.swift in Sources */,
 				2E507627249AC0C100510691 /* StorageService.swift in Sources */,
