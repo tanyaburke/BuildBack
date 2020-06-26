@@ -70,11 +70,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nq1-ZA-yra">
-                                <rect key="frame" x="0.0" y="76" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-QO-O0L">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -83,10 +83,10 @@
                             <constraint firstItem="cvK-KJ-goq" firstAttribute="bottom" secondItem="zpF-QO-O0L" secondAttribute="bottom" id="4A2-sl-NSv"/>
                             <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="nq1-ZA-yra" secondAttribute="trailing" id="RYm-dc-C3q"/>
                             <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="zpF-QO-O0L" secondAttribute="trailing" id="YLI-jE-UNL"/>
-                            <constraint firstItem="zpF-QO-O0L" firstAttribute="top" secondItem="pgY-i9-3bg" secondAttribute="top" id="ehZ-rm-u63"/>
                             <constraint firstItem="nq1-ZA-yra" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="kLN-cg-N0m"/>
                             <constraint firstItem="zpF-QO-O0L" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="rXn-IH-7O3"/>
-                            <constraint firstItem="nq1-ZA-yra" firstAttribute="top" secondItem="cvK-KJ-goq" secondAttribute="top" constant="32" id="wNH-b9-f5E"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="top" secondItem="nq1-ZA-yra" secondAttribute="bottom" id="u6A-BT-1va"/>
+                            <constraint firstItem="nq1-ZA-yra" firstAttribute="top" secondItem="cvK-KJ-goq" secondAttribute="top" id="wNH-b9-f5E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cvK-KJ-goq"/>
                     </view>
