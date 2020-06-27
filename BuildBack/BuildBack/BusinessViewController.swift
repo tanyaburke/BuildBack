@@ -59,7 +59,7 @@ extension BusinessViewController: UITableViewDataSource {
         storageService.retrieveItemImages(imageURL: buisness.imageURL) { (result) in
             switch result{
             case let .success(image):
-                cell.configureCell(buisnessName: buisness.buisnessName, buisnessType: buisness.type, buisnessImage: image)
+                cell.configureCell(buisnessName: buisness.name, buisnessType: buisness.type, buisnessImage: image)
                 
             case let .failure(error):
                 print(error)

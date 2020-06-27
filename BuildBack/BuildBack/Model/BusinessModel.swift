@@ -11,10 +11,10 @@ import Foundation
 
 struct BusinessModel {
     
-    let buisnessId: String
-    let buisnessName: String
+    let documentId: String
+    let name: String
     let type: String
-    let partOfApp: Bool
+    let isMember: Bool
     let email: String
     let address: String
     let description: String
@@ -26,10 +26,10 @@ struct BusinessModel {
 
 extension BusinessModel {
     init(_ dictionary: [String: Any]){
-        self.buisnessId = dictionary["buisnessId"] as? String ?? ""
-        self.buisnessName = dictionary["buisnessName"] as? String ?? ""
+        self.documentId = dictionary["documentId"] as? String ?? ""
+        self.name = dictionary["name"] as? String ?? ""
         self.type = dictionary["type"] as? String ?? ""
-        self.partOfApp = dictionary["partOfApp"] as? Bool ?? false
+        self.isMember = dictionary["isMember"] as? Bool ?? false
         self.email = dictionary["email"] as? String ?? ""
         self.address = dictionary["address"] as? String ?? ""
         self.description = dictionary["description"] as? String ?? ""

@@ -18,6 +18,9 @@ class StorageService {
     }()
     
     func retrieveItemImages(imageURL: String, completion: @escaping (Result<UIImage,Error>) -> Void) {
+        guard !imageURL.isEmpty else{
+            return
+        }
         storage.reference(forURL: imageURL).getData(maxSize: 1 * 1024 * 1024 * 1024) { (data, error) in
             if let error = error {
                 completion(.failure(error))
