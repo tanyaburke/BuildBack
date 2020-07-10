@@ -11,10 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" id="KGk-i7-Jjw" customClass="BusinessDisplayTableViewCell" customModule="BuildBack" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="509" height="224"/>
+            <rect key="frame" x="0.0" y="0.0" width="449" height="224"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="509" height="224"/>
+                <rect key="frame" x="0.0" y="0.0" width="449" height="224"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d30-mJ-fLZ" customClass="DesignableImageView" customModule="BuildBack" customModuleProvider="target">
@@ -29,24 +29,27 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fws-R5-d4l">
-                        <rect key="frame" x="228" y="12" width="183.5" height="72"/>
+                        <rect key="frame" x="228" y="6" width="213" height="120"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3n-iY-nPm">
-                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="34.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3n-iY-nPm">
+                                <rect key="frame" x="0.0" y="0.0" width="213" height="82.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnk-fx-2Ah">
-                                <rect key="frame" x="0.0" y="44.5" width="128.5" height="27.5"/>
+                                <rect key="frame" x="0.0" y="92.5" width="213" height="27.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" name="appGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="vnk-fx-2Ah" firstAttribute="top" secondItem="s3n-iY-nPm" secondAttribute="bottom" constant="10" id="vVu-81-9Ic"/>
+                        </constraints>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7q-mX-QM6" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                        <rect key="frame" x="228" y="157" width="100" height="52"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7q-mX-QM6" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
+                        <rect key="frame" x="224" y="179" width="90" height="30"/>
                         <color key="backgroundColor" red="1" green="0.91052131430000005" blue="0.19219665490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="KGc-9W-I3H"/>
@@ -59,12 +62,17 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="vnk-fx-2Ah" firstAttribute="centerY" secondItem="d30-mJ-fLZ" secondAttribute="centerY" id="CCV-TC-A24"/>
+                    <constraint firstItem="vnk-fx-2Ah" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="8" id="JHb-h5-j41"/>
                     <constraint firstItem="d30-mJ-fLZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JIN-nQ-qpk"/>
+                    <constraint firstItem="s3n-iY-nPm" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="8" id="P3N-Ui-Rmj"/>
+                    <constraint firstAttribute="trailing" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="229" id="Qra-O6-cJR"/>
                     <constraint firstAttribute="bottom" secondItem="d30-mJ-fLZ" secondAttribute="bottom" constant="20" id="RHY-2p-cbz"/>
-                    <constraint firstItem="fws-R5-d4l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="WyH-P3-RxB"/>
-                    <constraint firstItem="w7q-mX-QM6" firstAttribute="top" secondItem="fws-R5-d4l" secondAttribute="bottom" constant="73" id="ey5-YX-hrF"/>
-                    <constraint firstItem="w7q-mX-QM6" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="8" id="gwl-e5-CTk"/>
+                    <constraint firstAttribute="trailing" secondItem="s3n-iY-nPm" secondAttribute="trailing" constant="8" id="bzJ-Tk-RxR"/>
+                    <constraint firstAttribute="trailing" secondItem="vnk-fx-2Ah" secondAttribute="trailing" constant="8" id="dSw-HL-EvI"/>
+                    <constraint firstItem="w7q-mX-QM6" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="4" id="gwl-e5-CTk"/>
                     <constraint firstAttribute="bottom" secondItem="w7q-mX-QM6" secondAttribute="bottom" constant="15" id="kov-nz-LFh"/>
+                    <constraint firstItem="s3n-iY-nPm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="mLs-wj-S2F"/>
                     <constraint firstItem="fws-R5-d4l" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="8" id="oWN-ME-jff"/>
                     <constraint firstItem="d30-mJ-fLZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="sT8-nV-Uf3"/>
                 </constraints>
@@ -76,7 +84,7 @@
                 <outlet property="businessTypeLabel" destination="vnk-fx-2Ah" id="wSp-2h-6cf"/>
                 <outlet property="donateButton" destination="w7q-mX-QM6" id="OJ0-TQ-KfH"/>
             </connections>
-            <point key="canvasLocation" x="151" y="-96"/>
+            <point key="canvasLocation" x="106.5217391304348" y="-96.428571428571431"/>
         </tableViewCell>
     </objects>
     <resources>

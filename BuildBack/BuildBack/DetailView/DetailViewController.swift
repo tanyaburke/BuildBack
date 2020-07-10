@@ -1,20 +1,19 @@
 //
-//  ProfileViewController.swift
+//  DetailViewController.swift
 //  BuildBack
 //
-//  Created by Tanya Burke on 5/28/20.
+//  Created by Tanya Burke on 7/8/20.
 //  Copyright © 2020 Tanya Burke. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemGroupedBackground
-        
+        // Do any additional setup after loading the view.
     }
     
 

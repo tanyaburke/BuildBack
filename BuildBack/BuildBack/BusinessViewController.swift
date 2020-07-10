@@ -28,6 +28,7 @@ class BusinessViewController: UIViewController {
             super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
         retrieveBuisness()
         
@@ -72,4 +73,10 @@ extension BusinessViewController: UITableViewDataSource {
     
     
     
+}
+extension BusinessViewController: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
 }
