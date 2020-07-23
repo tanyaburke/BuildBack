@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="1fl-yp-Uxc">
             <objects>
-                <viewController id="eIb-tq-J5u" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="eIb-tq-J5u" customClass="DetailViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Osd-iY-Opg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,9 @@
                                         <state key="normal" title="Donate">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="donateButton:" destination="eIb-tq-J5u" eventType="touchUpInside" id="Rm7-m6-JNN"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Company Updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="330-7N-0e6">
                                         <rect key="frame" x="8" y="207" width="398" height="93"/>
@@ -92,6 +95,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="deM-i2-4Hr"/>
                     </view>
+                    <connections>
+                        <outlet property="companyName" destination="csi-cv-M2j" id="9me-Zn-WYr"/>
+                        <outlet property="detailLabel" destination="70c-V4-XK6" id="cE7-R4-jj6"/>
+                        <outlet property="detailViewController" destination="B0Y-da-bWH" id="fDY-in-7YH"/>
+                        <outlet property="updateLabel" destination="330-7N-0e6" id="Vps-wC-mFh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ft-eN-b2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

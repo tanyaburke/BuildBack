@@ -19,7 +19,6 @@
 		2E33AA1824A695FD00C5D456 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED12FBF24982DE4005A8706 /* CurvedView.swift */; };
 		2E33AA1924A695FD00C5D456 /* RoundedCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6444B42483216000663B77 /* RoundedCornerButton.swift */; };
 		2E33AA1A24A695FD00C5D456 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BF88B248846110032B61C /* EmptyView.swift */; };
-		2E33AA1B24A695FD00C5D456 /* BusinessDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F14EE248C56BD00198C71 /* BusinessDisplayTableViewCell.swift */; };
 		2E33AA1C24A695FD00C5D456 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BF889248845540032B61C /* UserProfileViewController.swift */; };
 		2E33AA1D24A695FD00C5D456 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED12FBD24982B45005A8706 /* HeaderView.swift */; };
 		2E33AA1E24A695FD00C5D456 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6F14E12489594E00198C71 /* ProfileCell.swift */; };
@@ -67,7 +66,6 @@
 		2E8B598D2480032600D916FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B598C2480032600D916FF /* ProfileViewController.swift */; };
 		2E8B598E2480032600D916FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B598C2480032600D916FF /* ProfileViewController.swift */; };
 		2E8B59902480037400D916FF /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B598F2480037400D916FF /* BusinessViewController.swift */; };
-		2E8B59912480037400D916FF /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B598F2480037400D916FF /* BusinessViewController.swift */; };
 		2E8B59D12482F6C700D916FF /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B59D02482F6C700D916FF /* AppColors.swift */; };
 		2E8B59D22482F6C700D916FF /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B59D02482F6C700D916FF /* AppColors.swift */; };
 		2E9BF88A248845540032B61C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9BF889248845540032B61C /* UserProfileViewController.swift */; };
@@ -205,7 +203,7 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		2E8B596E247FD24200D916FF /* Views */ = {
+		2E8B596E247FD24200D916FF /* DesignedViews */ = {
 			isa = PBXGroup;
 			children = (
 				2E8B59D02482F6C700D916FF /* AppColors.swift */,
@@ -216,10 +214,8 @@
 				2ED12FBF24982DE4005A8706 /* CurvedView.swift */,
 				2E6444B42483216000663B77 /* RoundedCornerButton.swift */,
 				2E9BF88B248846110032B61C /* EmptyView.swift */,
-				2E6F14EE248C56BD00198C71 /* BusinessDisplayTableViewCell.swift */,
-				2E6F14EF248C56BD00198C71 /* BusinessDisplayTableViewCell.xib */,
 			);
-			path = Views;
+			path = DesignedViews;
 			sourceTree = "<group>";
 		};
 		2E8B5972247FD2E900D916FF /* Extensions */ = {
@@ -238,6 +234,16 @@
 				2E8B5989247FD77700D916FF /* MainView.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		2E9906E024C91F0E00982004 /* BusinessTable */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B598F2480037400D916FF /* BusinessViewController.swift */,
+				2E6F14EE248C56BD00198C71 /* BusinessDisplayTableViewCell.swift */,
+				2E6F14EF248C56BD00198C71 /* BusinessDisplayTableViewCell.xib */,
+			);
+			path = BusinessTable;
 			sourceTree = "<group>";
 		};
 		2E9BF8852487F73F0032B61C /* InitialView  */ = {
@@ -322,11 +328,11 @@
 				2E9BF89024884DC00032B61C /* Login */,
 				2E7847D824A3F852006E85D2 /* OnBoardng */,
 				2E9BF8852487F73F0032B61C /* InitialView  */,
-				2E8B596E247FD24200D916FF /* Views */,
+				2E8B596E247FD24200D916FF /* DesignedViews */,
+				2E9906E024C91F0E00982004 /* BusinessTable */,
 				2E9BF888248844E90032B61C /* UserProfile */,
 				2E8B596A247FD1AD00D916FF /* ViewControllers */,
 				2E8B5983247FD73700D916FF /* TabBarViewController.swift */,
-				2E8B598F2480037400D916FF /* BusinessViewController.swift */,
 				2EF9E81A2476F49F00E122B8 /* ViewController.swift */,
 				2E8B5969247FD15A00D916FF /* SupportingFiles */,
 				2E8B5966247FCAAB00D916FF /* Assets.xcassets */,
@@ -593,7 +599,6 @@
 				2E33AA1824A695FD00C5D456 /* CurvedView.swift in Sources */,
 				2E33AA1924A695FD00C5D456 /* RoundedCornerButton.swift in Sources */,
 				2E33AA1A24A695FD00C5D456 /* EmptyView.swift in Sources */,
-				2E33AA1B24A695FD00C5D456 /* BusinessDisplayTableViewCell.swift in Sources */,
 				2E33AA1C24A695FD00C5D456 /* UserProfileViewController.swift in Sources */,
 				2E33AA1D24A695FD00C5D456 /* HeaderView.swift in Sources */,
 				2E33AA1E24A695FD00C5D456 /* ProfileCell.swift in Sources */,
@@ -612,7 +617,6 @@
 				2EF9E8312476F4A300E122B8 /* BuildBackTests.swift in Sources */,
 				2E8B598E2480032600D916FF /* ProfileViewController.swift in Sources */,
 				2E8B5975247FD32300D916FF /* UIView+Extensions.swift in Sources */,
-				2E8B59912480037400D916FF /* BusinessViewController.swift in Sources */,
 				2E8B596D247FD20400D916FF /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

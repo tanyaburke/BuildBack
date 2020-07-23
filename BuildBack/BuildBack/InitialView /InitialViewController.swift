@@ -16,8 +16,8 @@ class InitialViewController: UIViewController {
                     super.viewDidLoad()
                     
                     view.backgroundColor = .systemBackground
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+                                                 //(deadline: .now() + 4.5)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.85) {
                   
                         
                         let scene = UIApplication.shared.connectedScenes.first
