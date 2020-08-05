@@ -18,15 +18,25 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var updateLabel: UILabel!
     
+    private var business: BusinessModel
     
+    init?(coder: NSCoder, business:BusinessModel){
+          self.business = business
+          super.init(coder: coder)
+      }
+      
+      required init?(coder: NSCoder) {
+          fatalError("init(coder:) has not been implemented")
+      }
+      
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       setupDetailPage()
     }
     
     private func setupDetailPage(){
-        
+//        companyName.text = bui
         
     }
     

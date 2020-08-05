@@ -242,6 +242,7 @@
 				2E8B598F2480037400D916FF /* BusinessViewController.swift */,
 				2E6F14EE248C56BD00198C71 /* BusinessDisplayTableViewCell.swift */,
 				2E6F14EF248C56BD00198C71 /* BusinessDisplayTableViewCell.xib */,
+				2ED7E9AE24B62FE80043AE79 /* DetailView */,
 			);
 			path = BusinessTable;
 			sourceTree = "<group>";
@@ -324,7 +325,6 @@
 				2E6F14E32489619D00198C71 /* Model */,
 				2E8B5972247FD2E900D916FF /* Extensions */,
 				2E8B597C247FD44500D916FF /* StoryBoards */,
-				2ED7E9AE24B62FE80043AE79 /* DetailView */,
 				2E9BF89024884DC00032B61C /* Login */,
 				2E7847D824A3F852006E85D2 /* OnBoardng */,
 				2E9BF8852487F73F0032B61C /* InitialView  */,

@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol BusinessCellDelegate: AnyObject {
+    func didSelectBusiness( business: Business, businessCell: BusinessDisplayTableViewCell)
+    
+    
+}
+
+
 class BusinessDisplayTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var businessImageImageView: UIImageView!

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class BusinessViewController: UIViewController {
 
@@ -14,12 +16,17 @@ class BusinessViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var listener: ListenerRegistration?
+    
     private var storageService = StorageService()
     
     private var businesses = [BusinessModel]() {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+            
+                self.tableView.reloadData()
         }
+    }
     }
     
     private var buisnessManager = BusinessManager()
@@ -27,12 +34,17 @@ class BusinessViewController: UIViewController {
      override func viewDidLoad() {
             super.viewDidLoad()
 
+        configureTableView()
+        
+        }
+    
+    private func configureTableView(){
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
         retrieveBuisness()
-        
-        }
+    }
 
     private func retrieveBuisness(){
         buisnessManager.retriveBusinesses { (result) in
@@ -44,7 +56,16 @@ class BusinessViewController: UIViewController {
            }
         }
     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
+//    }
+//
+    override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(true)
+      listener?.remove()
+    }
 }
+
 
 
 extension BusinessViewController: UITableViewDataSource {
@@ -74,11 +95,38 @@ extension BusinessViewController: UITableViewDataSource {
     
     
     
-    
 }
 extension BusinessViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let business =  businesses[indexPath.row]
+        print (business.name)
+        
+        let storyboard =  UIStoryboard(name: "DetailView", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") { (coder) in
+            return DetailViewController(coder: coder, business: business)
+        }
+        navigationController?.pushViewController(detailViewController, animated: true)
+//        present(detailViewController, animated: true)
+    }
+    
+    
 }
+
+//Use something similar to segue to donate page
+//extension BusinessViewController: BusinessCellDelegate {
+//
+////    func didSelectBusiness( business: Business, businessCell: BusinessDisplayTableViewCell) {
+////
+////
+////            let storyboard =  UIStoryboard(name: "DetailView", bundle: nil)
+////            let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") { (coder) in
+////                return DetailViewController(coder: coder, business: business)
+////            }
+////            navigationController?.pushViewController(detailViewController, animated: true)
+////    }
+//}
