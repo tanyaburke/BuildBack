@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailViewController: UIImageView!
+    @IBOutlet weak var detailImageView: UIImageView!
     
     @IBOutlet weak var companyName: UILabel!
     
     @IBOutlet weak var detailLabel: UILabel!
     
     @IBOutlet weak var updateLabel: UILabel!
+    
+    private var storageService = StorageService()
     
     private var business: BusinessModel
     
@@ -36,13 +39,31 @@ class DetailViewController: UIViewController {
     }
     
     private func setupDetailPage(){
-//        companyName.text = bui
+      
+        companyName.text = business.name
+        detailLabel.text = business.description
         
+        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
+        switch result{
+        case let .success(image):
+            self.detailImageView.image = image
+        case let .failure(error):
+            print(error)
+        }
+       
+        
+    }
     }
     
     @IBAction func donateButton(_ sender: RoundedCornerButton) {
+        UIViewController.showViewController(storyBoardName: "Donate", viewControllerId: "DonateViewController")
+//       let storyboard =  UIStoryboard(name: "Donate", bundle: nil)
+//        let donateViewController = storyboard.instantiateViewController(identifier: "DonateViewController") { (coder) in
+//            return DonateViewController(coder:coder) navigationController?.pushViewController(donateViewController, animated: true)
+//        UIViewController.sho
     }
     
    
 
 }
+

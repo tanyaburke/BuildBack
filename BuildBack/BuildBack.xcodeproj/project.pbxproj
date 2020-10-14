@@ -25,6 +25,11 @@
 		2E33AA1F24A695FD00C5D456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E81A2476F49F00E122B8 /* ViewController.swift */; };
 		2E33AA2024A695FD00C5D456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E8162476F49F00E122B8 /* AppDelegate.swift */; };
 		2E33AA2124A695FD00C5D456 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E8182476F49F00E122B8 /* SceneDelegate.swift */; };
+		2E3445CE24F80F68005A51C4 /* Donate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E3445CD24F80F68005A51C4 /* Donate.storyboard */; };
+		2E3445D024F8127B005A51C4 /* ConfettiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3445CF24F8127B005A51C4 /* ConfettiViewController.swift */; };
+		2E3445D224F81293005A51C4 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3445D124F81293005A51C4 /* DonateViewController.swift */; };
+		2E3445D424F81DCC005A51C4 /* DrawerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E3445D324F81DCC005A51C4 /* DrawerDetailViewController.xib */; };
+		2E3445D624F84B53005A51C4 /* DrawerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3445D524F84B53005A51C4 /* DrawerDetailViewController.swift */; };
 		2E507624249A3E8800510691 /* buildBack.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E507623249A3E8800510691 /* buildBack.gif */; };
 		2E507625249A3E8800510691 /* buildBack.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E507623249A3E8800510691 /* buildBack.gif */; };
 		2E507627249AC0C100510691 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E507626249AC0C000510691 /* StorageService.swift */; };
@@ -97,6 +102,11 @@
 
 /* Begin PBXFileReference section */
 		2E33A9D024A64EB100C5D456 /* BusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessManager.swift; sourceTree = "<group>"; };
+		2E3445CD24F80F68005A51C4 /* Donate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Donate.storyboard; sourceTree = "<group>"; };
+		2E3445CF24F8127B005A51C4 /* ConfettiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiViewController.swift; sourceTree = "<group>"; };
+		2E3445D124F81293005A51C4 /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
+		2E3445D324F81DCC005A51C4 /* DrawerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerDetailViewController.xib; sourceTree = "<group>"; };
+		2E3445D524F84B53005A51C4 /* DrawerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerDetailViewController.swift; sourceTree = "<group>"; };
 		2E507623249A3E8800510691 /* buildBack.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = buildBack.gif; sourceTree = "<group>"; };
 		2E507626249AC0C000510691 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		2E6444AF2483054A00663B77 /* UnderlinedTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextfield.swift; sourceTree = "<group>"; };
@@ -170,6 +180,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E3445CC24F80CCA005A51C4 /* Donate */ = {
+			isa = PBXGroup;
+			children = (
+				2E3445CD24F80F68005A51C4 /* Donate.storyboard */,
+				2E3445D124F81293005A51C4 /* DonateViewController.swift */,
+				2E3445D524F84B53005A51C4 /* DrawerDetailViewController.swift */,
+				2E3445CF24F8127B005A51C4 /* ConfettiViewController.swift */,
+				2E3445D324F81DCC005A51C4 /* DrawerDetailViewController.xib */,
+			);
+			path = Donate;
+			sourceTree = "<group>";
+		};
 		2E6F14E32489619D00198C71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +352,7 @@
 				2E9BF8852487F73F0032B61C /* InitialView  */,
 				2E8B596E247FD24200D916FF /* DesignedViews */,
 				2E9906E024C91F0E00982004 /* BusinessTable */,
+				2E3445CC24F80CCA005A51C4 /* Donate */,
 				2E9BF888248844E90032B61C /* UserProfile */,
 				2E8B596A247FD1AD00D916FF /* ViewControllers */,
 				2E8B5983247FD73700D916FF /* TabBarViewController.swift */,
@@ -457,10 +480,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF9E8262476F4A300E122B8 /* LaunchScreen.storyboard in Resources */,
+				2E3445CE24F80F68005A51C4 /* Donate.storyboard in Resources */,
 				2E8B597E247FD46B00D916FF /* LoginView.storyboard in Resources */,
 				2E8B598A247FD77700D916FF /* MainView.storyboard in Resources */,
 				2E507624249A3E8800510691 /* buildBack.gif in Resources */,
 				2E6F14E02489592D00198C71 /* ProfileCell.xib in Resources */,
+				2E3445D424F81DCC005A51C4 /* DrawerDetailViewController.xib in Resources */,
 				2E7847DA24A3F896006E85D2 /* OnBoardingScreen.storyboard in Resources */,
 				2E6F14F1248C56BD00198C71 /* BusinessDisplayTableViewCell.xib in Resources */,
 				2E8B5963247FC9EF00D916FF /* GoogleService-Info.plist in Resources */,
@@ -570,6 +595,9 @@
 				2E33A9D124A64EB100C5D456 /* BusinessManager.swift in Sources */,
 				2E8B5981247FD55600D916FF /* DesignableView.swift in Sources */,
 				2E6F14E9248C473700198C71 /* DataBaseService.swift in Sources */,
+				2E3445D624F84B53005A51C4 /* DrawerDetailViewController.swift in Sources */,
+				2E3445D024F8127B005A51C4 /* ConfettiViewController.swift in Sources */,
+				2E3445D224F81293005A51C4 /* DonateViewController.swift in Sources */,
 				2E507627249AC0C100510691 /* StorageService.swift in Sources */,
 				2ED7E9AD24B62FE10043AE79 /* DetailViewController.swift in Sources */,
 				2E8B5977247FD39800D916FF /* Gif+Extension.swift in Sources */,

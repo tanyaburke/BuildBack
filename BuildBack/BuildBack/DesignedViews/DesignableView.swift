@@ -13,7 +13,7 @@ import UIKit
 class DesignableView: UIView {
   @IBInspectable var cornerRadius: CGFloat = 0
   @IBInspectable var borderWidth: CGFloat = 0
-    @IBInspectable var borderColor: CGColor = UIColor.systemPink.cgColor
+    @IBInspectable var borderColor: CGColor = UIColor.tertiarySystemGroupedBackground.cgColor
   
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -40,7 +40,7 @@ class DesignableLabel: UILabel {
   @IBInspectable var cornerRadius: CGFloat = 0
   @IBInspectable var borderWidth: CGFloat = 0
     @IBInspectable var bottomborderWidth: CGFloat = 0
-  @IBInspectable var borderColor: CGColor = UIColor.systemPink.cgColor
+  @IBInspectable var borderColor: CGColor = UIColor.tertiarySystemGroupedBackground.cgColor
   
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -54,7 +54,7 @@ class DesignableLabel: UILabel {
 class DesignableTextField: UITextField {
   @IBInspectable var cornerRadius: CGFloat = 0
   @IBInspectable var borderWidth: CGFloat = 0
-  @IBInspectable var borderColor: CGColor = UIColor.systemPink.cgColor
+  @IBInspectable var borderColor: CGColor = UIColor.tertiarySystemGroupedBackground.cgColor
   
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -67,7 +67,7 @@ class DesignableTextField: UITextField {
 class DesignableImageView: UIImageView {
   @IBInspectable var cornerRadius: CGFloat = 0
   @IBInspectable var borderWidth: CGFloat = 0
-  @IBInspectable var borderColor: CGColor = UIColor.systemPink.cgColor
+  @IBInspectable var borderColor: CGColor = UIColor.tertiarySystemGroupedBackground.cgColor
   
   override func layoutSubviews() {
     super.layoutSubviews()

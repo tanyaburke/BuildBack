@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }) else {
                 return
             }
-            UIViewController.showViewController(viewController: loginController)
+            UIViewController.showviewController(viewController: loginController)
       
         }
         
