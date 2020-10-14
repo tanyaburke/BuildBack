@@ -23,12 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }) else {
                 return
             }
-            UIViewController.showViewController(viewController: loginController)
+            UIViewController.showviewController(viewController: loginController)
       
         }
         
         UIView.transition(with: window!,
-                          duration: 0.5,
+                          duration: 0.1,
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: nil)

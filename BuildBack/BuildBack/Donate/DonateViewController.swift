@@ -1,20 +1,19 @@
 //
-//  ProfileViewController.swift
+//  DonateViewController.swift
 //  BuildBack
 //
-//  Created by Tanya Burke on 5/28/20.
+//  Created by Tanya Burke on 8/27/20.
 //  Copyright © 2020 Tanya Burke. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class DonateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemGroupedBackground
-        
+        // Do any additional setup after loading the view.
     }
     
 

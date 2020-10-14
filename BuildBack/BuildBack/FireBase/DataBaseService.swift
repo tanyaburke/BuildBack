@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 class DatabaseService {
     
-    static let itemsCollectio = "items" //BusinessCollection
+    static let itemsCollection = "items" //BusinessCollection
     
     
     lazy var db = Firestore.firestore()
