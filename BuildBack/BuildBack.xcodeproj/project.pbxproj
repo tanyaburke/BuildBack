@@ -221,6 +221,8 @@
 		2E8B596A247FD1AD00D916FF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E8B5983247FD73700D916FF /* TabBarViewController.swift */,
+				2EF9E81A2476F49F00E122B8 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -355,8 +357,6 @@
 				2E3445CC24F80CCA005A51C4 /* Donate */,
 				2E9BF888248844E90032B61C /* UserProfile */,
 				2E8B596A247FD1AD00D916FF /* ViewControllers */,
-				2E8B5983247FD73700D916FF /* TabBarViewController.swift */,
-				2EF9E81A2476F49F00E122B8 /* ViewController.swift */,
 				2E8B5969247FD15A00D916FF /* SupportingFiles */,
 				2E8B5966247FCAAB00D916FF /* Assets.xcassets */,
 				2EF9E8272476F4A300E122B8 /* Info.plist */,
