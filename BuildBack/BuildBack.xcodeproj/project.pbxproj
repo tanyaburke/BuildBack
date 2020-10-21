@@ -296,7 +296,6 @@
 		2E9BF88D248847D20032B61C /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
-				2E8B597D247FD46B00D916FF /* LoginView.storyboard */,
 				2E9BF88E2488480F0032B61C /* AuthenticationSession.swift */,
 				2E507626249AC0C000510691 /* StorageService.swift */,
 				2E6F14E8248C473600198C71 /* DataBaseService.swift */,
@@ -308,6 +307,7 @@
 		2E9BF89024884DC00032B61C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				2E8B597D247FD46B00D916FF /* LoginView.storyboard */,
 				2E8B5979247FD40800D916FF /* LoginViewController.swift */,
 			);
 			path = Login;
