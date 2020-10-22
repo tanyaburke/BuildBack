@@ -32,4 +32,7 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         businessTypeLabel.text = buisnessType
     }
   
+    @IBAction func donateButton(_ sender: UIButton) {
+        UIViewController.showViewController(storyBoardName: "Donate", viewControllerId: "DonateViewController")
+    }
 }
