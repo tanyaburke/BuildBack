@@ -16,21 +16,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-da-bWH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="318"/>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-FD-wpe" customClass="DesignableView" customModule="BuildBack" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="305" width="414" height="591"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-FD-wpe" customClass="DesignableView" customModule="BuildBack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="316" width="414" height="580"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </containerView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kne-RU-uGP">
-                                <rect key="frame" x="0.0" y="470" width="414" height="426"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kne-RU-uGP">
+                                <rect key="frame" x="0.0" y="331" width="414" height="565"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csi-cv-M2j" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="0.0" width="398" height="65"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csi-cv-M2j" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="398" height="57"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,12 +43,13 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="330-7N-0e6" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="125" width="414" height="88"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -58,11 +60,15 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-oU-F5e" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="226" width="414" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -94,7 +100,7 @@
                                     <constraint firstAttribute="trailing" secondItem="csi-cv-M2j" secondAttribute="trailing" constant="8" id="3Pv-qW-dDL"/>
                                     <constraint firstItem="330-7N-0e6" firstAttribute="top" secondItem="kne-RU-uGP" secondAttribute="top" constant="125" id="43i-sw-TXR"/>
                                     <constraint firstItem="ggc-xR-jx6" firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="361" id="7wM-xf-f2Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="361" id="922-Zb-39f"/>
+                                    <constraint firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="552" id="922-Zb-39f"/>
                                     <constraint firstItem="csi-cv-M2j" firstAttribute="top" secondItem="ggc-xR-jx6" secondAttribute="top" id="CSw-8Z-fgu"/>
                                     <constraint firstItem="330-7N-0e6" firstAttribute="top" secondItem="VPN-5i-QMr" secondAttribute="bottom" constant="20" id="W5x-7A-N40"/>
                                     <constraint firstItem="VPN-5i-QMr" firstAttribute="top" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="10" id="ezU-Fj-GZi"/>
@@ -114,7 +120,7 @@
                             <constraint firstItem="kne-RU-uGP" firstAttribute="leading" secondItem="RCc-FD-wpe" secondAttribute="leading" id="78h-1y-zwc"/>
                             <constraint firstItem="kne-RU-uGP" firstAttribute="trailing" secondItem="RCc-FD-wpe" secondAttribute="trailing" id="N3v-1c-abY"/>
                             <constraint firstItem="deM-i2-4Hr" firstAttribute="trailing" secondItem="RCc-FD-wpe" secondAttribute="trailing" id="UtL-KO-zqV"/>
-                            <constraint firstItem="RCc-FD-wpe" firstAttribute="top" secondItem="deM-i2-4Hr" secondAttribute="top" constant="261" id="Vmm-1I-oWW"/>
+                            <constraint firstItem="RCc-FD-wpe" firstAttribute="top" secondItem="deM-i2-4Hr" secondAttribute="top" constant="235" id="Vmm-1I-oWW"/>
                             <constraint firstItem="kne-RU-uGP" firstAttribute="bottom" secondItem="RCc-FD-wpe" secondAttribute="bottom" id="gVn-zR-u4n"/>
                             <constraint firstItem="B0Y-da-bWH" firstAttribute="width" secondItem="Osd-iY-Opg" secondAttribute="height" multiplier="207:448" id="gr6-fV-kUO"/>
                             <constraint firstItem="RCc-FD-wpe" firstAttribute="bottom" secondItem="deM-i2-4Hr" secondAttribute="bottom" constant="34" id="jlA-am-0xn"/>
@@ -127,6 +133,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="deM-i2-4Hr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xre-fO-pSi"/>
                     <connections>
                         <outlet property="companyName" destination="csi-cv-M2j" id="9me-Zn-WYr"/>
                         <outlet property="detailImageView" destination="B0Y-da-bWH" id="fDY-in-7YH"/>
@@ -135,6 +142,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ft-eN-b2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584.05797101449275" y="26.785714285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iVE-8y-ct2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gQu-vs-lDi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f2N-jq-EgF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eIb-tq-J5u" kind="relationship" relationship="rootViewController" id="uSS-yT-Z1H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJk-e1-hNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-326.08695652173918" y="26.785714285714285"/>
         </scene>

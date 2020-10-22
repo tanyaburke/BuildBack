@@ -59,6 +59,9 @@
                         <state key="normal" title="Donate">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <connections>
+                            <action selector="donateButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="b8r-pf-grN"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
