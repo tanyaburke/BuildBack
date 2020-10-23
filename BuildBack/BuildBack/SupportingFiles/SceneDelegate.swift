@@ -14,7 +14,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func afterSplashScreenAnimation(){
-        
+        // TODO: Add sign out button to profile, in app and delete code below
+        // For now, comment this out if you don't want to be logged out every time starting app
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            DispatchQueue.main.async {
+                print("Error logging user out")
+            }
+        }
         if let _ = Auth.auth().currentUser { // a user is currently logged in
             UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
         } else { // no logged in user
