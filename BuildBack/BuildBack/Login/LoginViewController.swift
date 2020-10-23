@@ -19,7 +19,8 @@ class LoginViewController: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var signInOrUpLabel: UILabel!
-    @IBOutlet weak var signInUpButtonText: UIButton!
+    @IBOutlet weak var signInUpButton: UIButton!
+    @IBOutlet weak var appleLoginButton: RoundedCornerButton!
     
     @IBOutlet weak var nameTextField: UnderlinedTextfield!
     @IBOutlet weak var emailTextField: UnderlinedTextfield!
@@ -44,14 +45,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        setupUI()
-    }
+    
     //MARK:- Functions
     private func setupUI() {
-//        nameTextField.delegate = self
-//        emailTextField.delegate = self
-//        passwordTextField.delegate = self
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        appleLoginButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     private func continueLoginFlow(email: String, password: String) {
         if accountState == .existingUser {

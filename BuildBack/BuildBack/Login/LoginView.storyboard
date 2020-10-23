@@ -140,11 +140,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="EK4-1N-QyD"/>
                     <connections>
+                        <outlet property="appleLoginButton" destination="WyP-aB-96D" id="uGh-m9-bcs"/>
                         <outlet property="emailTextField" destination="oHw-jq-VV9" id="ZAz-ky-qt2"/>
                         <outlet property="nameTextField" destination="02z-qv-whM" id="S5R-uF-kHF"/>
                         <outlet property="passwordTextField" destination="bSg-tq-ctW" id="1Bt-KC-ePy"/>
                         <outlet property="signInOrUpLabel" destination="eFl-3s-SG7" id="FxV-ec-xNk"/>
-                        <outlet property="signInUpButtonText" destination="5jv-L4-cR5" id="aGf-l5-Sx5"/>
+                        <outlet property="signInUpButton" destination="5jv-L4-cR5" id="aGf-l5-Sx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAS-Bc-qr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

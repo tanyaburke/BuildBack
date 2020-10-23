@@ -87,6 +87,7 @@
 		2EF9E8212476F49F00E122B8 /* BuildBack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E81F2476F49F00E122B8 /* BuildBack.xcdatamodeld */; };
 		2EF9E8262476F4A300E122B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF9E8242476F4A300E122B8 /* LaunchScreen.storyboard */; };
 		2EF9E8312476F4A300E122B8 /* BuildBackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E8302476F4A300E122B8 /* BuildBackTests.swift */; };
+		88810B1025425F4900496E4A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88810B0F25425F4900496E4A /* IntroViewController.swift */; };
 		CF3707A9E18C3A2816A9FBB3 /* Pods_BuildBackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		2EF9E82C2476F4A300E122B8 /* BuildBackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildBackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF9E8302476F4A300E122B8 /* BuildBackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildBackTests.swift; sourceTree = "<group>"; };
 		2EF9E8322476F4A300E122B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88810B0F25425F4900496E4A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C9B8F24ADB0B22E318815C /* Pods_BuildBack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD458A4E7D97376DC7499C36 /* Pods-BuildBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildBack.debug.xcconfig"; path = "Target Support Files/Pods-BuildBack/Pods-BuildBack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				2E8B597D247FD46B00D916FF /* LoginView.storyboard */,
 				2E8B5979247FD40800D916FF /* LoginViewController.swift */,
+				88810B0F25425F4900496E4A /* IntroViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				2E6F14E7248961E000198C71 /* BusinessModel.swift in Sources */,
 				2E6444B02483054A00663B77 /* UnderlinedTextfield.swift in Sources */,
 				2ED12FC024982DE4005A8706 /* CurvedView.swift in Sources */,
+				88810B1025425F4900496E4A /* IntroViewController.swift in Sources */,
 				2EF9E8192476F49F00E122B8 /* SceneDelegate.swift in Sources */,
 				2E6444B52483216000663B77 /* RoundedCornerButton.swift in Sources */,
 				2E9BF88F2488480F0032B61C /* AuthenticationSession.swift in Sources */,
