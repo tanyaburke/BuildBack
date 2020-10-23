@@ -23,8 +23,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-Ej-OM1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up for an account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFl-3s-SG7">
@@ -36,7 +36,7 @@
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="esu-WJ-2NT" userLabel="Signup Details Entry stack">
-                                <rect key="frame" x="20" y="219" width="374" height="269"/>
+                                <rect key="frame" x="20" y="243" width="374" height="269"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wf5-UP-wr3" userLabel="name stack">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="49.5"/>
@@ -101,10 +101,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="aTT-TE-LW9" userLabel="Login Button stack">
-                                <rect key="frame" x="158.5" y="508" width="97" height="100"/>
+                                <rect key="frame" x="155.5" y="576" width="103.5" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jv-L4-cR5" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="36"/>
                                         <color key="backgroundColor" name="signUpBlue"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                         <state key="normal" title="Sign Up"/>
@@ -113,7 +113,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyP-aB-96D" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="97" height="36"/>
+                                        <rect key="frame" x="0.0" y="64" width="103.5" height="36"/>
                                         <color key="backgroundColor" name="faceBookBlue"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                         <state key="normal" title="Apple Login">
@@ -127,11 +127,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eFl-3s-SG7" firstAttribute="leading" secondItem="tVg-0p-K1e" secondAttribute="leading" constant="20" id="0uA-t7-Fm0"/>
-                            <constraint firstItem="aTT-TE-LW9" firstAttribute="top" secondItem="esu-WJ-2NT" secondAttribute="bottom" constant="20" id="F1o-0J-BNm"/>
+                            <constraint firstItem="aTT-TE-LW9" firstAttribute="top" secondItem="esu-WJ-2NT" secondAttribute="bottom" constant="64" id="F1o-0J-BNm"/>
                             <constraint firstItem="tVg-0p-K1e" firstAttribute="trailing" secondItem="eFl-3s-SG7" secondAttribute="trailing" constant="20" id="Q9i-p6-2bX"/>
                             <constraint firstItem="eFl-3s-SG7" firstAttribute="top" secondItem="tVg-0p-K1e" secondAttribute="top" id="WYP-d4-327"/>
                             <constraint firstItem="esu-WJ-2NT" firstAttribute="leading" secondItem="tVg-0p-K1e" secondAttribute="leading" constant="20" id="dPO-Uj-oaL"/>
-                            <constraint firstItem="esu-WJ-2NT" firstAttribute="top" secondItem="eFl-3s-SG7" secondAttribute="bottom" constant="8" symbolic="YES" id="fNM-DJ-NfI"/>
+                            <constraint firstItem="esu-WJ-2NT" firstAttribute="top" secondItem="eFl-3s-SG7" secondAttribute="bottom" constant="32" id="fNM-DJ-NfI"/>
+                            <constraint firstItem="aTT-TE-LW9" firstAttribute="width" secondItem="xhT-na-SVp" secondAttribute="width" multiplier="0.25" id="mwN-KB-33s"/>
                             <constraint firstItem="esu-WJ-2NT" firstAttribute="height" secondItem="xhT-na-SVp" secondAttribute="height" multiplier="0.3" id="pQm-XA-Bcf"/>
                             <constraint firstItem="aTT-TE-LW9" firstAttribute="centerX" secondItem="xhT-na-SVp" secondAttribute="centerX" id="uPz-gt-7Xu"/>
                             <constraint firstItem="tVg-0p-K1e" firstAttribute="trailing" secondItem="esu-WJ-2NT" secondAttribute="trailing" constant="20" id="vcA-Rv-qu6"/>
@@ -149,77 +150,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAS-Bc-qr3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="647.82608695652175" y="-46.205357142857139"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="s0J-ZA-hyx">
-            <objects>
-                <viewController id="dEe-8d-ixk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3yX-p6-udJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="pRc-R3-sZA" userLabel="Login Button stack">
-                                <rect key="frame" x="159" y="748" width="97" height="114"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-o2-XUw" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="50"/>
-                                        <color key="backgroundColor" name="signUpBlue"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="26U-Fj-0Il"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Sign Up"/>
-                                        <connections>
-                                            <action selector="signInUpButton:" destination="LGx-Sb-4k0" eventType="touchUpInside" id="WH8-Qo-lWd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oc-zi-Atd" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="78" width="97" height="36"/>
-                                        <color key="backgroundColor" name="faceBookBlue"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Apple Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="vUt-WC-JMz" userLabel="Signup Details Entry Stack">
-                                <rect key="frame" x="20" y="267" width="369" height="378"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" id="nnH-tX-Bsl" userLabel="Email stack">
-                                <rect key="frame" x="13" y="413" width="488" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" id="5cE-he-UNR" userLabel="Password stack">
-                                <rect key="frame" x="-88" y="413" width="588.5" height="68.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XF-so-qen">
-                                        <rect key="frame" x="0.0" y="0.0" width="588.5" height="24.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <color key="textColor" name="appGray"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="XXXXXXXXXX" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGm-xP-KIg" customClass="UnderlinedTextfield" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="588.5" height="24"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="aSj-ji-TrC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CxF-gD-5FF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1657.9710144927537" y="-46.205357142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="84O-h6-LG4">

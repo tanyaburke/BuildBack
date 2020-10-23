@@ -23,7 +23,7 @@ class UnderlinedTextfield: UITextField {
     private func commontInit() {
         configurePlaceHolderTextAttribute()
         let bottomLayer: CALayer = CALayer()
-        bottomLayer.frame = CGRect(x: 0, y: frame.height - 3, width: frame.width , height: 2)
+        bottomLayer.frame = CGRect(x: 0, y: frame.height - 3, width: frame.width - 40, height: 2)
         bottomLayer.backgroundColor = UIColor.white.cgColor
         borderStyle = .none
         layer.addSublayer(bottomLayer)
