@@ -88,6 +88,7 @@
 		2EF9E8262476F4A300E122B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF9E8242476F4A300E122B8 /* LaunchScreen.storyboard */; };
 		2EF9E8312476F4A300E122B8 /* BuildBackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF9E8302476F4A300E122B8 /* BuildBackTests.swift */; };
 		88810B1025425F4900496E4A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88810B0F25425F4900496E4A /* IntroViewController.swift */; };
+		88810B142544D47200496E4A /* LoginViewRefactor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88810B132544D47200496E4A /* LoginViewRefactor.storyboard */; };
 		CF3707A9E18C3A2816A9FBB3 /* Pods_BuildBackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +155,7 @@
 		2EF9E8302476F4A300E122B8 /* BuildBackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildBackTests.swift; sourceTree = "<group>"; };
 		2EF9E8322476F4A300E122B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88810B0F25425F4900496E4A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		88810B132544D47200496E4A /* LoginViewRefactor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewRefactor.storyboard; sourceTree = "<group>"; };
 		B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C9B8F24ADB0B22E318815C /* Pods_BuildBack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD458A4E7D97376DC7499C36 /* Pods-BuildBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildBack.debug.xcconfig"; path = "Target Support Files/Pods-BuildBack/Pods-BuildBack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				2E8B597D247FD46B00D916FF /* LoginView.storyboard */,
 				2E8B5979247FD40800D916FF /* LoginViewController.swift */,
 				88810B0F25425F4900496E4A /* IntroViewController.swift */,
+				88810B132544D47200496E4A /* LoginViewRefactor.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				2E8B597E247FD46B00D916FF /* LoginView.storyboard in Resources */,
 				2E8B598A247FD77700D916FF /* MainView.storyboard in Resources */,
 				2E507624249A3E8800510691 /* buildBack.gif in Resources */,
+				88810B142544D47200496E4A /* LoginViewRefactor.storyboard in Resources */,
 				2E6F14E02489592D00198C71 /* ProfileCell.xib in Resources */,
 				2E3445D424F81DCC005A51C4 /* DrawerDetailViewController.xib in Resources */,
 				2E7847DA24A3F896006E85D2 /* OnBoardingScreen.storyboard in Resources */,
