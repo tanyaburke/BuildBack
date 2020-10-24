@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,6 +47,9 @@
                                 <state key="normal" image="chevron.right" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="semibold"/>
                                 </state>
+                                <connections>
+                                    <segue destination="PKR-Uu-YnZ" kind="show" id="Wcz-86-mJ1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fG9-Gr-NQv"/>
@@ -73,10 +77,162 @@
             </objects>
             <point key="canvasLocation" x="311.59420289855075" y="109.82142857142857"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Pee-cK-Th9">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="LoginViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wiw-3T-A69">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="buildback" translatesAutoresizingMaskIntoConstraints="NO" id="I28-GT-juF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view alpha="0.25" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cF9-sc-D7H">
+                                <rect key="frame" x="0.0" y="243" width="414" height="269"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up for an account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dap-e0-Al5">
+                                <rect key="frame" x="20" y="44" width="374" height="167"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="E06-2l-6Qt" userLabel="Signup Details Entry stack">
+                                <rect key="frame" x="20" y="243" width="374" height="269"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="udB-pn-XJt" userLabel="name stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="49.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H0-7g-Fkh">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" name="appGray"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Jane Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zGS-oK-Nxa" customClass="UnderlinedTextfield" customModule="BuildBack" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="24.5" width="374" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rjl-96-Lqe" userLabel="password stack">
+                                        <rect key="frame" x="0.0" y="110.5" width="374" height="48.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f57-JO-Z2Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" name="appGray"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="XXXXXXXXXX" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4L8-QA-Kdn" customClass="UnderlinedTextfield" customModule="BuildBack" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="24.5" width="374" height="24"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-Jf-g9b" userLabel="email stack">
+                                        <rect key="frame" x="0.0" y="220.5" width="374" height="48.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTB-Lh-57e">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" name="appGray"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="1" height="0.0"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="JaneDoe@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOe-Pt-JhB" customClass="UnderlinedTextfield" customModule="BuildBack" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="23.5" width="374" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="R5J-h6-i3O" userLabel="Login Button stack">
+                                <rect key="frame" x="155.5" y="576" width="103.5" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ub-Nj-Llt" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="36"/>
+                                        <color key="backgroundColor" name="signUpBlue"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signInUpButton:" destination="PKR-Uu-YnZ" eventType="touchUpInside" id="jeH-iy-MAX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIg-ym-3Ov" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="103.5" height="36"/>
+                                        <color key="backgroundColor" name="faceBookBlue"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9eI-fw-FMb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E06-2l-6Qt" firstAttribute="height" secondItem="Wiw-3T-A69" secondAttribute="height" multiplier="0.3" id="CH5-vn-GV9"/>
+                            <constraint firstItem="R5J-h6-i3O" firstAttribute="width" secondItem="Wiw-3T-A69" secondAttribute="width" multiplier="0.25" id="Fsi-Ty-eLu"/>
+                            <constraint firstItem="9eI-fw-FMb" firstAttribute="trailing" secondItem="E06-2l-6Qt" secondAttribute="trailing" constant="20" id="HZZ-fq-6br"/>
+                            <constraint firstItem="9eI-fw-FMb" firstAttribute="trailing" secondItem="Dap-e0-Al5" secondAttribute="trailing" constant="20" id="LA8-9t-aKZ"/>
+                            <constraint firstItem="Dap-e0-Al5" firstAttribute="leading" secondItem="9eI-fw-FMb" secondAttribute="leading" constant="20" id="NZ7-Ir-qiV"/>
+                            <constraint firstItem="Dap-e0-Al5" firstAttribute="top" secondItem="9eI-fw-FMb" secondAttribute="top" id="bsm-kK-jqH"/>
+                            <constraint firstItem="E06-2l-6Qt" firstAttribute="top" secondItem="Dap-e0-Al5" secondAttribute="bottom" constant="32" id="mOk-uJ-Nh2"/>
+                            <constraint firstItem="R5J-h6-i3O" firstAttribute="centerX" secondItem="Wiw-3T-A69" secondAttribute="centerX" id="uZR-J1-r45"/>
+                            <constraint firstItem="E06-2l-6Qt" firstAttribute="leading" secondItem="9eI-fw-FMb" secondAttribute="leading" constant="20" id="vKY-85-7fV"/>
+                            <constraint firstItem="R5J-h6-i3O" firstAttribute="top" secondItem="E06-2l-6Qt" secondAttribute="bottom" constant="64" id="wQ8-ye-AaG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N39-TR-BCW"/>
+                    <connections>
+                        <outlet property="appleLoginButton" destination="sIg-ym-3Ov" id="p3l-jp-m9W"/>
+                        <outlet property="emailTextField" destination="TOe-Pt-JhB" id="Cvx-Ck-pPP"/>
+                        <outlet property="nameTextField" destination="zGS-oK-Nxa" id="vwM-jS-1Xc"/>
+                        <outlet property="passwordTextField" destination="4L8-QA-Kdn" id="rmg-I4-aqu"/>
+                        <outlet property="signInOrUpLabel" destination="Dap-e0-Al5" id="mvn-Go-pdB"/>
+                        <outlet property="signInUpButton" destination="7Ub-Nj-Llt" id="qWi-0p-VUk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZB-Za-pCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149" y="110"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="buildback" width="225" height="225"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="randy-fath-ymf4_9Y9S_A-unsplash" width="2500" height="1667"/>
+        <namedColor name="appGray">
+            <color red="0.51372549019607838" green="0.51764705882352946" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="faceBookBlue">
+            <color red="0.16078431372549021" green="0.40000000000000002" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="signUpBlue">
+            <color red="0.1803921568627451" green="0.20784313725490197" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
