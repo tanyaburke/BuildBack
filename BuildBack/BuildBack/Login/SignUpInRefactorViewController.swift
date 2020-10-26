@@ -1,57 +1,48 @@
 //
-//  LoginViewController.swift
+//  SignUpInRefactorViewController.swift
 //  BuildBack
 //
-//  Created by Tanya Burke on 5/28/20.
+//  Created by Gregory Keeley on 10/26/20.
 //  Copyright © 2020 Tanya Burke. All rights reserved.
 //
 
 import UIKit
 import FirebaseAuth
 
+enum AccountState {
+    case existingUser
+    case newUser
+}
 
-//enum AccountState {
-//    case existingUser
-//    case newUser
-//}
-
-class LoginViewController: UIViewController {
+class SignUpInRefactorViewController: UIViewController {
     
     //MARK:- IBOutlets
-    @IBOutlet weak var signInOrUpLabel: UILabel!
-    @IBOutlet weak var signInUpButton: UIButton!
-    @IBOutlet weak var appleLoginButton: RoundedCornerButton!
-    
     @IBOutlet weak var nameTextField: UnderlinedTextfield!
-    @IBOutlet weak var emailTextField: UnderlinedTextfield!
     @IBOutlet weak var passwordTextField: UnderlinedTextfield!
+    @IBOutlet weak var emailAddressTextField: UnderlinedTextfield!
     
-    //MARK:- Variables/ Constants
+    @IBOutlet weak var signInButton: RoundedCornerButton!
+    @IBOutlet weak var signUpButton: RoundedCornerButton!
+    @IBOutlet weak var accountInfoLabel: UILabel!
+    
+    //MARK:- Variables/Constants
+    let databaseService = DatabaseService()
+    
     private var accountState: AccountState?
     private var authSession = AuthenticationSession()
     
-    let dataBaseService = DatabaseService()
-    
-    //MARK:- Initializers
-    init?(coder: NSCoder, accountState: AccountState) {
-        self.accountState = accountState
-        super.init(coder: coder)
-    }
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    //MARK:- View Lifecycles
+    //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
     //MARK:- Functions
     private func setupUI() {
-//        nameTextField.delegate = self
-//        emailTextField.delegate = self
-//        passwordTextField.delegate = self
-//        appleLoginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        nameTextField.delegate = self
+        passwordTextField.delegate = self
+        emailAddressTextField.delegate = self
+        accountInfoLabel.adjustsFontSizeToFitWidth = true
     }
     private func continueLoginFlow(email: String, password: String) {
         if accountState == .existingUser {
@@ -78,7 +69,7 @@ class LoginViewController: UIViewController {
                     guard let self = self, let name = self.nameTextField.text else {
                         return
                     }
-                    self.dataBaseService.createDatabaseUser(id: dataresult.user.uid, email: email, name: name, completion: { [weak self] in
+                    self.databaseService.createDatabaseUser(id: dataresult.user.uid, email: email, name: name, completion: { [weak self] in
                         DispatchQueue.main.async {
                             self?.navigateToMainView()
                         }
@@ -92,24 +83,11 @@ class LoginViewController: UIViewController {
         UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
         
     }
-    
-    //MARK:- @IBActions
-    @IBAction func signInUpButton(_ sender: UIButton) {
-        guard let email = emailTextField.text,
-              !email.isEmpty,
-              let password = passwordTextField.text,
-              !password.isEmpty else {
-            print("missing fields")
-            return
-        }
-        continueLoginFlow(email: email, password: password)
-    }
-    
 }
 
 
 //MARK:- Extensions
-extension LoginViewController: UITextFieldDelegate {
+extension SignUpInRefactorViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }

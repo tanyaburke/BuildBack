@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="311.59420289855075" y="109.82142857142857"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Sign Up In Refactor View Controller-->
         <scene sceneID="Pee-cK-Th9">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="LoginViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="SignUpInRefactorViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wiw-3T-A69">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,9 +179,6 @@
                                         <color key="backgroundColor" name="signUpBlue"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                         <state key="normal" title="Sign In"/>
-                                        <connections>
-                                            <action selector="signInUpButton:" destination="PKR-Uu-YnZ" eventType="touchUpInside" id="jeH-iy-MAX"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvz-BB-S8D">
                                         <rect key="frame" x="0.0" y="64" width="166" height="20.5"/>
@@ -217,12 +214,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="N39-TR-BCW"/>
                     <connections>
-                        <outlet property="appleLoginButton" destination="sIg-ym-3Ov" id="p3l-jp-m9W"/>
-                        <outlet property="emailTextField" destination="TOe-Pt-JhB" id="Cvx-Ck-pPP"/>
-                        <outlet property="nameTextField" destination="zGS-oK-Nxa" id="vwM-jS-1Xc"/>
-                        <outlet property="passwordTextField" destination="4L8-QA-Kdn" id="rmg-I4-aqu"/>
-                        <outlet property="signInOrUpLabel" destination="Dap-e0-Al5" id="mvn-Go-pdB"/>
-                        <outlet property="signInUpButton" destination="7Ub-Nj-Llt" id="qWi-0p-VUk"/>
+                        <outlet property="accountInfoLabel" destination="nvz-BB-S8D" id="YEb-Jx-4Dn"/>
+                        <outlet property="emailAddressTextField" destination="TOe-Pt-JhB" id="muO-sC-JzS"/>
+                        <outlet property="nameTextField" destination="zGS-oK-Nxa" id="xhA-cB-JmM"/>
+                        <outlet property="passwordTextField" destination="4L8-QA-Kdn" id="7ng-Q4-qkF"/>
+                        <outlet property="signInButton" destination="7Ub-Nj-Llt" id="Zd8-JZ-5j0"/>
+                        <outlet property="signUpButton" destination="sIg-ym-3Ov" id="t5t-qS-a9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZB-Za-pCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
