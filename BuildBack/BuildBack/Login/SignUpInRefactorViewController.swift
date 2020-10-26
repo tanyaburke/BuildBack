@@ -25,10 +25,11 @@ class SignUpInRefactorViewController: UIViewController {
     @IBOutlet weak var signUpButton: RoundedCornerButton!
     @IBOutlet weak var accountInfoLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
     //MARK:- Variables/Constants
     let databaseService = DatabaseService()
     
-    private var accountState: AccountState?
+    private var accountState: AccountState = .existingUser
     private var authSession = AuthenticationSession()
     
     //MARK:- View Life Cycles
@@ -43,6 +44,17 @@ class SignUpInRefactorViewController: UIViewController {
         passwordTextField.delegate = self
         emailAddressTextField.delegate = self
         accountInfoLabel.adjustsFontSizeToFitWidth = true
+        signInButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        signUpButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    }
+    private func configureUI() {
+        if accountState == .existingUser {
+            nameTextField.isHidden = true
+            nameLabel.isHidden = true
+        } else {
+            nameTextField.isHidden = false
+            nameLabel.isHidden = false
+        }
     }
     private func continueLoginFlow(email: String, password: String) {
         if accountState == .existingUser {
@@ -78,11 +90,25 @@ class SignUpInRefactorViewController: UIViewController {
             }
         }
     }
-    
     func navigateToMainView(){
         UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
-        
     }
+    //MARK:- IBActions
+    @IBAction func signinButtonPressed(_ sender: RoundedCornerButton) {
+        accountState = .existingUser
+        signInButton.titleLabel?.text = "Sign In"
+        accountInfoLabel.text = "Don't have an account?"
+        signUpButton.titleLabel?.text = "Create Account"
+        configureUI()
+    }
+    @IBAction func singUpButtonPressed(_ sender: RoundedCornerButton) {
+        accountState = .newUser
+        signInButton.titleLabel?.text = "Create Account"
+        accountInfoLabel.text = "Already have an account?"
+        signUpButton.titleLabel?.text = "Sign In"
+        configureUI()
+    }
+    
 }
 
 
