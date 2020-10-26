@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SrS-en-f4n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="0YL-UZ-p36">
             <objects>
-                <viewController id="SrS-en-f4n" sceneMemberID="viewController">
+                <viewController id="SrS-en-f4n" customClass="IntroViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nxr-Pt-eCk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="semibold"/>
                                 </state>
                                 <connections>
+                                    <action selector="proceedButtonPressed:" destination="SrS-en-f4n" eventType="touchUpInside" id="G1A-Rj-CSj"/>
                                     <segue destination="PKR-Uu-YnZ" kind="show" id="Wcz-86-mJ1"/>
                                 </connections>
                             </button>
@@ -72,6 +73,9 @@
                             <constraint firstAttribute="bottom" secondItem="IF0-ck-YeF" secondAttribute="bottom" id="yzi-lw-sq6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="proceedButton" destination="yDR-bo-bsa" id="Lob-Qz-Vlc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTT-Ac-b6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,22 +172,28 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="R5J-h6-i3O" userLabel="Login Button stack">
-                                <rect key="frame" x="155.5" y="576" width="103.5" height="100"/>
+                                <rect key="frame" x="124" y="576" width="166" height="148.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ub-Nj-Llt" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ub-Nj-Llt" userLabel="Sign In Button" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="36"/>
                                         <color key="backgroundColor" name="signUpBlue"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Sign Up"/>
+                                        <state key="normal" title="Sign In"/>
                                         <connections>
                                             <action selector="signInUpButton:" destination="PKR-Uu-YnZ" eventType="touchUpInside" id="jeH-iy-MAX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIg-ym-3Ov" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="103.5" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvz-BB-S8D">
+                                        <rect key="frame" x="0.0" y="64" width="166" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIg-ym-3Ov" userLabel="Sign Up Button" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="112.5" width="166" height="36"/>
                                         <color key="backgroundColor" name="faceBookBlue"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Sign In">
+                                        <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -194,7 +204,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="E06-2l-6Qt" firstAttribute="height" secondItem="Wiw-3T-A69" secondAttribute="height" multiplier="0.3" id="CH5-vn-GV9"/>
-                            <constraint firstItem="R5J-h6-i3O" firstAttribute="width" secondItem="Wiw-3T-A69" secondAttribute="width" multiplier="0.25" id="Fsi-Ty-eLu"/>
+                            <constraint firstItem="R5J-h6-i3O" firstAttribute="width" secondItem="Wiw-3T-A69" secondAttribute="width" multiplier="0.4" id="Fsi-Ty-eLu"/>
                             <constraint firstItem="9eI-fw-FMb" firstAttribute="trailing" secondItem="E06-2l-6Qt" secondAttribute="trailing" constant="20" id="HZZ-fq-6br"/>
                             <constraint firstItem="9eI-fw-FMb" firstAttribute="trailing" secondItem="Dap-e0-Al5" secondAttribute="trailing" constant="20" id="LA8-9t-aKZ"/>
                             <constraint firstItem="Dap-e0-Al5" firstAttribute="leading" secondItem="9eI-fw-FMb" secondAttribute="leading" constant="20" id="NZ7-Ir-qiV"/>

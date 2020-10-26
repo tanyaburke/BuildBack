@@ -26,8 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let _ = Auth.auth().currentUser { // a user is currently logged in
             UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
         } else { // no logged in user
-            guard let loginController = UIStoryboard(name: "LoginView", bundle: .main).instantiateInitialViewController(creator: { coder in
-                  return LoginViewController(coder: coder, accountState: .newUser)
+            guard let loginController = UIStoryboard(name: "LoginViewRefactor", bundle: .main).instantiateInitialViewController(creator: { coder in
+                    return IntroViewController(coder: coder)
+//                  return LoginViewController(coder: coder, accountState: .newUser)
             }) else {
                 return
             }
