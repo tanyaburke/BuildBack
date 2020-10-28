@@ -10,63 +10,58 @@ import UIKit
 import FirebaseAuth
 
 
-enum AccountState {
-    case existingUser
-    case newUser
-}
+//enum AccountState {
+//    case existingUser
+//    case newUser
+//}
 
 class LoginViewController: UIViewController {
     
-    
+    //MARK:- IBOutlets
     @IBOutlet weak var signInOrUpLabel: UILabel!
-    @IBOutlet weak var signInUpButtonText: UIButton!
+    @IBOutlet weak var signInUpButton: UIButton!
+    @IBOutlet weak var appleLoginButton: RoundedCornerButton!
     
-    @IBOutlet weak var nameTextFeild: UnderlinedTextfield!
+    @IBOutlet weak var nameTextField: UnderlinedTextfield!
+    @IBOutlet weak var emailTextField: UnderlinedTextfield!
+    @IBOutlet weak var passwordTextField: UnderlinedTextfield!
     
-    @IBOutlet weak var emailTextFeild: UnderlinedTextfield!
-    
-    @IBOutlet weak var passWordTextFeild: UnderlinedTextfield!
-    
+    //MARK:- Variables/ Constants
     private var accountState: AccountState?
-    
     private var authSession = AuthenticationSession()
     
     let dataBaseService = DatabaseService()
     
+    //MARK:- Initializers
     init?(coder: NSCoder, accountState: AccountState) {
         self.accountState = accountState
         super.init(coder: coder)
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    //MARK:- View Lifecycles
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
     }
     
-    @IBAction func signInUpButton(_ sender: UIButton) {
-        guard let email = emailTextFeild.text,
-            !email.isEmpty,
-            let password = passWordTextFeild.text,
-            !password.isEmpty else {
-                print("missing fields")
-                return
-        }
-        continueLoginFlow(email: email, password: password)
+    //MARK:- Functions
+    private func setupUI() {
+//        nameTextField.delegate = self
+//        emailTextField.delegate = self
+//        passwordTextField.delegate = self
+//        appleLoginButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
-    
     private func continueLoginFlow(email: String, password: String) {
         if accountState == .existingUser {
             authSession.signExistingUser(email: email, password: password) { [weak self] (result) in
                 switch result {
-                case .failure(let error): break
-                    //                 DispatchQueue.main.async {
-                    //                   self?.errorLabel.text = "\(error.localizedDescription)"
-                    //                   self?.errorLabel.textColor = .systemRed
+                case .failure(let error):
+                    self?.showAlert(title: "Something went wrong", message: "\(error.localizedDescription)")
+                //                 DispatchQueue.main.async {
+                //                   self?.errorLabel.text = "\(error.localizedDescription)"
+                //                   self?.errorLabel.textColor = .systemRed
                 //                 }
                 case .success:
                     DispatchQueue.main.async {
@@ -77,10 +72,10 @@ class LoginViewController: UIViewController {
         } else {
             authSession.createNewUser(email: email, password: password) { [weak self] (result) in
                 switch result {
-                case .failure(let error): break
-                print(error)
+                case .failure(let error):
+                    print(error)
                 case let .success(dataresult):
-                    guard let self = self, let name = self.nameTextFeild.text else {
+                    guard let self = self, let name = self.nameTextField.text else {
                         return
                     }
                     self.dataBaseService.createDatabaseUser(id: dataresult.user.uid, email: email, name: name, completion: { [weak self] in
@@ -93,13 +88,29 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
     func navigateToMainView(){
-        
         UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
         
     }
     
+    //MARK:- @IBActions
+    @IBAction func signInUpButton(_ sender: UIButton) {
+        guard let email = emailTextField.text,
+              !email.isEmpty,
+              let password = passwordTextField.text,
+              !password.isEmpty else {
+            print("missing fields")
+            return
+        }
+        continueLoginFlow(email: email, password: password)
+    }
     
-    
+}
+
+
+//MARK:- Extensions
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
