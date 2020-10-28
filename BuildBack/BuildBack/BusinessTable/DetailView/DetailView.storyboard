@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="1fl-yp-Uxc">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="eIb-tq-J5u" customClass="DetailViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Osd-iY-Opg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-da-bWH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-FD-wpe" customClass="DesignableView" customModule="BuildBack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="305" width="414" height="591"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </containerView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kne-RU-uGP">
+                                <rect key="frame" x="0.0" y="470" width="414" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csi-cv-M2j" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="398" height="65"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomborderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="330-7N-0e6" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="125" width="414" height="88"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomborderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-oU-F5e" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="226" width="414" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomborderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPN-5i-QMr" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
+                                        <rect key="frame" x="162" y="75" width="90" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.91052131430000005" blue="0.19219665490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="qeR-jY-VhU"/>
+                                        </constraints>
+                                        <state key="normal" title="Donate">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="donateButton:" destination="eIb-tq-J5u" eventType="touchUpInside" id="Rm7-m6-JNN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="csi-cv-M2j" firstAttribute="leading" secondItem="kne-RU-uGP" secondAttribute="leading" constant="8" id="2pQ-Cp-szm"/>
+                                    <constraint firstAttribute="trailing" secondItem="csi-cv-M2j" secondAttribute="trailing" constant="8" id="3Pv-qW-dDL"/>
+                                    <constraint firstItem="330-7N-0e6" firstAttribute="top" secondItem="kne-RU-uGP" secondAttribute="top" constant="125" id="43i-sw-TXR"/>
+                                    <constraint firstItem="ggc-xR-jx6" firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="361" id="7wM-xf-f2Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="361" id="922-Zb-39f"/>
+                                    <constraint firstItem="csi-cv-M2j" firstAttribute="top" secondItem="ggc-xR-jx6" secondAttribute="top" id="CSw-8Z-fgu"/>
+                                    <constraint firstItem="330-7N-0e6" firstAttribute="top" secondItem="VPN-5i-QMr" secondAttribute="bottom" constant="20" id="W5x-7A-N40"/>
+                                    <constraint firstItem="VPN-5i-QMr" firstAttribute="top" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="10" id="ezU-Fj-GZi"/>
+                                    <constraint firstItem="330-7N-0e6" firstAttribute="centerX" secondItem="kne-RU-uGP" secondAttribute="centerX" id="lxf-as-7PC"/>
+                                    <constraint firstItem="VPN-5i-QMr" firstAttribute="leading" secondItem="ggc-xR-jx6" secondAttribute="leading" constant="162" id="nwx-4g-g0A"/>
+                                    <constraint firstItem="330-7N-0e6" firstAttribute="leading" secondItem="ggc-xR-jx6" secondAttribute="leading" id="tfj-6g-MU8"/>
+                                    <constraint firstItem="330-7N-0e6" firstAttribute="centerX" secondItem="VPN-5i-QMr" secondAttribute="centerX" id="uUI-ic-FUh"/>
+                                    <constraint firstItem="VPN-5i-QMr" firstAttribute="centerX" secondItem="csi-cv-M2j" secondAttribute="centerX" id="vfo-oG-w2b"/>
+                                    <constraint firstItem="ggc-xR-jx6" firstAttribute="bottom" secondItem="330-7N-0e6" secondAttribute="bottom" constant="213" id="yPL-Fv-Pex"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="a2k-8K-cAp"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ggc-xR-jx6"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="deM-i2-4Hr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kne-RU-uGP" firstAttribute="leading" secondItem="RCc-FD-wpe" secondAttribute="leading" id="78h-1y-zwc"/>
+                            <constraint firstItem="kne-RU-uGP" firstAttribute="trailing" secondItem="RCc-FD-wpe" secondAttribute="trailing" id="N3v-1c-abY"/>
+                            <constraint firstItem="deM-i2-4Hr" firstAttribute="trailing" secondItem="RCc-FD-wpe" secondAttribute="trailing" id="UtL-KO-zqV"/>
+                            <constraint firstItem="RCc-FD-wpe" firstAttribute="top" secondItem="deM-i2-4Hr" secondAttribute="top" constant="261" id="Vmm-1I-oWW"/>
+                            <constraint firstItem="kne-RU-uGP" firstAttribute="bottom" secondItem="RCc-FD-wpe" secondAttribute="bottom" id="gVn-zR-u4n"/>
+                            <constraint firstItem="B0Y-da-bWH" firstAttribute="width" secondItem="Osd-iY-Opg" secondAttribute="height" multiplier="207:448" id="gr6-fV-kUO"/>
+                            <constraint firstItem="RCc-FD-wpe" firstAttribute="bottom" secondItem="deM-i2-4Hr" secondAttribute="bottom" constant="34" id="jlA-am-0xn"/>
+                            <constraint firstItem="deM-i2-4Hr" firstAttribute="bottom" secondItem="B0Y-da-bWH" secondAttribute="bottom" constant="500" id="mWZ-gL-4ow"/>
+                            <constraint firstItem="RCc-FD-wpe" firstAttribute="leading" secondItem="deM-i2-4Hr" secondAttribute="leading" id="nm8-FW-fsE"/>
+                            <constraint firstItem="deM-i2-4Hr" firstAttribute="trailing" secondItem="B0Y-da-bWH" secondAttribute="trailing" id="ovv-tB-5A3"/>
+                            <constraint firstItem="deM-i2-4Hr" firstAttribute="top" secondItem="B0Y-da-bWH" secondAttribute="top" constant="44" id="prC-bI-TAR"/>
+                            <constraint firstItem="RCc-FD-wpe" firstAttribute="width" secondItem="Osd-iY-Opg" secondAttribute="height" multiplier="207:448" id="w60-VB-Zir"/>
+                            <constraint firstItem="B0Y-da-bWH" firstAttribute="leading" secondItem="deM-i2-4Hr" secondAttribute="leading" id="xXP-Qt-Imq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="companyName" destination="csi-cv-M2j" id="9me-Zn-WYr"/>
+                        <outlet property="detailImageView" destination="B0Y-da-bWH" id="fDY-in-7YH"/>
+                        <outlet property="detailLabel" destination="Lh7-oU-F5e" id="YCJ-Wd-3ih"/>
+                        <outlet property="updateLabel" destination="330-7N-0e6" id="Vps-wC-mFh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ft-eN-b2T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-326.08695652173918" y="26.785714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="randy-fath-ymf4_9Y9S_A-unsplash" width="2500" height="1667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

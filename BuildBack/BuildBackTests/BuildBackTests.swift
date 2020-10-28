@@ -7,28 +7,50 @@
 //
 
 import XCTest
+import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 @testable import BuildBack
 
 class BuildBackTests: XCTestCase {
-
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testPostBusinessToDataBase(){
+        
+        let exp = XCTestExpectation(description: "business added")
+        guard let user = FirebaseAuth.Auth.auth().currentUser else{
+            XCTFail("no logged user")
+            return
         }
+        let documentId = Firestore.firestore().collection("business").document().documentID
+        let business = BusinessModel(documentId: documentId, name: "NailsByDreaKing", type: "Nail Technician", isMember: true, email: "@nailsbydreaking Instagram", address: "", description: "Nail Technician, Acrylics Only", paymentType: "ApplePay", imageURL: "gs://buildback-2e1ee.appspot.com/91968497_256415468821982_7294447772625797120_n(1).jpg")
+        
+  
+        Firestore.firestore().collection("business").document(business.documentId).setData(["name": business.name,
+                                                                                            "documentId": business.documentId, "type": business.type,
+                                                                                            "isMember": business.isMember,
+                                                                                            "email": business.email,
+                                                                                            "address": business.address,
+                                                                                            "description":business.description,
+                                                                                            "paymentType": business.paymentType,
+                                                                                            "imageURL": business.imageURL
+            
+        ]) { (error) in exp.fulfill()
+            if let error = error{
+                XCTFail("failed to upload video with error: \(error.localizedDescription)")
+            }
+            
+            
+            XCTAssert(true)
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+        
     }
-
+    
+    
 }
+
+

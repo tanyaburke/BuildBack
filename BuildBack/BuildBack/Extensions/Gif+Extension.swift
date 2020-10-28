@@ -31,7 +31,7 @@ extension UIImage {
         }
 
         return UIImage.animatedImageWithSource(source)
-    }
+    }    
 
     public class func gif(url: String) -> UIImage? {
         guard let bundleURL = URL(string: url) else {
