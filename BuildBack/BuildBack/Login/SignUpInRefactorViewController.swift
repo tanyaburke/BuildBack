@@ -21,8 +21,8 @@ class SignUpInRefactorViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UnderlinedTextfield!
     @IBOutlet weak var emailAddressTextField: UnderlinedTextfield!
     
-    @IBOutlet weak var signInButton: RoundedCornerButton!
-    @IBOutlet weak var signUpButton: RoundedCornerButton!
+    @IBOutlet weak var topButton: RoundedCornerButton!
+    @IBOutlet weak var bottomButton: RoundedCornerButton!
     @IBOutlet weak var accountInfoLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -36,6 +36,7 @@ class SignUpInRefactorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        configureLoginInfoStack()
     }
     
     //MARK:- Functions
@@ -44,10 +45,10 @@ class SignUpInRefactorViewController: UIViewController {
         passwordTextField.delegate = self
         emailAddressTextField.delegate = self
         accountInfoLabel.adjustsFontSizeToFitWidth = true
-        signInButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        signUpButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        topButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        bottomButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
-    private func configureUI() {
+    private func configureLoginInfoStack() {
         if accountState == .existingUser {
             nameTextField.isHidden = true
             nameLabel.isHidden = true
@@ -93,20 +94,39 @@ class SignUpInRefactorViewController: UIViewController {
     func navigateToMainView(){
         UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
     }
-    //MARK:- IBActions
-    @IBAction func signinButtonPressed(_ sender: RoundedCornerButton) {
-        accountState = .existingUser
-        signInButton.titleLabel?.text = "Sign In"
-        accountInfoLabel.text = "Don't have an account?"
-        signUpButton.titleLabel?.text = "Create Account"
-        configureUI()
+    private func configureLoginButtons() {
+        if accountState == .existingUser {
+            topButton.setTitle("Sign In", for: .normal)
+            accountInfoLabel.text = "Don't have an account?"
+            bottomButton.setTitle("Create Account", for: .normal)
+            configureLoginInfoStack()
+        } else {
+            accountState = .newUser
+            topButton.setTitle("Create Account", for: .normal)
+            accountInfoLabel.text = "Already have an account?"
+            bottomButton.setTitle("Sign In", for: .normal)
+            configureLoginInfoStack()
+        }
+
     }
-    @IBAction func singUpButtonPressed(_ sender: RoundedCornerButton) {
-        accountState = .newUser
-        signInButton.titleLabel?.text = "Create Account"
-        accountInfoLabel.text = "Already have an account?"
-        signUpButton.titleLabel?.text = "Sign In"
-        configureUI()
+    //MARK:- IBActions
+    @IBAction func topButtonPressed(_ sender: RoundedCornerButton) {
+        // Sign in or create account functions go here
+        guard let email = emailAddressTextField.text, let password = passwordTextField.text else {
+            showAlert(title: "Something is missing", message: "Please check all fields have been filled out")
+            return
+        }
+        continueLoginFlow(email: email, password: password)
+    }
+    @IBAction func bottomButtonPressed(_ sender: RoundedCornerButton) {
+        if accountState == .existingUser {
+            accountState = .newUser
+            print("New user")
+        } else {
+            accountState = .existingUser
+            print("Existing User")
+        }
+        configureLoginButtons()
     }
     
 }
