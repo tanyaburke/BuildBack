@@ -266,7 +266,7 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
-		2E9906E024C91F0E00982004 /* BusinessTable */ = {
+		2E9906E024C91F0E00982004 /* BusinessTableView */ = {
 			isa = PBXGroup;
 			children = (
 				2E8B598F2480037400D916FF /* BusinessViewController.swift */,
@@ -274,7 +274,7 @@
 				2E6F14EF248C56BD00198C71 /* BusinessDisplayTableViewCell.xib */,
 				2ED7E9AE24B62FE80043AE79 /* DetailView */,
 			);
-			path = BusinessTable;
+			path = BusinessTableView;
 			sourceTree = "<group>";
 		};
 		2E9BF8852487F73F0032B61C /* InitialView  */ = {
@@ -362,7 +362,7 @@
 				2E7847D824A3F852006E85D2 /* OnBoardng */,
 				2E9BF8852487F73F0032B61C /* InitialView  */,
 				2E8B596E247FD24200D916FF /* DesignedViews */,
-				2E9906E024C91F0E00982004 /* BusinessTable */,
+				2E9906E024C91F0E00982004 /* BusinessTableView */,
 				2E3445CC24F80CCA005A51C4 /* Donate */,
 				2E9BF888248844E90032B61C /* UserProfile */,
 				2E8B596A247FD1AD00D916FF /* ViewControllers */,

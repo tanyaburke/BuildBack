@@ -11,9 +11,8 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class BusinessViewController: UIViewController {
-
-    @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     private var listener: ListenerRegistration?
@@ -23,29 +22,25 @@ class BusinessViewController: UIViewController {
     private var businesses = [BusinessModel]() {
         didSet {
             DispatchQueue.main.async {
-            
                 self.tableView.reloadData()
+            }
         }
-    }
     }
     
     private var buisnessManager = BusinessManager()
     
-     override func viewDidLoad() {
-            super.viewDidLoad()
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
         configureTableView()
-        
-        }
+    }
     
     private func configureTableView(){
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
         retrieveBuisness()
     }
-
+    
     private func retrieveBuisness(){
         buisnessManager.retriveBusinesses { (result) in
             switch result{
@@ -53,16 +48,16 @@ class BusinessViewController: UIViewController {
                 self.businesses = businesses
             case let .failure(error):
                 print(error)
-           }
+            }
         }
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
-//    }
-//
+    //    override func viewDidAppear(_ animated: Bool) {
+    //        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
+    //    }
+    //
     override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(true)
-      listener?.remove()
+        super.viewWillDisappear(true)
+        listener?.remove()
     }
 }
 
@@ -78,11 +73,11 @@ extension BusinessViewController: UITableViewDataSource {
             fatalError("Error loading Cell")
         }
         let buisness = businesses[indexPath.row]
+        cell.businessImageImageView.image = nil
         storageService.retrieveItemImages(imageURL: buisness.imageURL) { (result) in
             switch result{
             case let .success(image):
                 cell.configureCell(buisnessName: buisness.name, buisnessType: buisness.type, buisnessImage: image)
-                
             case let .failure(error):
                 print(error)
             }
@@ -91,11 +86,9 @@ extension BusinessViewController: UITableViewDataSource {
         return cell
     }
     
-
-    
-    
-    
 }
+
+//MARK:-
 extension BusinessViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -111,7 +104,7 @@ extension BusinessViewController: UITableViewDelegate{
             return DetailViewController(coder: coder, business: business)
         }
         navigationController?.pushViewController(detailViewController, animated: true)
-//        present(detailViewController, animated: true)
+        //        present(detailViewController, animated: true)
     }
     
     

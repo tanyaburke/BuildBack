@@ -17,7 +17,7 @@ protocol BusinessCellDelegate: AnyObject {
 
 class BusinessDisplayTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var businessImageImageView: UIImageView!
+    @IBOutlet public weak var businessImageImageView: UIImageView!
     
     @IBOutlet private weak var businessNameLabel: UILabel!
     
@@ -25,9 +25,10 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var donateButton: UIButton!
     
-    func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage){
-        
-        businessImageImageView.image = buisnessImage
+    func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage) {
+        DispatchQueue.main.async {
+            self.businessImageImageView.image = buisnessImage
+        }
         businessNameLabel.text = buisnessName
         businessTypeLabel.text = buisnessType
     }
