@@ -70,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="1028.985507246377" y="93.75"/>
         </scene>
-        <!--Business View Controller-->
+        <!--BuildBack-->
         <scene sceneID="yjj-tv-vXx">
             <objects>
                 <viewController storyboardIdentifier="BusinessViewController" id="M5J-TE-CxI" customClass="BusinessViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,12 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nq1-ZA-yra">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-QO-O0L">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -91,17 +87,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cvK-KJ-goq" firstAttribute="bottom" secondItem="zpF-QO-O0L" secondAttribute="bottom" id="1fV-l3-FMH"/>
-                            <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="nq1-ZA-yra" secondAttribute="trailing" id="Fmi-Lz-Qyr"/>
-                            <constraint firstItem="zpF-QO-O0L" firstAttribute="top" secondItem="nq1-ZA-yra" secondAttribute="bottom" id="Im2-9r-gLV"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="bottom" secondItem="cvK-KJ-goq" secondAttribute="bottom" id="Sfb-PM-GTt"/>
                             <constraint firstItem="zpF-QO-O0L" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="UXn-iA-h1p"/>
-                            <constraint firstItem="nq1-ZA-yra" firstAttribute="top" secondItem="cvK-KJ-goq" secondAttribute="top" id="YtG-0f-SeQ"/>
+                            <constraint firstItem="zpF-QO-O0L" firstAttribute="top" secondItem="cvK-KJ-goq" secondAttribute="top" id="bOJ-dO-W4g"/>
                             <constraint firstItem="cvK-KJ-goq" firstAttribute="trailing" secondItem="zpF-QO-O0L" secondAttribute="trailing" id="qGW-JY-yDI"/>
-                            <constraint firstItem="nq1-ZA-yra" firstAttribute="leading" secondItem="cvK-KJ-goq" secondAttribute="leading" id="xu1-SM-KsT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1Qy-N0-6vP"/>
+                    <navigationItem key="navigationItem" title="BuildBack" id="1Qy-N0-6vP"/>
                     <connections>
-                        <outlet property="searchBar" destination="nq1-ZA-yra" id="Ko1-sk-ztm"/>
                         <outlet property="tableView" destination="zpF-QO-O0L" id="tC1-Ma-oTM"/>
                     </connections>
                 </viewController>

@@ -16,9 +16,7 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var listener: ListenerRegistration?
-    
     private var storageService = StorageService()
-    
     private var businesses = [BusinessModel]() {
         didSet {
             DispatchQueue.main.async {
@@ -26,12 +24,15 @@ class BusinessViewController: UIViewController {
             }
         }
     }
-    
     private var buisnessManager = BusinessManager()
+    
+    var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchController()
         configureTableView()
+        
     }
     
     private func configureTableView(){
@@ -40,7 +41,17 @@ class BusinessViewController: UIViewController {
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
         retrieveBuisness()
     }
-    
+    private func setupSearchController() {
+        resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.searchBar.sizeToFit()
+            controller.obscuresBackgroundDuringPresentation = false
+            controller.automaticallyShowsSearchResultsController = false
+            tableView.tableHeaderView = controller.searchBar
+            return controller
+        })()
+    }
     private func retrieveBuisness(){
         buisnessManager.retriveBusinesses { (result) in
             switch result{
@@ -82,13 +93,12 @@ extension BusinessViewController: UITableViewDataSource {
                 print(error)
             }
         }
-        
         return cell
     }
     
 }
 
-//MARK:-
+//MARK:- Extensions
 extension BusinessViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -110,6 +120,20 @@ extension BusinessViewController: UITableViewDelegate{
     
 }
 
+extension BusinessViewController: UISearchResultsUpdating {
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
+            tableView.reloadData()
+            return
+        }
+    }
+    
+
+    
+}
 //Use something similar to segue to donate page
 //extension BusinessViewController: BusinessCellDelegate {
 //
