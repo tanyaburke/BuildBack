@@ -44,6 +44,7 @@ class BusinessViewController: UIViewController {
     private func setupSearchController() {
         resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
+            controller.searchBar.placeholder = "Search for a business"
             controller.searchResultsUpdater = self
             controller.searchBar.sizeToFit()
             controller.obscuresBackgroundDuringPresentation = false
@@ -121,18 +122,24 @@ extension BusinessViewController: UITableViewDelegate{
 }
 
 extension BusinessViewController: UISearchResultsUpdating {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        print("Searching for: \(searchBar.text ?? "error")")
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+    }
     func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
-            tableView.reloadData()
+//            tableView.reloadData()
             return
         }
     }
-    
-
-    
 }
 //Use something similar to segue to donate page
 //extension BusinessViewController: BusinessCellDelegate {
