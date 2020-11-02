@@ -26,13 +26,24 @@ class BusinessViewController: UIViewController {
     }
     private var buisnessManager = BusinessManager()
     
+    //This is set to true only using the bar
+    private var currentlySearching = false {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    private var filteredBusinesses = [BusinessModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
         configureTableView()
-        
     }
     
     private func configureTableView(){
@@ -71,25 +82,37 @@ class BusinessViewController: UIViewController {
         super.viewWillDisappear(true)
         listener?.remove()
     }
+    private func searchForBusiness(query: String) {
+        currentlySearching = true
+        filteredBusinesses = businesses.filter { $0.name == query }
+    }
 }
 
 
 
 extension BusinessViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return businesses.count
+        if currentlySearching {
+            return filteredBusinesses.count
+        } else {
+            return businesses.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as? BusinessDisplayTableViewCell else {
             fatalError("Error loading Cell")
         }
-        let buisness = businesses[indexPath.row]
+        var business = businesses[indexPath.row]
+        if currentlySearching {
+            business = filteredBusinesses[indexPath.row]
+        }
+        // This helps reduce flickering of images when first loading cells
         cell.businessImageImageView.image = nil
-        storageService.retrieveItemImages(imageURL: buisness.imageURL) { (result) in
+        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
             switch result{
             case let .success(image):
-                cell.configureCell(buisnessName: buisness.name, buisnessType: buisness.type, buisnessImage: image)
+                cell.configureCell(buisnessName: business.name, buisnessType: business.type, buisnessImage: image)
             case let .failure(error):
                 print(error)
             }
@@ -100,7 +123,7 @@ extension BusinessViewController: UITableViewDataSource {
 }
 
 //MARK:- Extensions
-extension BusinessViewController: UITableViewDelegate{
+extension BusinessViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
@@ -124,21 +147,27 @@ extension BusinessViewController: UITableViewDelegate{
 extension BusinessViewController: UISearchResultsUpdating {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
-        print("Searching for: \(searchBar.text ?? "error")")
+
+        
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
         searchBar.text = ""
+        currentlySearching = false
     }
     func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
-//            tableView.reloadData()
+            tableView.reloadData()
             return
         }
+        currentlySearching = true
+        print("Searching for: \(searchText)")
+        searchForBusiness(query: searchText)
+//        tableView.reloadData()
     }
 }
 //Use something similar to segue to donate page
