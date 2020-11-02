@@ -27,16 +27,8 @@ class BusinessViewController: UIViewController {
     private var buisnessManager = BusinessManager()
     
     //This is set to true only using the bar
-    private var currentlySearching = false {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    private var filteredBusinesses = [BusinessModel]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var currentlySearching = false
+    private var filteredBusinesses = [BusinessModel]()
     
     var resultSearchController = UISearchController()
     
@@ -84,7 +76,7 @@ class BusinessViewController: UIViewController {
     }
     private func searchForBusiness(query: String) {
         currentlySearching = true
-        filteredBusinesses = businesses.filter { $0.name == query }
+        filteredBusinesses = businesses.filter { $0.name.lowercased().contains(query.lowercased()) }
     }
 }
 
@@ -147,8 +139,7 @@ extension BusinessViewController: UITableViewDelegate {
 extension BusinessViewController: UISearchResultsUpdating {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
-
-        
+        currentlySearching = true
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -161,13 +152,13 @@ extension BusinessViewController: UISearchResultsUpdating {
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
+            // TODO: Determine if this is necessary
+            currentlySearching = false
             tableView.reloadData()
             return
         }
-        currentlySearching = true
-        print("Searching for: \(searchText)")
         searchForBusiness(query: searchText)
-//        tableView.reloadData()
+        tableView.reloadData()
     }
 }
 //Use something similar to segue to donate page
