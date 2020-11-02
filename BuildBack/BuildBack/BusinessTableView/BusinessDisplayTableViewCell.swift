@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol BusinessCellDelegate: AnyObject {
     func didSelectBusiness( business: Business, businessCell: BusinessDisplayTableViewCell)
@@ -17,7 +18,7 @@ protocol BusinessCellDelegate: AnyObject {
 
 class BusinessDisplayTableViewCell: UITableViewCell {
 
-    @IBOutlet public weak var businessImageImageView: UIImageView!
+    @IBOutlet public weak var businessLogoImageView: UIImageView!
     
     @IBOutlet private weak var businessNameLabel: UILabel!
     
@@ -27,7 +28,8 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     
     func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage) {
         DispatchQueue.main.async {
-            self.businessImageImageView.image = buisnessImage
+            self.businessLogoImageView.kf.indicatorType = .activity
+            self.businessLogoImageView.image = buisnessImage
         }
         businessNameLabel.text = buisnessName
         businessTypeLabel.text = buisnessType

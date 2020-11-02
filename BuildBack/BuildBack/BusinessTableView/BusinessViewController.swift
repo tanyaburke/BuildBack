@@ -99,8 +99,6 @@ extension BusinessViewController: UITableViewDataSource {
         if currentlySearching {
             business = filteredBusinesses[indexPath.row]
         }
-        // This helps reduce flickering of images when first loading cells
-        cell.businessImageImageView.image = nil
         storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
             switch result{
             case let .success(image):
