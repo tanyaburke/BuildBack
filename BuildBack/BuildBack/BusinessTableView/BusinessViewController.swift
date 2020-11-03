@@ -99,14 +99,15 @@ extension BusinessViewController: UITableViewDataSource {
         if currentlySearching {
             business = filteredBusinesses[indexPath.row]
         }
-        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
-            switch result{
-            case let .success(image):
-                cell.configureCell(buisnessName: business.name, buisnessType: business.type, buisnessImage: image)
-            case let .failure(error):
-                print(error)
-            }
-        }
+        cell.configureCell(business: business)
+//        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
+//            switch result{
+//            case let .success(image):
+//                cell.configureCell(buisnessName: business.name, buisnessType: business.type, buisnessImage: image)
+//            case let .failure(error):
+//                print(error)
+//            }
+//        }
         return cell
     }
     

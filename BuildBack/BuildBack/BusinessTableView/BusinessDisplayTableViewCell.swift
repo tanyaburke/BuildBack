@@ -26,13 +26,16 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var donateButton: UIButton!
     
-    func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage) {
+//    func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage) {
+    func configureCell(business: BusinessModel) {
         DispatchQueue.main.async {
             self.businessLogoImageView.kf.indicatorType = .activity
-            self.businessLogoImageView.image = buisnessImage
+            print(business.imageURL)
+            self.businessLogoImageView.kf.setImage(with: URL(string: business.imageURL))
+//            self.businessLogoImageView.image = buisnessImage
         }
-        businessNameLabel.text = buisnessName
-        businessTypeLabel.text = buisnessType
+        businessNameLabel.text = business.name
+        businessTypeLabel.text = business.type
     }
   
     @IBAction func donateButton(_ sender: UIButton) {
