@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -90,6 +90,7 @@
 		88810B1025425F4900496E4A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88810B0F25425F4900496E4A /* IntroViewController.swift */; };
 		88810B142544D47200496E4A /* LoginViewRefactor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88810B132544D47200496E4A /* LoginViewRefactor.storyboard */; };
 		88810B1825472E4F00496E4A /* SignUpInRefactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88810B1725472E4F00496E4A /* SignUpInRefactorViewController.swift */; };
+		88D4E54C25509691000C8400 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 88D4E54B25509691000C8400 /* Kingfisher */; };
 		CF3707A9E18C3A2816A9FBB3 /* Pods_BuildBackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88D4E54C25509691000C8400 /* Kingfisher in Frameworks */,
 				1D82212881CAAD8980E5687B /* Pods_BuildBack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +268,7 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
-		2E9906E024C91F0E00982004 /* BusinessTable */ = {
+		2E9906E024C91F0E00982004 /* BusinessTableView */ = {
 			isa = PBXGroup;
 			children = (
 				2E8B598F2480037400D916FF /* BusinessViewController.swift */,
@@ -274,7 +276,7 @@
 				2E6F14EF248C56BD00198C71 /* BusinessDisplayTableViewCell.xib */,
 				2ED7E9AE24B62FE80043AE79 /* DetailView */,
 			);
-			path = BusinessTable;
+			path = BusinessTableView;
 			sourceTree = "<group>";
 		};
 		2E9BF8852487F73F0032B61C /* InitialView  */ = {
@@ -362,7 +364,7 @@
 				2E7847D824A3F852006E85D2 /* OnBoardng */,
 				2E9BF8852487F73F0032B61C /* InitialView  */,
 				2E8B596E247FD24200D916FF /* DesignedViews */,
-				2E9906E024C91F0E00982004 /* BusinessTable */,
+				2E9906E024C91F0E00982004 /* BusinessTableView */,
 				2E3445CC24F80CCA005A51C4 /* Donate */,
 				2E9BF888248844E90032B61C /* UserProfile */,
 				2E8B596A247FD1AD00D916FF /* ViewControllers */,
@@ -422,6 +424,9 @@
 			dependencies = (
 			);
 			name = BuildBack;
+			packageProductDependencies = (
+				88D4E54B25509691000C8400 /* Kingfisher */,
+			);
 			productName = BuildBack;
 			productReference = 2EF9E8132476F49F00E122B8 /* BuildBack.app */;
 			productType = "com.apple.product-type.application";
@@ -473,6 +478,9 @@
 				Base,
 			);
 			mainGroup = 2EF9E80A2476F49F00E122B8;
+			packageReferences = (
+				88D4E54A25509691000C8400 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2EF9E8142476F49F00E122B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -912,6 +920,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88D4E54A25509691000C8400 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88D4E54B25509691000C8400 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88D4E54A25509691000C8400 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2EF9E81F2476F49F00E122B8 /* BuildBack.xcdatamodeld */ = {

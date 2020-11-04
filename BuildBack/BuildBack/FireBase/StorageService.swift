@@ -37,7 +37,6 @@ class StorageService {
     }
     
     public func uploadPhoto(userId: String? = nil, itemID: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()){
-        
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             return
         }
@@ -46,9 +45,7 @@ class StorageService {
         
         if let userId = userId {
             photoReference = storageRef.child("UserProfilePhotos/\(userId).jpeg")
-            
         } else if let itemId = itemID {
-            
             photoReference = storageRef.child("BusinessPhoto\(itemId).jpeg")
         }
         
@@ -65,6 +62,7 @@ class StorageService {
                         completion(.failure(error))
                     } else if let url = url {
                         completion(.success(url))
+                        print(url)
                     }
                 }
             }
