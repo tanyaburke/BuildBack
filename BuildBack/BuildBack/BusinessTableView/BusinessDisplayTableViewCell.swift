@@ -12,9 +12,7 @@ import Kingfisher
 protocol BusinessCellDelegate: AnyObject {
     func didSelectBusiness( business: Business, businessCell: BusinessDisplayTableViewCell)
     
-    
 }
-
 
 class BusinessDisplayTableViewCell: UITableViewCell {
 
@@ -26,13 +24,12 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var donateButton: UIButton!
     
-//    func configureCell(buisnessName: String, buisnessType: String, buisnessImage: UIImage) {
     func configureCell(business: BusinessModel) {
+        businessNameLabel.adjustsFontSizeToFitWidth = true
         DispatchQueue.main.async {
             self.businessLogoImageView.kf.indicatorType = .activity
             print(business.imageURL)
             self.businessLogoImageView.kf.setImage(with: URL(string: business.imageURL))
-//            self.businessLogoImageView.image = buisnessImage
         }
         businessNameLabel.text = business.name
         businessTypeLabel.text = business.type

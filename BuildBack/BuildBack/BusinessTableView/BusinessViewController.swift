@@ -117,7 +117,9 @@ extension BusinessViewController: UITableViewDataSource {
 extension BusinessViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        //        return 120
+        let maxHeight = tableView.frame.height
+        return CGFloat(maxHeight / 5)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
