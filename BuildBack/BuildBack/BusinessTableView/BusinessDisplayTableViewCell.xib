@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" id="KGk-i7-Jjw" customClass="BusinessDisplayTableViewCell" customModule="BuildBack" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="449" height="224"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" rowHeight="132" id="KGk-i7-Jjw" customClass="BusinessDisplayTableViewCell" customModule="BuildBack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="132"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="449" height="224"/>
+                <rect key="frame" x="0.0" y="0.0" width="449" height="132"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robert-svebeck-TNsLQrmTo2Y-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="d30-mJ-fLZ" customClass="DesignableImageView" customModule="BuildBack" customModuleProvider="target">
-                        <rect key="frame" x="16" y="16" width="200" height="192"/>
+                        <rect key="frame" x="16" y="16" width="200" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="z0k-HF-yy4"/>
                         </constraints>
@@ -29,14 +29,20 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3n-iY-nPm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3n-iY-nPm">
                         <rect key="frame" x="232" y="16" width="183.5" height="34.5"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnk-fx-2Ah">
+                        <rect key="frame" x="232" y="50.5" width="163.5" height="27.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                        <color key="textColor" name="appGray"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7q-mX-QM6" customClass="RoundedCornerButton" customModule="BuildBack" customModuleProvider="target">
-                        <rect key="frame" x="232" y="178" width="90" height="30"/>
+                        <rect key="frame" x="232" y="86" width="90" height="30"/>
                         <color key="backgroundColor" red="1" green="0.91052131430000005" blue="0.19219665490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="KGc-9W-I3H"/>
@@ -50,40 +56,49 @@
                             <action selector="donateButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="b8r-pf-grN"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnk-fx-2Ah">
-                        <rect key="frame" x="232" y="58.5" width="163.5" height="27.5"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                        <color key="textColor" name="appGray"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJi-hj-K21" userLabel="Bookmark Button">
+                        <rect key="frame" x="395" y="85" width="20.5" height="32"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" image="bookmark" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                        </state>
+                        <connections>
+                            <action selector="bookmarkButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MaM-Wk-GiR"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="vnk-fx-2Ah" firstAttribute="top" secondItem="s3n-iY-nPm" secondAttribute="bottom" constant="8" id="EoM-6e-zd6"/>
+                    <constraint firstItem="DJi-hj-K21" firstAttribute="centerY" secondItem="w7q-mX-QM6" secondAttribute="centerY" id="2Uh-Ki-Yy8"/>
+                    <constraint firstItem="s3n-iY-nPm" firstAttribute="trailing" secondItem="DJi-hj-K21" secondAttribute="trailing" id="93r-jT-Iuy"/>
+                    <constraint firstItem="w7q-mX-QM6" firstAttribute="top" secondItem="vnk-fx-2Ah" secondAttribute="bottom" constant="8" id="ChS-mC-K3F"/>
+                    <constraint firstItem="vnk-fx-2Ah" firstAttribute="top" secondItem="s3n-iY-nPm" secondAttribute="bottom" id="EoM-6e-zd6"/>
                     <constraint firstItem="vnk-fx-2Ah" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="16" id="HX7-Z9-kd8"/>
                     <constraint firstItem="d30-mJ-fLZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JIN-nQ-qpk"/>
                     <constraint firstItem="s3n-iY-nPm" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="16" id="LVu-QW-cht"/>
                     <constraint firstItem="w7q-mX-QM6" firstAttribute="bottom" secondItem="d30-mJ-fLZ" secondAttribute="bottom" id="MCX-PN-byA"/>
+                    <constraint firstAttribute="trailing" secondItem="s3n-iY-nPm" secondAttribute="trailing" constant="16" id="P3T-nY-sVk"/>
                     <constraint firstAttribute="trailing" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="229" id="Qra-O6-cJR"/>
                     <constraint firstAttribute="bottom" secondItem="d30-mJ-fLZ" secondAttribute="bottom" constant="16" id="RHY-2p-cbz"/>
-                    <constraint firstItem="s3n-iY-nPm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="X6p-y5-upD"/>
                     <constraint firstAttribute="trailingMargin" secondItem="vnk-fx-2Ah" secondAttribute="trailing" constant="16" id="cbE-P9-pum"/>
-                    <constraint firstItem="w7q-mX-QM6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vnk-fx-2Ah" secondAttribute="bottom" constant="16" id="ckG-2z-sL2"/>
-                    <constraint firstAttribute="trailing" secondItem="s3n-iY-nPm" secondAttribute="trailing" constant="16" id="dsD-TL-EhA"/>
                     <constraint firstItem="w7q-mX-QM6" firstAttribute="leading" secondItem="d30-mJ-fLZ" secondAttribute="trailing" constant="16" id="gwl-e5-CTk"/>
+                    <constraint firstItem="DJi-hj-K21" firstAttribute="height" secondItem="w7q-mX-QM6" secondAttribute="height" multiplier="1.06667" id="nW7-if-TVu"/>
+                    <constraint firstItem="s3n-iY-nPm" firstAttribute="top" secondItem="d30-mJ-fLZ" secondAttribute="top" id="qM4-wO-xmn"/>
                     <constraint firstItem="d30-mJ-fLZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="sT8-nV-Uf3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bookmarkButton" destination="DJi-hj-K21" id="r6h-51-4RC"/>
                 <outlet property="businessLogoImageView" destination="d30-mJ-fLZ" id="ghe-0F-RTh"/>
                 <outlet property="businessNameLabel" destination="s3n-iY-nPm" id="WbP-6B-Z5t"/>
                 <outlet property="businessTypeLabel" destination="vnk-fx-2Ah" id="wSp-2h-6cf"/>
                 <outlet property="donateButton" destination="w7q-mX-QM6" id="OJ0-TQ-KfH"/>
             </connections>
-            <point key="canvasLocation" x="106.5217391304348" y="-96.428571428571431"/>
+            <point key="canvasLocation" x="106.5217391304348" y="-127.23214285714285"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="robert-svebeck-TNsLQrmTo2Y-unsplash" width="3052" height="4586"/>
         <namedColor name="appGray">
             <color red="0.51372549019607838" green="0.51764705882352946" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

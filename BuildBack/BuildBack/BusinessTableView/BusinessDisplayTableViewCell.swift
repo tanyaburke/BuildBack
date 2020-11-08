@@ -16,26 +16,36 @@ protocol BusinessCellDelegate: AnyObject {
 
 class BusinessDisplayTableViewCell: UITableViewCell {
 
-    @IBOutlet public weak var businessLogoImageView: UIImageView!
-    
+    @IBOutlet private weak var businessLogoImageView: UIImageView!
     @IBOutlet private weak var businessNameLabel: UILabel!
-    
     @IBOutlet private weak var businessTypeLabel: UILabel!
-    
     @IBOutlet private weak var donateButton: UIButton!
+    @IBOutlet private weak var bookmarkButton: UIButton!
+    
+    var businessToSave: BusinessModel?
     
     func configureCell(business: BusinessModel) {
+        businessToSave = business
         businessNameLabel.adjustsFontSizeToFitWidth = true
+
+        businessNameLabel.text = business.name
+        businessTypeLabel.text = business.type
+        
         DispatchQueue.main.async {
             self.businessLogoImageView.kf.indicatorType = .activity
             print(business.imageURL)
             self.businessLogoImageView.kf.setImage(with: URL(string: business.imageURL))
         }
-        businessNameLabel.text = business.name
-        businessTypeLabel.text = business.type
     }
   
     @IBAction func donateButton(_ sender: UIButton) {
         UIViewController.showViewController(storyBoardName: "Donate", viewControllerId: "DonateViewController")
+    }
+    @IBAction func bookmarkButtonPressed(_ sender: UIButton) {
+        guard let businessToBeBookmarked = businessToSave else {
+            print("No business to bookmark")
+            return
+        }
+        print("Book mark: \(businessToBeBookmarked.documentId)")
     }
 }

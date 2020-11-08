@@ -119,7 +119,7 @@ extension BusinessViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //        return 120
         let maxHeight = tableView.frame.height
-        return CGFloat(maxHeight / 5)
+        return CGFloat(maxHeight / 4.75)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
