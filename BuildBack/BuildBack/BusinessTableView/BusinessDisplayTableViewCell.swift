@@ -8,10 +8,10 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
 
 protocol BusinessCellDelegate: AnyObject {
     func didSelectBusiness( business: Business, businessCell: BusinessDisplayTableViewCell)
-    
 }
 
 class BusinessDisplayTableViewCell: UITableViewCell {
@@ -23,6 +23,7 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     @IBOutlet private weak var bookmarkButton: UIButton!
     
     var businessToSave: BusinessModel?
+    let db = DatabaseService()
     
     func configureCell(business: BusinessModel) {
         businessToSave = business
@@ -42,8 +43,12 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         UIViewController.showViewController(storyBoardName: "Donate", viewControllerId: "DonateViewController")
     }
     @IBAction func bookmarkButtonPressed(_ sender: UIButton) {
-        guard let businessToBeBookmarked = businessToSave else {
-            print("No business to bookmark")
+        guard let businessToBeBookmarked = businessToSave,
+              let user = Auth.auth().currentUser
+              else {
+            return
+        }
+        db.bookmarkBusinessForUser(id: user.uid, businessID: businessToBeBookmarked.documentId) { () -> Void? in
             return
         }
         print("Book mark: \(businessToBeBookmarked.documentId)")

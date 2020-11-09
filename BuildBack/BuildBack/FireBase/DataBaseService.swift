@@ -14,7 +14,7 @@ import FirebaseFirestore
 class DatabaseService {
     
     static let itemsCollection = "items" //BusinessCollection
-    
+    static let bookmarkedBusinessesCollection = "bookmarkedBusinesses"
     
     lazy var db = Firestore.firestore()
     
@@ -27,7 +27,14 @@ class DatabaseService {
             completion()
         }
     }
-    
+    func bookmarkBusinessForUser(id: String, businessID: String, completion: @escaping ()-> Void? ) {
+        db.collection("user").document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document().setData(["bookmarkedBusinesses": businessID]) { (error) in
+            if let error = error {
+                print(error)
+            }
+            completion()
+        }
+    }
 //    func createItem(companyName: String, completion @escaping (Result<String, Error>) -> ()) {
 //        
 //        guard let user = Auth.auth().currentUser else {return}
