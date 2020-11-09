@@ -24,6 +24,7 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     
     var businessToSave: BusinessModel?
     let db = DatabaseService()
+    var isBookmarked = false
     
     func configureCell(business: BusinessModel) {
         businessToSave = business
@@ -45,12 +46,20 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     @IBAction func bookmarkButtonPressed(_ sender: UIButton) {
         guard let businessToBeBookmarked = businessToSave,
               let user = Auth.auth().currentUser
-              else {
-            return
+        else { return }
+        if !isBookmarked {
+            isBookmarked = true
+            bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            db.bookmarkBusinessForUser(id: user.uid, businessID: businessToBeBookmarked.documentId) { () -> Void? in
+                return
+            }
+            print("Book mark: \(businessToBeBookmarked.documentId)")
+        } else {
+            isBookmarked = false
+            bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            db.removeBookmarkedBusinessForUser(id: user.uid, businessID: businessToBeBookmarked.documentId) { () -> Void? in
+                return
+            }
         }
-        db.bookmarkBusinessForUser(id: user.uid, businessID: businessToBeBookmarked.documentId) { () -> Void? in
-            return
-        }
-        print("Book mark: \(businessToBeBookmarked.documentId)")
     }
 }

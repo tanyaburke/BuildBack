@@ -35,6 +35,19 @@ class DatabaseService {
             completion()
         }
     }
+    func removeBookmarkedBusinessForUser(id: String, businessID: String, completion: @escaping ()-> Void? ) {
+        
+        //TODO: It appears business IDs are generated uniquely each time, this needs to be changed to a static id for the purposes of bookmarking and removing bookmarks
+        db.collection("user").document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(businessID).delete { (error) in
+            if let error = error {
+                print("error: \(error.localizedDescription)")
+                completion()
+            } else {
+                print("bookmark removed successfully")
+                completion()
+            }
+        }
+    }
 //    func createItem(companyName: String, completion @escaping (Result<String, Error>) -> ()) {
 //        
 //        guard let user = Auth.auth().currentUser else {return}
