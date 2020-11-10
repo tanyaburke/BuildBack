@@ -16,6 +16,7 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var listener: ListenerRegistration?
+    private var databaseService = DatabaseService()
     private var storageService = StorageService()
     private var businesses = [BusinessModel]() {
         didSet {
@@ -24,10 +25,19 @@ class BusinessViewController: UIViewController {
             }
         }
     }
-    private var buisnessManager = BusinessManager()
+    private var businessManager = BusinessManager()
+    
+    private var bookmarkedBusinesses: [BusinessModel]? {
+        didSet {
+            dump(bookmarkedBusinesses)
+        }
+    }
     
     //This is set to true only using the bar
     private var currentlySearching = false
+    
+    // filteredBusinesses is used to store businesses when searching. Only when currentlySearching is set to true, this becomes the datasource for the tableview
+    // By setting this array to hold the filtered (searched) businesses, it avoids having to make network calls on each search for quicker results
     private var filteredBusinesses = [BusinessModel]()
     
     var resultSearchController = UISearchController()
@@ -36,13 +46,22 @@ class BusinessViewController: UIViewController {
         super.viewDidLoad()
         setupSearchController()
         configureTableView()
+        fetchUserBookmarkedBusinesses()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        listener?.remove()
+    }
+    //    override func viewDidAppear(_ animated: Bool) {
+    //        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
+    //    }
+    //
     
     private func configureTableView(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
-        retrieveBuisness()
+        retrieveAllBusinesses()
     }
     private func setupSearchController() {
         resultSearchController = ({
@@ -56,8 +75,8 @@ class BusinessViewController: UIViewController {
             return controller
         })()
     }
-    private func retrieveBuisness(){
-        buisnessManager.retriveBusinesses { (result) in
+    private func retrieveAllBusinesses() {
+        businessManager.retriveBusinesses { (result) in
             switch result{
             case let .success(businesses):
                 self.businesses = businesses
@@ -66,14 +85,17 @@ class BusinessViewController: UIViewController {
             }
         }
     }
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
-    //    }
-    //
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        listener?.remove()
+    private func fetchUserBookmarkedBusinesses() {
+        databaseService.fetchUserBusinessBookmarks { (results) in
+            switch results {
+            case .failure(let appError):
+                print("error: \(appError.localizedDescription)")
+            case .success(let businesses):
+                self.bookmarkedBusinesses = businesses
+            }
+        }
     }
+
     private func searchForBusiness(query: String) {
         currentlySearching = true
         filteredBusinesses = businesses.filter { $0.name.lowercased().contains(query.lowercased()) }
@@ -99,7 +121,6 @@ extension BusinessViewController: UITableViewDataSource {
         if currentlySearching {
             business = filteredBusinesses[indexPath.row]
         }
-        print("\(business.name): \(business.documentId)")
         cell.configureCell(business: business)
 //        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
 //            switch result{
