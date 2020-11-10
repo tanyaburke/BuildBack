@@ -35,7 +35,6 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         
         DispatchQueue.main.async {
             self.businessLogoImageView.kf.indicatorType = .activity
-            print(business.imageURL)
             self.businessLogoImageView.kf.setImage(with: URL(string: business.imageURL))
         }
     }

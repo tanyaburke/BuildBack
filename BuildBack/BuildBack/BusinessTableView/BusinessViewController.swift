@@ -99,6 +99,7 @@ extension BusinessViewController: UITableViewDataSource {
         if currentlySearching {
             business = filteredBusinesses[indexPath.row]
         }
+        print(business.documentId)
         cell.configureCell(business: business)
 //        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
 //            switch result{
@@ -124,14 +125,11 @@ extension BusinessViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let business =  businesses[indexPath.row]
-        print (business.name)
-        
         let storyboard =  UIStoryboard(name: "DetailView", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") { (coder) in
             return DetailViewController(coder: coder, business: business)
         }
         navigationController?.pushViewController(detailViewController, animated: true)
-        //        present(detailViewController, animated: true)
     }
     
     
