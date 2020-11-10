@@ -99,7 +99,7 @@ extension BusinessViewController: UITableViewDataSource {
         if currentlySearching {
             business = filteredBusinesses[indexPath.row]
         }
-        print(business.documentId)
+        print("\(business.name): \(business.documentId)")
         cell.configureCell(business: business)
 //        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
 //            switch result{
