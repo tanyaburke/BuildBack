@@ -15,12 +15,13 @@ class DatabaseService {
     
     static let itemsCollection = "items" //BusinessCollection
     static let bookmarkedBusinessesCollection = "bookmarkedBusinesses"
+    static let userCollection = "user"
     
     lazy var db = Firestore.firestore()
     
     
     func createDatabaseUser(id: String, email: String, name: String, completion: @escaping ()-> Void? ) {
-        db.collection("user").document(id).setData(["email": email, "name": name]) { (error) in
+        db.collection(DatabaseService.userCollection).document(id).setData(["email": email, "name": name]) { (error) in
             if let error = error {
                 print(error)
             }
@@ -28,7 +29,7 @@ class DatabaseService {
         }
     }
     func bookmarkBusinessForUser(id: String, businessID: String, businessName: String, completion: @escaping ()-> Void? ) {
-        db.collection("user").document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(businessID).setData(["businessID": businessID, "businessName": businessName]) { (error) in
+        db.collection(DatabaseService.userCollection).document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(businessID).setData(["businessID": businessID, "businessName": businessName]) { (error) in
             if let error = error {
                 print(error)
             } else {
@@ -37,13 +38,25 @@ class DatabaseService {
         }
     }
     func removeBookmarkedBusinessForUser(id: String, businessID: String, completion: @escaping ()-> Void? ) {
-        db.collection("user").document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(businessID).delete { (error) in
+        db.collection(DatabaseService.userCollection).document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(businessID).delete { (error) in
             if let error = error {
                 print("error: \(error.localizedDescription)")
                 completion()
             } else {
                 print("bookmark removed successfully")
                 completion()
+            }
+        }
+    }
+    func fetchUserBusinessBookmarks(completion: @escaping (Result<[BusinessModel], Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
+        let userID = user.uid
+        db.collection(DatabaseService.userCollection).document(userID).collection(DatabaseService.bookmarkedBusinessesCollection).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot {
+                let bookmarkedBusinesses = snapshot.documents.map { BusinessModel($0.data()) }
+                completion(.success(bookmarkedBusinesses))
             }
         }
     }

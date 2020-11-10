@@ -52,7 +52,6 @@ class BusinessDisplayTableViewCell: UITableViewCell {
             db.bookmarkBusinessForUser(id: user.uid, businessID: businessToBeBookmarked.documentId, businessName: businessToBeBookmarked.name) { () -> Void? in
                 return
             }
-            print("Book mark: \(businessToBeBookmarked.documentId)")
         } else {
             isBookmarked = false
             bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
