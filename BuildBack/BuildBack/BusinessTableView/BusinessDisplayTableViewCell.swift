@@ -49,7 +49,7 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         if !isBookmarked {
             isBookmarked = true
             bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
-            db.bookmarkBusinessForUser(id: user.uid, businessID: businessToBeBookmarked.documentId, businessName: businessToBeBookmarked.name) { () -> Void? in
+            db.bookmarkBusinessForUser(id: user.uid, business: businessToBeBookmarked) { () -> Void? in
                 return
             }
         } else {
