@@ -45,7 +45,18 @@ class BookmarkedBusinessesViewController: UIViewController {
 
 //MARK:- Extensions
 extension BookmarkedBusinessesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let maxHeight = tableView.frame.height
+        return CGFloat(maxHeight / 4.75)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let business =  bookmarkedBusinesses[indexPath.row]
+        let storyboard =  UIStoryboard(name: "DetailView", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") { (coder) in
+            return DetailViewController(coder: coder, business: business)
+        }
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
 extension BookmarkedBusinessesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
