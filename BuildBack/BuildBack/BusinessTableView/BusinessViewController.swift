@@ -27,9 +27,9 @@ class BusinessViewController: UIViewController {
     }
     private var businessManager = BusinessManager()
     
-    private var bookmarkedBusinesses: [BusinessModel]? {
+    private var bookmarkedBusinesses = [BusinessModel]() {
         didSet {
-            dump(bookmarkedBusinesses)
+            tableView.reloadData()
         }
     }
     
@@ -117,11 +117,14 @@ extension BusinessViewController: UITableViewDataSource {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as? BusinessDisplayTableViewCell else {
             fatalError("Error loading Cell")
         }
-        var business = businesses[indexPath.row]
+        var currentBusiness = businesses[indexPath.row]
         if currentlySearching {
-            business = filteredBusinesses[indexPath.row]
+            currentBusiness = filteredBusinesses[indexPath.row]
         }
-        cell.configureCell(business: business)
+        if bookmarkedBusinesses.contains(currentBusiness) {
+            cell.isBookmarked = true
+        }
+        cell.configureCell(business: currentBusiness)
 //        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
 //            switch result{
 //            case let .success(image):

@@ -22,9 +22,9 @@ class BusinessDisplayTableViewCell: UITableViewCell {
     @IBOutlet private weak var donateButton: UIButton!
     @IBOutlet private weak var bookmarkButton: UIButton!
     
-    var businessToSave: BusinessModel?
-    let db = DatabaseService()
-    var isBookmarked = false
+    private var businessToSave: BusinessModel?
+    private let db = DatabaseService()
+    public var isBookmarked = false
     
     func configureCell(business: BusinessModel) {
         businessToSave = business
@@ -36,6 +36,10 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.businessLogoImageView.kf.indicatorType = .activity
             self.businessLogoImageView.kf.setImage(with: URL(string: business.imageURL))
+        }
+        
+        if isBookmarked {
+            bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         }
     }
   

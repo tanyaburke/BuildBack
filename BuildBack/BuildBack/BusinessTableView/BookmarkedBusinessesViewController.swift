@@ -67,8 +67,11 @@ extension BookmarkedBusinessesViewController: UITableViewDataSource {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as? BusinessDisplayTableViewCell else {
             fatalError("Error loading Cell")
         }
-        let business = bookmarkedBusinesses[indexPath.row]
-        cell.configureCell(business: business)
+        let currentBusiness = bookmarkedBusinesses[indexPath.row]
+        if bookmarkedBusinesses.contains(currentBusiness) {
+            cell.isBookmarked = true
+        }
+        cell.configureCell(business: currentBusiness)
         return cell
     }
     
