@@ -52,19 +52,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGc-ZF-R50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028.985507246377" y="851.78571428571422"/>
+            <point key="canvasLocation" x="1029" y="852"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Bookmarked Businesses View Controller-->
         <scene sceneID="kaZ-nJ-YZw">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="IlH-67-r1n" customClass="ProfileViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="IlH-67-r1n" customClass="BookmarkedBusinessesViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fQ7-9C-Fm2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="An0-vF-GMT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3HL-jV-cQM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="An0-vF-GMT" firstAttribute="bottom" secondItem="3HL-jV-cQM" secondAttribute="bottom" id="JQc-G8-aoc"/>
+                            <constraint firstItem="An0-vF-GMT" firstAttribute="leading" secondItem="3HL-jV-cQM" secondAttribute="leading" id="fh9-Sc-0Ka"/>
+                            <constraint firstItem="An0-vF-GMT" firstAttribute="top" secondItem="3HL-jV-cQM" secondAttribute="top" id="gdJ-n0-aBI"/>
+                            <constraint firstItem="An0-vF-GMT" firstAttribute="trailing" secondItem="3HL-jV-cQM" secondAttribute="trailing" id="o7L-xZ-mMc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ube-Jj-nvx"/>
+                    <connections>
+                        <outlet property="tableView" destination="An0-vF-GMT" id="AAG-Ci-1HE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IcB-tb-Oh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

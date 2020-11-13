@@ -62,7 +62,6 @@ class StorageService {
                         completion(.failure(error))
                     } else if let url = url {
                         completion(.success(url))
-                        print(url)
                     }
                 }
             }

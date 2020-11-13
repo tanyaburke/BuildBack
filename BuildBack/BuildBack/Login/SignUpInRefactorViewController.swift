@@ -121,10 +121,8 @@ class SignUpInRefactorViewController: UIViewController {
     @IBAction func bottomButtonPressed(_ sender: RoundedCornerButton) {
         if accountState == .existingUser {
             accountState = .newUser
-            print("New user")
         } else {
             accountState = .existingUser
-            print("Existing User")
         }
         configureLoginButtons()
     }

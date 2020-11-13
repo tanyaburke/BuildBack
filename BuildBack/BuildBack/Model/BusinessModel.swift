@@ -9,8 +9,10 @@
 import Foundation
 
 
-struct BusinessModel {
-    
+struct BusinessModel: Equatable {
+    static func ==(lhs: BusinessModel, rhs: BusinessModel) -> Bool {
+        return lhs.documentId == rhs.documentId
+    }
     let documentId: String
     let name: String
     let type: String

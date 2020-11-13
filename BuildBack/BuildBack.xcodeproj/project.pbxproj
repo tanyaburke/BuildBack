@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -90,7 +90,7 @@
 		88810B1025425F4900496E4A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88810B0F25425F4900496E4A /* IntroViewController.swift */; };
 		88810B142544D47200496E4A /* LoginViewRefactor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88810B132544D47200496E4A /* LoginViewRefactor.storyboard */; };
 		88810B1825472E4F00496E4A /* SignUpInRefactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88810B1725472E4F00496E4A /* SignUpInRefactorViewController.swift */; };
-		88D4E54C25509691000C8400 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 88D4E54B25509691000C8400 /* Kingfisher */; };
+		889970B2255C5B0300DB25BB /* BookmarkedBusinessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889970B1255C5B0300DB25BB /* BookmarkedBusinessesViewController.swift */; };
 		CF3707A9E18C3A2816A9FBB3 /* Pods_BuildBackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +159,7 @@
 		88810B0F25425F4900496E4A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		88810B132544D47200496E4A /* LoginViewRefactor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewRefactor.storyboard; sourceTree = "<group>"; };
 		88810B1725472E4F00496E4A /* SignUpInRefactorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInRefactorViewController.swift; sourceTree = "<group>"; };
+		889970B1255C5B0300DB25BB /* BookmarkedBusinessesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedBusinessesViewController.swift; sourceTree = "<group>"; };
 		B27F97A3647102560CE86BBB /* Pods_BuildBackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C9B8F24ADB0B22E318815C /* Pods_BuildBack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildBack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD458A4E7D97376DC7499C36 /* Pods-BuildBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildBack.debug.xcconfig"; path = "Target Support Files/Pods-BuildBack/Pods-BuildBack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +173,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88D4E54C25509691000C8400 /* Kingfisher in Frameworks */,
 				1D82212881CAAD8980E5687B /* Pods_BuildBack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +275,7 @@
 				2E6F14EE248C56BD00198C71 /* BusinessDisplayTableViewCell.swift */,
 				2E6F14EF248C56BD00198C71 /* BusinessDisplayTableViewCell.xib */,
 				2ED7E9AE24B62FE80043AE79 /* DetailView */,
+				889970B1255C5B0300DB25BB /* BookmarkedBusinessesViewController.swift */,
 			);
 			path = BusinessTableView;
 			sourceTree = "<group>";
@@ -425,7 +426,6 @@
 			);
 			name = BuildBack;
 			packageProductDependencies = (
-				88D4E54B25509691000C8400 /* Kingfisher */,
 			);
 			productName = BuildBack;
 			productReference = 2EF9E8132476F49F00E122B8 /* BuildBack.app */;
@@ -479,7 +479,6 @@
 			);
 			mainGroup = 2EF9E80A2476F49F00E122B8;
 			packageReferences = (
-				88D4E54A25509691000C8400 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 2EF9E8142476F49F00E122B8 /* Products */;
 			projectDirPath = "";
@@ -607,6 +606,7 @@
 				2E9BF88A248845540032B61C /* UserProfileViewController.swift in Sources */,
 				2E6F14F0248C56BD00198C71 /* BusinessDisplayTableViewCell.swift in Sources */,
 				2ED12FBC2497F013005A8706 /* CircularImageView.swift in Sources */,
+				889970B2255C5B0300DB25BB /* BookmarkedBusinessesViewController.swift in Sources */,
 				2E6F14E5248961C700198C71 /* UserModel.swift in Sources */,
 				2E6444B3248309AD00663B77 /* CircularShadowedButton.swift in Sources */,
 				2E8B598D2480032600D916FF /* ProfileViewController.swift in Sources */,
@@ -920,25 +920,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		88D4E54A25509691000C8400 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.15.7;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		88D4E54B25509691000C8400 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88D4E54A25509691000C8400 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2EF9E81F2476F49F00E122B8 /* BuildBack.xcdatamodeld */ = {
