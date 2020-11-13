@@ -43,7 +43,6 @@ class DatabaseService {
                 print("error: \(error.localizedDescription)")
                 completion()
             } else {
-                print("bookmark removed successfully")
                 completion()
             }
         }

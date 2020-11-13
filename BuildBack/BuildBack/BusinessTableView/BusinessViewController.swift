@@ -36,7 +36,6 @@ class BusinessViewController: UIViewController {
     private var bookmarkIDs = [String]() {
         didSet {
             tableView.reloadData()
-            dump(bookmarkIDs)
         }
     }
     
