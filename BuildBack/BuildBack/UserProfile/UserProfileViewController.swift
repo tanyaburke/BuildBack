@@ -23,23 +23,23 @@ class UserProfileViewController: UIViewController {
 //
 //      }
 //
-//      override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .systemBackground
-//
-//  collectionView.dataSource = self
-//   collectionView.delegate = self
-//
-//
-//        // register collection view cell
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
-    //    podcastView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "podcastCell")
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
         
-        //or register collection view cell using xib/nib
         
+        // register collection view cell
+        
+//        podcastView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "podcastCell")
+//
+//        or register collection view cell using xib/nib
+//
 //        collectionView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellWithReuseIdentifier: "ProfileCell")
-//
-//      }
+        
+    }
 //
 //      private func fetchPodcasts(_ name: String = "swift") {
 //        PodcastAPIClient.fetchPodcast(with: name) { (result) in
