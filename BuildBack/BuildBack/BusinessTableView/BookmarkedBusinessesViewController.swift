@@ -19,7 +19,8 @@ class BookmarkedBusinessesViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
+    private let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -34,6 +35,14 @@ class BookmarkedBusinessesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshControlFunctions(_ :)), for: .valueChanged)
+
+    }
+    @objc private func refreshControlFunctions(_ sender: Any) {
+        fetchUserBookmarkedBusinesses()
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     private func fetchUserBookmarkedBusinesses() {
         bookmarkedBusinesses.removeAll()
