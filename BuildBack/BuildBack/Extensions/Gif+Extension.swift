@@ -12,6 +12,12 @@ import ImageIO
 extension UIImageView {
 
     public func loadGif(name: String) {
+        
+        // TODO: I believe the message in the debug console (nw_protocol_get_quic_image_block_invoke dlopen libquic failed) is related to the DispatchQueue.
+        // Solutions seem to suggest switching this out with a URLSession.shared.dataTask is the way to go
+        // Below is the stackoverflow article I found related to this message
+        // https://stackoverflow.com/questions/64029844/strange-error-nw-protocol-get-quic-image-block-invoke-dlopen-libquic-failed
+        
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
             DispatchQueue.main.async {

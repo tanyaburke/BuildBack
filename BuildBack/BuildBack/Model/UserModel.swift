@@ -17,7 +17,7 @@ struct UserModel {
     let email: String
     let description: String
     let donatedTo: [Business]
-    
+    let bookmarkedBusinesses: [String]
 }
 
 struct Business {

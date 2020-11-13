@@ -16,6 +16,7 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var listener: ListenerRegistration?
+    private var databaseService = DatabaseService()
     private var storageService = StorageService()
     private var businesses = [BusinessModel]() {
         didSet {
@@ -24,11 +25,32 @@ class BusinessViewController: UIViewController {
             }
         }
     }
-    private var buisnessManager = BusinessManager()
+    private var businessManager = BusinessManager()
+    
+    private var bookmarkedBusinesses = [BusinessModel]() {
+        didSet {
+            populateBookmarkIDs()
+            tableView.reloadData()
+        }
+    }
+    private var bookmarkIDs = [String]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     //This is set to true only using the bar
     private var currentlySearching = false
-    private var filteredBusinesses = [BusinessModel]()
+    
+    // filteredBusinesses is used to store businesses when searching. Only when currentlySearching is set to true, this becomes the datasource for the tableview
+    // By setting this array to hold the filtered (searched) businesses, it avoids having to make network calls on each search for quicker results
+    private var filteredBusinesses = [BusinessModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    private let refreshControl = UIRefreshControl()
     
     var resultSearchController = UISearchController()
     
@@ -36,13 +58,30 @@ class BusinessViewController: UIViewController {
         super.viewDidLoad()
         setupSearchController()
         configureTableView()
+        fetchUserBookmarkedBusinesses()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        retrieveAllBusinesses()
+        fetchUserBookmarkedBusinesses()
+        tableView.reloadData()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        listener?.remove()
     }
     
     private func configureTableView(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
-        retrieveBuisness()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshControlFunctions(_ :)), for: .valueChanged)
+        retrieveAllBusinesses()
+    }
+    @objc private func refreshControlFunctions(_ sender: Any) {
+        retrieveAllBusinesses()
+        fetchUserBookmarkedBusinesses()
+        self.refreshControl.endRefreshing()
     }
     private func setupSearchController() {
         resultSearchController = ({
@@ -56,8 +95,8 @@ class BusinessViewController: UIViewController {
             return controller
         })()
     }
-    private func retrieveBuisness(){
-        buisnessManager.retriveBusinesses { (result) in
+    private func retrieveAllBusinesses() {
+        businessManager.retriveBusinesses { (result) in
             switch result{
             case let .success(businesses):
                 self.businesses = businesses
@@ -66,13 +105,23 @@ class BusinessViewController: UIViewController {
             }
         }
     }
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
-    //    }
-    //
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        listener?.remove()
+    private func fetchUserBookmarkedBusinesses() {
+        bookmarkedBusinesses.removeAll()
+        databaseService.fetchUserBusinessBookmarks { (results) in
+            switch results {
+            case .failure(let appError):
+                print("error: \(appError.localizedDescription)")
+            case .success(let businesses):
+                self.bookmarkedBusinesses = businesses
+            }
+        }
+    }
+    private func populateBookmarkIDs() {
+        bookmarkIDs.removeAll()
+        for business in bookmarkedBusinesses {
+            print(business.documentId)
+            bookmarkIDs.append(business.documentId)
+        }
     }
     private func searchForBusiness(query: String) {
         currentlySearching = true
@@ -95,19 +144,15 @@ extension BusinessViewController: UITableViewDataSource {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "businessCell", for: indexPath) as? BusinessDisplayTableViewCell else {
             fatalError("Error loading Cell")
         }
-        var business = businesses[indexPath.row]
+        var currentBusiness = businesses[indexPath.row]
         if currentlySearching {
-            business = filteredBusinesses[indexPath.row]
+            currentBusiness = filteredBusinesses[indexPath.row]
         }
-        cell.configureCell(business: business)
-//        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
-//            switch result{
-//            case let .success(image):
-//                cell.configureCell(buisnessName: business.name, buisnessType: business.type, buisnessImage: image)
-//            case let .failure(error):
-//                print(error)
-//            }
-//        }
+        cell.isBookmarked = false
+        if bookmarkedBusinesses.contains(currentBusiness) {
+            cell.isBookmarked = true
+        }
+        cell.configureCell(business: currentBusiness)
         return cell
     }
     
@@ -117,19 +162,18 @@ extension BusinessViewController: UITableViewDataSource {
 extension BusinessViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        //        return 120
+        let maxHeight = tableView.frame.height
+        return CGFloat(maxHeight / 4.75)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let business =  businesses[indexPath.row]
-        print (business.name)
-        
         let storyboard =  UIStoryboard(name: "DetailView", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController") { (coder) in
             return DetailViewController(coder: coder, business: business)
         }
         navigationController?.pushViewController(detailViewController, animated: true)
-        //        present(detailViewController, animated: true)
     }
     
     
