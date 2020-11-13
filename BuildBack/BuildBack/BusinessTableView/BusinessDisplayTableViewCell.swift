@@ -37,7 +37,6 @@ class BusinessDisplayTableViewCell: UITableViewCell {
             self.businessLogoImageView.kf.indicatorType = .activity
             self.businessLogoImageView.kf.setImage(with: URL(string: business.imageURL))
         }
-        
         if isBookmarked {
             bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         } else {

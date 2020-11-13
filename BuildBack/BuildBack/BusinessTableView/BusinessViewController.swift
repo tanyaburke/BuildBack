@@ -62,6 +62,8 @@ class BusinessViewController: UIViewController {
         fetchUserBookmarkedBusinesses()
     }
     override func viewWillAppear(_ animated: Bool) {
+        retrieveAllBusinesses()
+        fetchUserBookmarkedBusinesses()
         tableView.reloadData()
     }
     override func viewWillDisappear(_ animated: Bool) {

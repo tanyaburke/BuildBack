@@ -25,15 +25,18 @@ class BookmarkedBusinessesViewController: UIViewController {
         configureTableView()
         fetchUserBookmarkedBusinesses()
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        fetchUserBookmarkedBusinesses()
         tableView.reloadData()
     }
+    
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
     }
     private func fetchUserBookmarkedBusinesses() {
+        bookmarkedBusinesses.removeAll()
         databaseService.fetchUserBusinessBookmarks { (results) in
             switch results {
             case .failure(let appError):
