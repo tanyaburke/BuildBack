@@ -29,7 +29,14 @@ class BusinessViewController: UIViewController {
     
     private var bookmarkedBusinesses = [BusinessModel]() {
         didSet {
+            populateBookmarkIDs()
             tableView.reloadData()
+        }
+    }
+    private var bookmarkIDs = [String]() {
+        didSet {
+            tableView.reloadData()
+            dump(bookmarkIDs)
         }
     }
     
@@ -38,7 +45,13 @@ class BusinessViewController: UIViewController {
     
     // filteredBusinesses is used to store businesses when searching. Only when currentlySearching is set to true, this becomes the datasource for the tableview
     // By setting this array to hold the filtered (searched) businesses, it avoids having to make network calls on each search for quicker results
-    private var filteredBusinesses = [BusinessModel]()
+    private var filteredBusinesses = [BusinessModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    private let refreshControl = UIRefreshControl()
     
     var resultSearchController = UISearchController()
     
@@ -48,20 +61,26 @@ class BusinessViewController: UIViewController {
         configureTableView()
         fetchUserBookmarkedBusinesses()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         listener?.remove()
     }
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        listener = Firestore.firestore().collection(<#T##collectionPath: String##String#>)
-    //    }
-    //
     
     private func configureTableView(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "BusinessDisplayTableViewCell", bundle: .main), forCellReuseIdentifier: "businessCell")
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshControlFunctions(_ :)), for: .valueChanged)
         retrieveAllBusinesses()
+    }
+    @objc private func refreshControlFunctions(_ sender: Any) {
+        retrieveAllBusinesses()
+        fetchUserBookmarkedBusinesses()
+        self.refreshControl.endRefreshing()
     }
     private func setupSearchController() {
         resultSearchController = ({
@@ -86,6 +105,7 @@ class BusinessViewController: UIViewController {
         }
     }
     private func fetchUserBookmarkedBusinesses() {
+        bookmarkedBusinesses.removeAll()
         databaseService.fetchUserBusinessBookmarks { (results) in
             switch results {
             case .failure(let appError):
@@ -95,7 +115,13 @@ class BusinessViewController: UIViewController {
             }
         }
     }
-
+    private func populateBookmarkIDs() {
+        bookmarkIDs.removeAll()
+        for business in bookmarkedBusinesses {
+            print(business.documentId)
+            bookmarkIDs.append(business.documentId)
+        }
+    }
     private func searchForBusiness(query: String) {
         currentlySearching = true
         filteredBusinesses = businesses.filter { $0.name.lowercased().contains(query.lowercased()) }
@@ -121,18 +147,11 @@ extension BusinessViewController: UITableViewDataSource {
         if currentlySearching {
             currentBusiness = filteredBusinesses[indexPath.row]
         }
+        cell.isBookmarked = false
         if bookmarkedBusinesses.contains(currentBusiness) {
             cell.isBookmarked = true
         }
         cell.configureCell(business: currentBusiness)
-//        storageService.retrieveItemImages(imageURL: business.imageURL) { (result) in
-//            switch result{
-//            case let .success(image):
-//                cell.configureCell(buisnessName: business.name, buisnessType: business.type, buisnessImage: image)
-//            case let .failure(error):
-//                print(error)
-//            }
-//        }
         return cell
     }
     

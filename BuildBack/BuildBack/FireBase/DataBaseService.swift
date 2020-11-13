@@ -29,7 +29,7 @@ class DatabaseService {
         }
     }
     func bookmarkBusinessForUser(id: String, business: BusinessModel, completion: @escaping ()-> Void? ) {
-        db.collection(DatabaseService.userCollection).document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(business.documentId).setData(["businessID": business.documentId, "name": business.name, "type": business.type, "isMember": business.isMember, "email": business.email, "address": business.address, "description": business.description, "paymentType": business.paymentType, "imageURL": business.imageURL]) { (error) in
+        db.collection(DatabaseService.userCollection).document(id).collection(DatabaseService.bookmarkedBusinessesCollection).document(business.documentId).setData(["documentId": business.documentId, "name": business.name, "type": business.type, "isMember": business.isMember, "email": business.email, "address": business.address, "description": business.description, "paymentType": business.paymentType, "imageURL": business.imageURL]) { (error) in
             if let error = error {
                 print(error)
             } else {

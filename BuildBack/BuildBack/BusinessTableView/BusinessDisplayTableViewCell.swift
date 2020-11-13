@@ -40,6 +40,8 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         
         if isBookmarked {
             bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        } else {
+            bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         }
     }
   

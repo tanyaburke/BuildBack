@@ -25,6 +25,9 @@ class BookmarkedBusinessesViewController: UIViewController {
         configureTableView()
         fetchUserBookmarkedBusinesses()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
