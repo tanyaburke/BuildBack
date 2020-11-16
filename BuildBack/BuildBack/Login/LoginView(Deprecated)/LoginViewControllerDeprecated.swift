@@ -15,7 +15,7 @@ import FirebaseAuth
 //    case newUser
 //}
 
-class LoginViewController: UIViewController {
+class LoginViewControllerDeprecated: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var signInOrUpLabel: UILabel!
@@ -109,7 +109,7 @@ class LoginViewController: UIViewController {
 
 
 //MARK:- Extensions
-extension LoginViewController: UITextFieldDelegate {
+extension LoginViewControllerDeprecated: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }

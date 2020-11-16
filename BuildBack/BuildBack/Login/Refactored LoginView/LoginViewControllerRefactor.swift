@@ -9,12 +9,13 @@
 import UIKit
 import FirebaseAuth
 
+// This enum determines the status of a user when using the app
 enum AccountState {
     case existingUser
     case newUser
 }
 
-class SignUpInRefactorViewController: UIViewController {
+class LoginViewControllerRefactor: UIViewController {
     
     //MARK:- IBOutlets
     @IBOutlet weak var nameTextField: UnderlinedTextfield!
@@ -26,6 +27,7 @@ class SignUpInRefactorViewController: UIViewController {
     @IBOutlet weak var accountInfoLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
+    
     //MARK:- Variables/Constants
     let databaseService = DatabaseService()
     
@@ -48,6 +50,8 @@ class SignUpInRefactorViewController: UIViewController {
         topButton.titleLabel?.adjustsFontSizeToFitWidth = true
         bottomButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
+    
+    // Determines whether or not a user is creating a new account, or signing into an existing one
     private func configureLoginInfoStack() {
         if accountState == .existingUser {
             nameTextField.isHidden = true
@@ -57,6 +61,8 @@ class SignUpInRefactorViewController: UIViewController {
             nameLabel.isHidden = false
         }
     }
+    
+    // Used sign-in (if existing user), or create an account
     private func continueLoginFlow(email: String, password: String) {
         if accountState == .existingUser {
             authSession.signExistingUser(email: email, password: password) { [weak self] (result) in
@@ -91,9 +97,13 @@ class SignUpInRefactorViewController: UIViewController {
             }
         }
     }
+    
+    // Used to navigate to the main view of the app
     func navigateToMainView(){
         UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
     }
+    
+    // Determines the signin/create account button stack depending on the user status (newUser or existingUser)
     private func configureLoginButtons() {
         if accountState == .existingUser {
             topButton.setTitle("Sign In", for: .normal)
@@ -107,8 +117,9 @@ class SignUpInRefactorViewController: UIViewController {
             bottomButton.setTitle("Sign In", for: .normal)
             configureLoginInfoStack()
         }
-
+        
     }
+    
     //MARK:- IBActions
     @IBAction func topButtonPressed(_ sender: RoundedCornerButton) {
         // Sign in or create account functions go here
@@ -129,9 +140,8 @@ class SignUpInRefactorViewController: UIViewController {
     
 }
 
-
 //MARK:- Extensions
-extension SignUpInRefactorViewController: UITextFieldDelegate {
+extension LoginViewControllerRefactor: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
