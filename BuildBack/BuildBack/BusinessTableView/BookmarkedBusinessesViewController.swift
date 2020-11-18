@@ -10,7 +10,7 @@ import UIKit
 
 class BookmarkedBusinessesViewController: UIViewController {
     
-    
+     //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     var databaseService = DatabaseService()
@@ -21,6 +21,7 @@ class BookmarkedBusinessesViewController: UIViewController {
     }
     private let refreshControl = UIRefreshControl()
     
+     //MARK:- View lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -31,6 +32,7 @@ class BookmarkedBusinessesViewController: UIViewController {
         tableView.reloadData()
     }
     
+     //MARK:- Functions
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self

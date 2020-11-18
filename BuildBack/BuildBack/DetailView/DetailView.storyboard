@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-da-bWH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-da-bWH">
                                 <rect key="frame" x="0.0" y="44" width="414" height="318"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-FD-wpe" customClass="DesignableView" customModule="BuildBack" customModuleProvider="target">
@@ -31,9 +31,9 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kne-RU-uGP">
                                 <rect key="frame" x="0.0" y="331" width="414" height="565"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csi-cv-M2j" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csi-cv-M2j" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="398" height="57"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="330-7N-0e6" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="125" width="414" height="88"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-oU-F5e" customClass="DesignableLabel" customModule="BuildBack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="226" width="414" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -102,8 +102,8 @@
                                     <constraint firstAttribute="trailing" secondItem="csi-cv-M2j" secondAttribute="trailing" constant="8" id="3Pv-qW-dDL"/>
                                     <constraint firstItem="330-7N-0e6" firstAttribute="top" secondItem="kne-RU-uGP" secondAttribute="top" constant="125" id="43i-sw-TXR"/>
                                     <constraint firstItem="ggc-xR-jx6" firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="361" id="7wM-xf-f2Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="552" id="922-Zb-39f"/>
-                                    <constraint firstItem="csi-cv-M2j" firstAttribute="top" secondItem="ggc-xR-jx6" secondAttribute="top" id="CSw-8Z-fgu"/>
+                                    <constraint firstAttribute="bottom" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="500" id="922-Zb-39f"/>
+                                    <constraint firstItem="csi-cv-M2j" firstAttribute="top" secondItem="ggc-xR-jx6" secondAttribute="top" constant="8" id="CSw-8Z-fgu"/>
                                     <constraint firstItem="330-7N-0e6" firstAttribute="top" secondItem="VPN-5i-QMr" secondAttribute="bottom" constant="20" id="W5x-7A-N40"/>
                                     <constraint firstItem="VPN-5i-QMr" firstAttribute="top" secondItem="csi-cv-M2j" secondAttribute="bottom" constant="10" id="ezU-Fj-GZi"/>
                                     <constraint firstItem="330-7N-0e6" firstAttribute="centerX" secondItem="kne-RU-uGP" secondAttribute="centerX" id="lxf-as-7PC"/>
@@ -168,6 +168,15 @@
     </scenes>
     <resources>
         <image name="randy-fath-ymf4_9Y9S_A-unsplash" width="2500" height="1667"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

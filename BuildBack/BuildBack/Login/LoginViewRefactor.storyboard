@@ -1,90 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SrS-en-f4n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Intro View Controller-->
-        <scene sceneID="0YL-UZ-p36">
-            <objects>
-                <viewController id="SrS-en-f4n" customClass="IntroViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nxr-Pt-eCk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="randy-fath-ymf4_9Y9S_A-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-ck-YeF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building back our community through one donation at a time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl1-Pw-2Ao" userLabel="Description label">
-                                <rect key="frame" x="20" y="582" width="374" height="66"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="23"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="0.0" height="3"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BuildBack" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-51-ZQF" userLabel="BuildBack label">
-                                <rect key="frame" x="20" y="481.5" width="374" height="92.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="66"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="3" height="2"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDR-bo-bsa" customClass="CircularShadowedButton" customModule="BuildBack" customModuleProvider="target">
-                                <rect key="frame" x="320" y="768" width="54" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="yDR-bo-bsa" secondAttribute="height" multiplier="1:1" id="bMK-tj-0me"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.right" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="semibold"/>
-                                </state>
-                                <connections>
-                                    <action selector="proceedButtonPressed:" destination="SrS-en-f4n" eventType="touchUpInside" id="G1A-Rj-CSj"/>
-                                    <segue destination="PKR-Uu-YnZ" kind="show" id="Wcz-86-mJ1"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fG9-Gr-NQv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="fG9-Gr-NQv" firstAttribute="trailing" secondItem="yDR-bo-bsa" secondAttribute="trailing" constant="40" id="3gg-9M-iYa"/>
-                            <constraint firstItem="yDR-bo-bsa" firstAttribute="top" secondItem="nl1-Pw-2Ao" secondAttribute="bottom" constant="120" id="8Bt-6N-vQB"/>
-                            <constraint firstItem="yDR-bo-bsa" firstAttribute="bottom" secondItem="fG9-Gr-NQv" secondAttribute="bottom" constant="-40" id="DXd-Zm-8kN"/>
-                            <constraint firstItem="yDR-bo-bsa" firstAttribute="height" secondItem="Nxr-Pt-eCk" secondAttribute="height" multiplier="0.06" id="EuI-ao-s7P"/>
-                            <constraint firstItem="nl1-Pw-2Ao" firstAttribute="top" secondItem="hE1-51-ZQF" secondAttribute="bottom" constant="8" symbolic="YES" id="KoX-0N-0Ok"/>
-                            <constraint firstAttribute="trailing" secondItem="IF0-ck-YeF" secondAttribute="trailing" id="ZxK-0M-6bW"/>
-                            <constraint firstItem="fG9-Gr-NQv" firstAttribute="trailing" secondItem="hE1-51-ZQF" secondAttribute="trailing" constant="20" id="b5a-bD-QjM"/>
-                            <constraint firstItem="nl1-Pw-2Ao" firstAttribute="leading" secondItem="fG9-Gr-NQv" secondAttribute="leading" constant="20" id="c5I-69-rX6"/>
-                            <constraint firstItem="hE1-51-ZQF" firstAttribute="leading" secondItem="fG9-Gr-NQv" secondAttribute="leading" constant="20" id="efC-Ma-LF4"/>
-                            <constraint firstItem="fG9-Gr-NQv" firstAttribute="trailing" secondItem="nl1-Pw-2Ao" secondAttribute="trailing" constant="20" id="fKu-nC-dh9"/>
-                            <constraint firstItem="IF0-ck-YeF" firstAttribute="centerX" secondItem="Nxr-Pt-eCk" secondAttribute="centerX" id="ju9-yr-gf0"/>
-                            <constraint firstItem="IF0-ck-YeF" firstAttribute="centerY" secondItem="Nxr-Pt-eCk" secondAttribute="centerY" id="n1c-0p-lUf"/>
-                            <constraint firstItem="IF0-ck-YeF" firstAttribute="top" secondItem="Nxr-Pt-eCk" secondAttribute="top" id="pEP-wy-icW"/>
-                            <constraint firstItem="IF0-ck-YeF" firstAttribute="leading" secondItem="Nxr-Pt-eCk" secondAttribute="leading" id="ylt-mE-gJD"/>
-                            <constraint firstAttribute="bottom" secondItem="IF0-ck-YeF" secondAttribute="bottom" id="yzi-lw-sq6"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="proceedButton" destination="yDR-bo-bsa" id="Lob-Qz-Vlc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rTT-Ac-b6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="311.59420289855075" y="109.82142857142857"/>
-        </scene>
-        <!--Sign Up In Refactor View Controller-->
+        <!--Login View Controller Refactor-->
         <scene sceneID="Pee-cK-Th9">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="SignUpInRefactorViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="LoginViewControllerRefactor" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wiw-3T-A69">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="buildback" translatesAutoresizingMaskIntoConstraints="NO" id="I28-GT-juF">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view alpha="0.25" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cF9-sc-D7H">
                                 <rect key="frame" x="0.0" y="243" width="414" height="269"/>
@@ -239,8 +168,6 @@
     </scenes>
     <resources>
         <image name="buildback" width="225" height="225"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="randy-fath-ymf4_9Y9S_A-unsplash" width="2500" height="1667"/>
         <namedColor name="appGray">
             <color red="0.51372549019607838" green="0.51764705882352946" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

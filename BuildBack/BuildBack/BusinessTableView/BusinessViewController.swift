@@ -119,7 +119,6 @@ class BusinessViewController: UIViewController {
     private func populateBookmarkIDs() {
         bookmarkIDs.removeAll()
         for business in bookmarkedBusinesses {
-            print(business.documentId)
             bookmarkIDs.append(business.documentId)
         }
     }
