@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="311.59420289855075" y="109.82142857142857"/>
         </scene>
-        <!--Sign Up In Refactor View Controller-->
+        <!--Login View Controller Refactor-->
         <scene sceneID="Pee-cK-Th9">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="SignUpInRefactorViewController" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="PKR-Uu-YnZ" customClass="LoginViewControllerRefactor" customModule="BuildBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wiw-3T-A69">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
