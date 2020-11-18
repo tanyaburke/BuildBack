@@ -32,7 +32,7 @@ class LaunchScreenView: UIView {
     private func commonInit(){
         loadingGif()
     }
-    
+
     //MARK:- Element Constraint functions
     private func loadingGif() {
         addSubview(logoGifImageView)

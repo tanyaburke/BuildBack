@@ -9,6 +9,7 @@
 import UIKit
 
 class LaunchScreenViewController: UIViewController {
+    
      //MARK:- Variables/Constants
     let logoAnimationView = LaunchScreenView()
     

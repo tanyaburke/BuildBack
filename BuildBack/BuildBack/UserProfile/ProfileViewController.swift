@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
             try? Auth.auth().signOut()
         }
         guard let loginController = UIStoryboard(name: "LoginViewRefactor", bundle: .main).instantiateInitialViewController(creator: { coder in
-                return LaunchScreenViewController(coder: coder)
+                return IntroViewController(coder: coder)
         }) else {
             return
         }
