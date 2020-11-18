@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    func afterSplashScreenAnimation(){
+    func afterSplashScreenAnimation() {
         if let _ = Auth.auth().currentUser { // a user is currently logged in
             UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "TabBarViewController")
         } else { // no logged in user
@@ -42,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         
-        window?.rootViewController = InitialViewController()
+        window?.rootViewController = LaunchScreenViewController()
         
         window?.makeKeyAndVisible()
     }
