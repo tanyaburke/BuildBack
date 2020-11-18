@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-
+/*
 //enum AccountState {
 //    case existingUser
 //    case newUser
@@ -114,3 +114,4 @@ extension LoginViewControllerDeprecated: UITextFieldDelegate {
         textField.resignFirstResponder()
     }
 }
+*/
