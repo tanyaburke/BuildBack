@@ -18,7 +18,7 @@ import UIKit
         }
         
         enum Images {
-            static let box = UIImage(named: "Box")!
+            static let box = UIImage(named: "bßox")!
             static let triangle = UIImage(named: "Triangle")!
             static let circle = UIImage(named: "Circle")!
             static let swirl = UIImage(named: "Spiral")!
