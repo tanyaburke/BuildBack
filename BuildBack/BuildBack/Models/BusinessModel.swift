@@ -22,8 +22,6 @@ struct BusinessModel: Equatable {
     let description: String
     let paymentType: String
     let imageURL: String
-
-    
 }
 
 extension BusinessModel {

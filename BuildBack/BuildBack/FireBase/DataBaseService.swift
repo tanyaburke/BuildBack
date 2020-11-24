@@ -19,7 +19,6 @@ class DatabaseService {
     
     lazy var db = Firestore.firestore()
     
-    
     func createDatabaseUser(id: String, email: String, name: String, completion: @escaping ()-> Void? ) {
         db.collection(DatabaseService.userCollection).document(id).setData(["email": email, "name": name]) { (error) in
             if let error = error {

@@ -9,14 +9,12 @@
 import UIKit
 
 class CircularImageView: UIImageView {
-   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addCornerRadius()
         configureShadow()
     }
-    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -37,5 +35,5 @@ class CircularImageView: UIImageView {
         layer.shadowOpacity = 1.0
         layer.shadowRadius = 0.5
     }
-
+    
 }
