@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LaunchScreenViewController: UIViewController {
+class GifIntroViewController: UIViewController {
     
-     //MARK:- Variables/Constants
-    let logoAnimationView = LaunchScreenView()
+    //MARK:- Variables/Constants
+    let logoAnimationView = GifIntroView()
     
-     //MARK:- View Life Cycles
+    //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -26,7 +26,7 @@ class LaunchScreenViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-     //MARK:- Functions
+    //MARK:- Functions
     private func loadGifAnimation() {
         let animationTime = 4.2
         DispatchQueue.main.asyncAfter(deadline: .now() + animationTime) {

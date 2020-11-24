@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LaunchScreenView: UIView {
+class GifIntroView: UIView {
     
     //MARK:- UI Elements
     public lazy var logoGifImageView: UIImageView = {

@@ -9,24 +9,23 @@
 import UIKit
 
 class RoundedCornerButton: UIButton {
-
-   override init(frame: CGRect) {
-       super.init(frame: frame)
-       addCornerRadius()
-     
-   }
-   
-   
-   required init?(coder: NSCoder) {
-       super.init(coder: coder)
-       
-       addCornerRadius()
-       
-   }
-   
-   private func addCornerRadius(){
-       layer.cornerRadius = 8
     
-   }
-
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addCornerRadius()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        addCornerRadius()
+        
+    }
+    
+    private func addCornerRadius(){
+        layer.cornerRadius = 8
+        
+    }
+    
 }

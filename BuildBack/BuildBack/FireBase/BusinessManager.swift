@@ -17,7 +17,6 @@ class BusinessManager {
     
     func retriveBusinesses(completion: @escaping (Result<[BusinessModel], Error>) -> Void) {
         databaseService.db.collection("business").getDocuments { (snapshot, error) in
-            
             if let snapshot = snapshot{
                 var businessArray = [BusinessModel]()
                 snapshot.documents.forEach({
@@ -31,8 +30,7 @@ class BusinessManager {
             }
         }
     }
-    
-  func sendBusinessData(business: BusinessModel) {
+    func sendBusinessData(business: BusinessModel) {
         databaseService.db.collection("business").document(business.documentId).setData(["name": business.name,
                                                                                          "documentId": business.documentId, "type": business.type,
                                                                                          "isMember": business.isMember,
@@ -41,14 +39,11 @@ class BusinessManager {
                                                                                          "description":business.description,
                                                                                          "paymentType": business.paymentType,
                                                                                          "imageURL": business.imageURL
-                                                                                         
         ]) { (error) in
             if let error = error{
                 print(error)
             }
         }
-        
-        
     }
     
 }
