@@ -14,8 +14,8 @@ class GifIntroView: UIView {
     public lazy var logoGifImageView: UIImageView = {
         let gifImage =  UIImageView()
         gifImage.loadGif(name: "buildBack")
-        gifImage.backgroundColor = .systemBackground
-        gifImage.contentMode = .scaleAspectFill
+        gifImage.backgroundColor = .black
+        gifImage.contentMode = .scaleAspectFit
         gifImage.animationDuration = 0.5
         return gifImage
     }()
@@ -37,10 +37,10 @@ class GifIntroView: UIView {
     private func loadingGif() {
         addSubview(logoGifImageView)
         logoGifImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoGifImageView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-        logoGifImageView.bottomAnchor.constraint(equalTo:bottomAnchor, constant: 0).isActive = true
-        logoGifImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -100).isActive = true
-        logoGifImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 100).isActive = true
+        logoGifImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        logoGifImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        logoGifImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
+        logoGifImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
     }
 
 }

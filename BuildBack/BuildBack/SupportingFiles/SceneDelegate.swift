@@ -23,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }) else {
                 return
             }
-            UIViewController.showviewController(viewController: loginController)
             
+            UIViewController.showviewController(viewController: loginController)
         }
         
         UIView.transition(with: window!,
@@ -39,10 +39,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let rootVC = GifIntroViewController()
+        rootVC.view.backgroundColor = .black
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         
-        window?.rootViewController = GifIntroViewController()
+        window?.rootViewController = rootVC
         
         window?.makeKeyAndVisible()
     }
