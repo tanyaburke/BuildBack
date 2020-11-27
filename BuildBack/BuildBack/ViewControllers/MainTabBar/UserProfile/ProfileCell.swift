@@ -9,7 +9,7 @@
 import UIKit
 
 
-
+///Can be removed. We are reformating the profile/ or can be used in list of donated to businesses
 class ProfileCell: UICollectionViewCell {
 
     @IBOutlet weak var companyImage: UIImageView!
@@ -18,22 +18,6 @@ class ProfileCell: UICollectionViewCell {
     @IBOutlet weak var companyType: UILabel!
     
     @IBOutlet weak var donateButton: UIButton!
-    
-//    func configureCell(podcast: Podcast) {
-//        podcastCollectionNameLabel.text = podcast.collectionName
-//        podcastImageView.getImage(with: podcast.artworkUrl600) { [weak self] (result) in
-//            switch result {
-//            case .failure:
-//                
-//                DispatchQueue.main.async {
-//                    self?.podcastImageView.image = UIImage(named: "circle")
-//                }
-//                
-//            case .success(let image):
-//                DispatchQueue.main.async {
-//                    self?.podcastImageView.image = image
-//                }
-//            }
-//        }
-//    }
+
+    ///Code to implement to set the Profile cell
 }

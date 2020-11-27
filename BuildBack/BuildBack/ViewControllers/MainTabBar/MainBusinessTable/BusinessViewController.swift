@@ -12,9 +12,11 @@ import FirebaseAuth
 
 class BusinessViewController: UIViewController {
     
+    //MARK:- IBOutlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK:- Variables/Constants
     private var listener: ListenerRegistration?
     private var databaseService = DatabaseService()
     private var storageService = StorageService()
@@ -49,11 +51,10 @@ class BusinessViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
     private let refreshControl = UIRefreshControl()
-    
     var resultSearchController = UISearchController()
     
+    //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
@@ -70,6 +71,7 @@ class BusinessViewController: UIViewController {
         listener?.remove()
     }
     
+    //MARK:- Functions
     private func configureTableView(){
         tableView.dataSource = self
         tableView.delegate = self
@@ -128,8 +130,7 @@ class BusinessViewController: UIViewController {
     }
 }
 
-
-
+//MARK:- Extensions
 extension BusinessViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if currentlySearching {
@@ -204,6 +205,7 @@ extension BusinessViewController: UISearchResultsUpdating {
     }
 }
 //Use something similar to segue to donate page
+///Would allow user to navigate to detai view
 //extension BusinessViewController: BusinessCellDelegate {
 //
 ////    func didSelectBusiness( business: Business, businessCell: BusinessDisplayTableViewCell) {

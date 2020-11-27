@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///Plays a Giff that matches the initial imamge on the LaunchScreen
 class GifIntroViewController: UIViewController {
     
     //MARK:- Variables/Constants

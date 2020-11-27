@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+///Eventually looking to implement this ennum to set the exact colors used with in the app
 //enum AppColors{
 //    
 //    case purple

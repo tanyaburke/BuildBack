@@ -15,17 +15,19 @@ protocol BusinessCellDelegate: AnyObject {
 }
 
 class BusinessDisplayTableViewCell: UITableViewCell {
-
+    //MARK:- IBOutlets
     @IBOutlet private weak var businessLogoImageView: UIImageView!
     @IBOutlet private weak var businessNameLabel: UILabel!
     @IBOutlet private weak var businessTypeLabel: UILabel!
     @IBOutlet private weak var donateButton: UIButton!
     @IBOutlet private weak var bookmarkButton: UIButton!
-    
+ 
+    //MARK:- Variables/Constants
     private var businessToSave: BusinessModel?
     private let db = DatabaseService()
     public var isBookmarked = false
     
+    //MARK:- Functions
     func configureCell(business: BusinessModel) {
         businessToSave = business
         businessNameLabel.adjustsFontSizeToFitWidth = true
@@ -44,6 +46,7 @@ class BusinessDisplayTableViewCell: UITableViewCell {
         }
     }
   
+    //MARK:- IBActions
     @IBAction func donateButton(_ sender: UIButton) {
         UIViewController.showViewController(storyBoardName: "Donate", viewControllerId: "DonateViewController")
     }

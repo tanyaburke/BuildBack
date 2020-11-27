@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///Allows for rounded views, borders and border color
 @IBDesignable
 
 class DesignableView: UIView {

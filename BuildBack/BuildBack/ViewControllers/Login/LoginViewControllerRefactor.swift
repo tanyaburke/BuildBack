@@ -69,10 +69,6 @@ class LoginViewControllerRefactor: UIViewController {
                 switch result {
                 case .failure(let error):
                     self?.showAlert(title: "Something went wrong", message: "\(error.localizedDescription)")
-                //                 DispatchQueue.main.async {
-                //                   self?.errorLabel.text = "\(error.localizedDescription)"
-                //                   self?.errorLabel.textColor = .systemRed
-                //                 }
                 case .success:
                     DispatchQueue.main.async {
                         self?.navigateToMainView()

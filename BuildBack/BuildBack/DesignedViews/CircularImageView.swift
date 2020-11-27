@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///To be implemented in the profile, for the profile image view
 class CircularImageView: UIImageView {
     
     override init(frame: CGRect) {

@@ -58,7 +58,8 @@ class DatabaseService {
             }
         }
     }
-    //    func createItem(companyName: String, completion @escaping (Result<String, Error>) -> ()) {
+    ///Function to add business
+    //    func createBusiness(companyName: String, completion @escaping (Result<String, Error>) -> ()) {
     //
     //        guard let user = Auth.auth().currentUser else {return}
     //    }
