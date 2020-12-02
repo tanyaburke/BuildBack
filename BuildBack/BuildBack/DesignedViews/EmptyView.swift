@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+///Can be used for saved buissness view
 class EmptyView: UIView {
     
     public lazy var titleLabel: UILabel = {

@@ -11,17 +11,17 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
-     //MARK:- IBOutlets
+    //MARK:- IBOutlets
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var updateLabel: UILabel!
     
-     //MARK:- Variables and Constants
+    //MARK:- Variables and Constants
     private var storageService = StorageService()
     private var business: BusinessModel
     
-     //MARK:- Initializers
+    //MARK:- Initializers
     init?(coder: NSCoder, business:BusinessModel){
         self.business = business
         super.init(coder: coder)
@@ -30,13 +30,13 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-     //MARK:- View Lifecycles
+    //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDetailPage()
     }
     
-     //MARK:- Functions
+    //MARK:- Functions
     private func setupDetailPage(){
         companyName.text = business.name
         detailLabel.text = business.description
@@ -50,9 +50,10 @@ class DetailViewController: UIViewController {
         }
     }
     
-     //MARK:- @IBActions
+    //MARK:- @IBActions
     @IBAction func donateButton(_ sender: RoundedCornerButton) {
         UIViewController.showViewController(storyBoardName: "Donate", viewControllerId: "DonateViewController")
+        ///Code to segue to the Donate View Controller
         //       let storyboard =  UIStoryboard(name: "Donate", bundle: nil)
         //        let donateViewController = storyboard.instantiateViewController(identifier: "DonateViewController") { (coder) in
         //            return DonateViewController(coder:coder) navigationController?.pushViewController(donateViewController, animated: true)

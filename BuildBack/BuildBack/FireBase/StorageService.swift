@@ -16,7 +16,7 @@ class StorageService {
     private lazy var storage: Storage = {
         return Storage.storage()
     }()
-    
+
     func retrieveItemImages(imageURL: String, completion: @escaping (Result<UIImage,Error>) -> Void) {
         guard !imageURL.isEmpty else{
             return
@@ -35,7 +35,6 @@ class StorageService {
             }
         }
     }
-    
     public func uploadPhoto(userId: String? = nil, itemID: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()){
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             return
