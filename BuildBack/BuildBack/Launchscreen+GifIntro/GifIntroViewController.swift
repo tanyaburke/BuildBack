@@ -24,11 +24,12 @@ class GifIntroViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        view.backgroundColor = .black
     }
     
     //MARK:- Functions
     private func loadGifAnimation() {
-        let animationTime = 4.2
+        let animationTime = 5.0
         DispatchQueue.main.asyncAfter(deadline: .now() + animationTime) {
             let scene = UIApplication.shared.connectedScenes.first
             if let sceneDelegate = (scene?.delegate as? SceneDelegate) {

@@ -12,7 +12,7 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .opaqueSeparator
+        view.backgroundColor = .black
     }
 
 }
