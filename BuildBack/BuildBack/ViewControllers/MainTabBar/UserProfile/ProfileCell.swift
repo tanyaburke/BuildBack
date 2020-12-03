@@ -12,28 +12,12 @@ import UIKit
 
 class ProfileCell: UICollectionViewCell {
 
-    @IBOutlet weak var companyImage: UIImageView!
-    
-    @IBOutlet weak var companyName: UILabel!
-    @IBOutlet weak var companyType: UILabel!
-    
+    @IBOutlet weak var businessLogoImageView: UIImageView!
+    @IBOutlet weak var businessNameLabel: UILabel!
+    @IBOutlet weak var businessTypeLabel: UILabel!
     @IBOutlet weak var donateButton: UIButton!
     
-//    func configureCell(podcast: Podcast) {
-//        podcastCollectionNameLabel.text = podcast.collectionName
-//        podcastImageView.getImage(with: podcast.artworkUrl600) { [weak self] (result) in
-//            switch result {
-//            case .failure:
-//                
-//                DispatchQueue.main.async {
-//                    self?.podcastImageView.image = UIImage(named: "circle")
-//                }
-//                
-//            case .success(let image):
-//                DispatchQueue.main.async {
-//                    self?.podcastImageView.image = image
-//                }
-//            }
-//        }
-//    }
+    public func configureCell() {
+        
+    }
 }
