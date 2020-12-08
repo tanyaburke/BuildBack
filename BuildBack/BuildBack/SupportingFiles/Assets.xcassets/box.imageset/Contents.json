@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Alphabet-B-Transparent-Image1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "letterB2x .png",
+      "filename" : "Alphabet-B-Transparent-Image2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "letterB3x-1.png",
+      "filename" : "Alphabet-B-Transparent-Image3x.png",
       "scale" : "3x"
     }
   ],
